@@ -56,6 +56,16 @@ jobs:
             echo "has_patch=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Ensure labels exist
+        if: steps.check.outputs.has_patch == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create self-iterate --color "5319e7" \
+            --description "Autonomous self-iteration loop output" 2>/dev/null || true
+          gh label create needs-review --color "fbca04" \
+            --description "Awaiting human review" 2>/dev/null || true
+
       - name: Create improvement PR
         if: steps.check.outputs.has_patch == 'true'
         env:
