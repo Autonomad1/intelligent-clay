@@ -1,0 +1,89 @@
+name: self-iterate
+
+# Autonomous weekly self-iteration loop.
+#
+# Runs the test prompts in tests/prompts.yaml against the current SKILL.md,
+# scores each output against spec, and opens a PR with a proposed SKILL.md
+# improvement if recurring gaps emerge. Human-gated: PRs need human review
+# before merge.
+
+on:
+  schedule:
+    - cron: "17 9 * * 1"   # every Monday at 09:17 UTC
+  workflow_dispatch:        # also runnable on demand
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  self-iterate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install anthropic pyyaml
+
+      - name: Run self-iteration
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: claude-opus-4-7
+        run: |
+          mkdir -p runs
+          python scripts/self_iterate.py | tee runs/last-summary.md
+
+      - name: Determine if a patch was proposed
+        id: check
+        run: |
+          latest=$(ls -1dt runs/*/ 2>/dev/null | head -1 | sed 's:/$::')
+          if [ -z "$latest" ]; then
+            echo "has_patch=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ -s "$latest/proposed-patch.md" ] && \
+             ! grep -q "No gaps observed" "$latest/proposed-patch.md"; then
+            echo "has_patch=true" >> "$GITHUB_OUTPUT"
+            echo "run_dir=$latest" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_patch=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create improvement PR
+        if: steps.check.outputs.has_patch == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ts=$(date -u +%Y%m%d-%H%M)
+          branch="self-iterate/${ts}"
+          git config user.name "intelligent-clay-bot"
+          git config user.email "noreply@github.com"
+          git checkout -b "$branch"
+          git add runs/
+          git commit -m "self-iterate: weekly run ${ts}"
+          git push origin "$branch"
+          gh pr create \
+            --base main \
+            --head "$branch" \
+            --title "chore(skill): self-iterate ${ts} — proposed SKILL.md improvement" \
+            --body-file "${{ steps.check.outputs.run_dir }}/proposed-patch.md" \
+            --label "self-iterate,needs-review"
+
+      - name: Commit run logs even if no patch
+        if: steps.check.outputs.has_patch != 'true'
+        run: |
+          ts=$(date -u +%Y%m%d-%H%M)
+          git config user.name "intelligent-clay-bot"
+          git config user.email "noreply@github.com"
+          git add runs/
+          if ! git diff --cached --quiet; then
+            git commit -m "self-iterate: weekly run ${ts} (no patch needed)"
+            git push origin main
+          fi

@@ -1,108 +1,133 @@
 ---
 name: intelligent-clay
 description: Use when productizing, modularizing, packaging, or repackaging a service — turning consulting, coaching, agency, freelance, or done-for-you offerings into configurable, tiered, build-your-own products. Triggers on phrases like "too custom to scale", "add tiers", "build-your-own version", "turn my service into a product", "modularize my offering", or "scale without doing more 1-on-1 work".
+version: 1.1
 ---
 
 # Intelligent Clay
 
-## Overview
-
-Services are clay. Take fixed offerings and make them shapeable. This skill produces ONE thing: the **structural blueprint** for productizing a service — not marketing copy, not positioning, not a roadmap. Structure only.
-
-The output is the LEGO-fication step that has to happen before pricing, copy, or positioning becomes useful for a custom service.
+Services are clay. This skill produces ONE thing: the **structural blueprint** for productizing a service. Not marketing copy, not positioning, not a roadmap. Structure only.
 
 ## When to Use
 
-Apply when the user describes:
-- A service-based offering they want to modularize, package, or productize
-- Wanting tiers, a "build-your-own", or à-la-carte version of a custom service
-- Symptoms like "my service is too custom", "I can't scale 1-on-1", "every engagement is bespoke", "I want to package this"
+Apply when the user describes a service-based offering they want to modularize, package, productize, or make build-your-own.
 
-**Inputs accepted:** prose description, sales page, pitch deck, URL, verbal sketch, or pricing page.
-
-**When NOT to use:**
-- Pure software/SaaS (already modular by construction)
+**Out of scope (refuse + redirect):**
+- Pure SaaS / software (already modular)
 - Pure physical products (use SKU/bundle logic instead)
-- Marketing copy or positioning work (use offer-extraction or Dunford-style skills)
-- Product roadmap or discovery (use a PM skill)
+- Marketing copy or positioning (use offer-extraction or Dunford-style skills)
+- Product roadmap / discovery (use a PM skill)
 
-For **hybrid offerings** (service + product): decompose the service portion only; treat the fixed product as a single atom.
-For **single-deliverable services** (e.g., "I write resumes"): atomize by *process steps* and *variables* (turnaround, depth, revision count, format options, channel).
+**Modes:**
+- **Default mode** — fresh productization. Output: 3 tiers (Lite/Core/Premium, or renamed in the offering's vocabulary) + BYO.
+- **Existing-tier overlay mode** — user already has tiers and wants BYO without breaking them. Preserve existing tiers exactly; slot BYO **underneath** the cheapest and **between** existing tiers; prove each existing tier still wins on price vs. its BYO-summed equivalent. See [`references/existing-tier-overlay.md`](references/existing-tier-overlay.md).
+- **Hybrid offerings** (service + product) — decompose the service portion only; the product is one fixed atom.
+- **Single-deliverable services** ("I write resumes") — atomize by *process steps* and *variables* (turnaround, depth, format, revision count).
 
-## Required Output Format
-
-Always produce three parts, in this order. Never substitute.
+## Required Output (always 3 parts, in order)
 
 ### Part 1 — Atomic Decomposition
 
-List the smallest standalone components. An "atom" is something a customer could (in principle) buy in isolation. Use these atom types as a checklist; aim for at least one in each category that applies:
+Flat bullet list, grouped by atom type. Each atom must pass: *could a customer buy just this and get value?* Phases ("Discovery") are bundles, not atoms; "60-min stakeholder interview" is.
 
-- **Deliverables** — artifacts produced (audit doc, brand guide, training plan, dashboard)
-- **Time blocks** — sessions, calls, sprints, workshops, with duration
-- **Access tiers** — response time, channels (Slack, Voxer, email, weekly call)
-- **Support levels** — revisions, office hours, async review, on-call
-- **Customizations** — variables the customer can vary (industry focus, depth, pace)
+- **Deliverables** — artifacts produced
+- **Time blocks** — sessions, calls, sprints, with duration
+- **Access tiers** — channels and response time
+- **Support levels** — revisions, office hours, async review
+- **Customizations** — variables (industry focus, depth, pace, etc.)
 
-Render as a flat bullet list. Do **not** group into phases — that's the naive failure mode. Each item should pass the test: *could a customer buy just this and get value?*
+### Part 2 — Configuration Architecture (always a table)
 
-### Part 2 — Configuration Architecture
+Render as a table, one row per dimension:
 
-Define the dimensions on which the customer customizes. For each dimension that applies, specify:
+| Dimension | What it controls | Levels | Dependencies |
+|-----------|------------------|--------|--------------|
 
-- **The dimension name and what it controls**
-- **The levels available** (e.g., 1 / 3 / 5 interviews; sprint / standard / deep)
-- **Dependencies** (e.g., "Premium pace requires Standard or higher depth")
-- **Valid combinations or invalid pairs**
+Standard dimensions: Depth, Breadth, Pace, Format, Support, Add-ons. Definitions and standard levels in [`references/dimensions.md`](references/dimensions.md). **Invent domain-specific dimensions** when the standard six don't capture a key configurable — examples that emerged from real runs: "Discipline Mix" (creative agency), "Targeting" (resume writer), "Tracking Scope" (SEO retainer).
 
-Standard dimensions to consider (use what fits, omit what doesn't):
+Below the table: **Invalid combinations the configurator must block** as a flat bullet list.
 
-| Dimension | What it controls |
-|-----------|------------------|
-| Depth | How thorough — # interviews, # revisions, # iterations |
-| Breadth | How much scope — verbal only / verbal + visual / full system |
-| Pace | How fast — sprint / standard / deep |
-| Format | How delivered — live / async / hybrid |
-| Support | How much access — workshop-only / + revisions / + retainer |
-| Add-ons | What extends the base — extra deliverables, follow-on access |
+### Part 3 — Three Tiers + Build-Your-Own
 
-If a dimension has dependencies, state them explicitly. The configuration architecture is what makes "build-your-own" actually work without producing nonsense combinations.
+Three packages. Not two. Not five. Use Lite/Core/Premium, or rename in the brand's vocabulary (Foundation/Signature/Elite, Studio Lite/Core/Premium). For each tier:
 
-### Part 3 — Tiered Packages + Build-Your-Own
+- **Configuration** — level on each dimension
+- **Positioning line** — one sentence: who it's for, what they get
+- **Pricing logic** — what the price is anchored against (see Pricing-Anchor Rule below)
 
-Three packages, then BYO. Not two. Not five. **Three plus BYO.**
+Then a **Build-Your-Own framework**:
 
-For each tier (use Lite / Core / Premium, or rename in the offering's vocabulary):
-- **Configuration** — the level chosen on each dimension
-- **Positioning line** — one sentence: who it's for and what they get
-- **Pricing logic** — what the price is anchored against (cost saved, value delivered, comparable benchmark), not just a number
+- **Base price** (typically Lite) + **per-dimension upgrade pricing**
+- **Floor** (minimum viable) and **Ceiling** (above which auto-route to Premium or custom)
+- **Dependencies the configurator must enforce**
+- **Flagship-protection rule:** the BYO sum to reach each tier's configuration must price *above* that tier's flagship — flagships must remain the rational discount.
 
-Then the **Build-Your-Own framework**:
-- **Base price** (typically the Lite configuration) + **per-dimension upgrade pricing**
-- **Floor** (minimum viable bundle) and **ceiling** (above which it should be Premium or custom)
-- **Dependencies enforced** (which combinations the configurator must block)
+### Pricing-Anchor Rule
+
+| Input quality | Anchor approach |
+|---------------|-----------------|
+| User gave concrete prices | Use $ figures; anchor each tier against them |
+| Domain norms are well-known (exec coaching, brand strategy, SEO retainers) | Use $ figures from those benchmarks |
+| Truly vague input | Use placeholder tokens (`+$A`, `+$B`) — do not fabricate |
+
+## Inline Example (compressed)
+
+**Input:** "$15K, 6-week brand strategy engagement ending in a brand guide."
+
+**Part 1 (excerpt):**
+- *Deliverables:* brand audit · positioning statement · voice guide · brand guide PDF · naming recommendation
+- *Time blocks:* 60-min kickoff · 45-min stakeholder interview · 90-min positioning workshop
+- *Customizations:* # interviews (3/6/10), B2B vs B2C, internal-only vs agency-handoff-ready
+
+**Part 2 (excerpt):**
+
+| Dimension | What it controls | Levels | Dependencies |
+|---|---|---|---|
+| Depth | Interview thoroughness | Light / Standard / Deep | Sprint pace blocked at Deep |
+| Breadth | Brand-system scope | Verbal-only / +Visual / Full system | Naming add-on requires +Visual |
+| Pace | Calendar | Sprint (2w) / Standard (6w) / Deep (10w) | — |
+
+**Part 3 (excerpt):**
+
+| Tier | Price | Anchor |
+|---|---|---|
+| Lite — Positioning Sprint | $6,500 | ~40% of flagship; cost-of-bad-positioning entry point |
+| Core — Brand Guide *(flagship)* | $15,000 | Senior-strategist-only at half typical agency engagements ($25–50K) |
+| Premium — Brand System + Embed | $32,000 | Below consultancy retainer + naming sum-of-parts (~$45K) |
+
+BYO: $6,500 base + per-dimension upgrades; floor $6,500; ceiling $28,000 routes to Premium; configurator blocks Sprint+Deep, Async+Deep, Naming without Visual.
 
 ## Anti-Patterns
 
-| Failure mode | Why it's wrong |
-|--------------|----------------|
-| Five tiers instead of three + BYO | Decision paralysis; undermines the anchor; spec calls for 3 + BYO |
-| Skipping the configuration architecture | This is the most common naive failure — going straight from atoms to packages |
-| Listing phases as atoms | Phases are bundles, not atoms. "Discovery" isn't an atom; "60-min stakeholder interview" is |
-| Mixing in marketing or positioning advice | Stay structural. Refer the user to offer-extraction or positioning skills if they need that |
-| Asking clarifying questions before producing | Infer from what's given, produce the blueprint, then offer to refine |
-| Pricing modules to sum exactly to the flagship | Protects nothing; the flagship should still feel like a discount versus the sum |
+| Failure | Why it's wrong |
+|---------|----------------|
+| Five tiers instead of three + BYO | Decision paralysis; undermines anchor |
+| Skipping Part 2 entirely | Most common naive failure |
+| Listing phases as atoms | Phases are bundles, not atoms |
+| Marketing/positioning advice | Out of scope; refer to other skills |
+| Asking clarifying questions before producing | Infer, produce, then offer to refine |
+| Summing module prices to flagship exactly | Flagship must feel like a discount vs. parts |
 
 ## Self-Check Before Responding
 
-- [ ] Are atoms truly atomic, or am I describing high-level phases?
-- [ ] Did I produce explicit configuration dimensions with levels and dependencies?
-- [ ] Did I produce exactly 3 tiers + BYO (not 5, not "Base + add-ons")?
-- [ ] Each tier: configuration, positioning line, pricing logic — all three?
-- [ ] Did I stay structural and avoid drifting into marketing/pricing strategy?
-- [ ] Did I produce, rather than punt with clarifying questions?
+Atoms truly atomic? Part 2 in table form with dependencies? Three tiers + BYO (or existing-tier overlay)? Each tier has configuration + positioning + pricing logic anchored, not just $? BYO has floor, ceiling, configurator dependencies, flagship-protection rule? Domain-specific dimensions added if needed? Stayed structural — no marketing or positioning drift?
 
-If any answer is no, revise before delivering.
+## Memory Integration (Optional)
 
-## After the Blueprint
+If `claude-mem` (or equivalent persistent memory) is available, **before** producing the blueprint, query for past runs in the same domain. If 2+ similar past runs exist, prepend a one-line memory preamble:
 
-Once the blueprint is delivered, optionally offer one follow-up: *"Want me to draft the scope/deliverable language for any of these tiers, or stress-test the dimensions against an edge case?"* Do not pre-emptively expand into marketing, positioning, or operations advice — those are separate skills.
+> *Memory note: I've seen N similar offerings ([verticals]). Load-bearing dimensions historically: [list]. Applying as starting hypotheses; will diverge where this offering differs.*
+
+**After** producing the blueprint, save the run as a tagged observation (`intelligent-clay:run`) with domain, vertical, dimensions used, invented dimensions, anchor strategy, and notable dependencies. Full schema and integration spec in [`references/memory-integration.md`](references/memory-integration.md).
+
+If memory is unavailable, omit the preamble silently. Never fail or refuse because memory isn't there.
+
+## Optional Follow-Up Menu
+
+After delivering, offer **one** based on context:
+
+- **Scope/deliverable language** drafting for any tier
+- **Configurator output mode** — re-emit Parts 2 and 3 as JSON/YAML for paste into Typeform/Webflow/custom builder. See [`references/configurator-output.md`](references/configurator-output.md)
+- **Edge-case stress-test** — apply dimensions to a concrete extreme scenario the user names
+- **Highest-leverage atom** identification — which 1–2 atoms, if standardized, unlock the most BYO velocity
+- **Pricing validation** — sanity-check each tier's anchor against the user's competitive set

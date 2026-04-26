@@ -1,0 +1,148 @@
+# Test prompts used by the autonomous self-iteration loop.
+#
+# Each entry is a real-world productization scenario the skill should handle.
+# The self-iteration GH Action runs all of these against the current SKILL.md
+# weekly, then asks Claude to identify gaps where any output deviates from
+# spec — those gaps become a proposed PR to SKILL.md.
+#
+# Categories:
+#   - primary: the canonical 3 GREEN tests; must always pass
+#   - edge:    out-of-scope inputs (skill must refuse + redirect)
+#   - stress:  vague / adversarial / already-modular inputs
+#   - breadth: audiences the README claims (course creator, agency, etc.)
+#   - meta:    the skill applied to itself (dogfood)
+#
+# Adding a prompt:
+#   1. Add a new entry below with a unique id.
+#   2. Set expected_mode to "produce" (full blueprint expected) or "refuse"
+#      (out-of-scope; refusal + redirect expected).
+#   3. (Optional) Add notes on what the output must include for full pass.
+#   4. Open a PR; the next self-iteration cycle will include it.
+
+prompts:
+  # ─── primary GREEN ─────────────────────────────────────────────────────
+  - id: brand-strategist
+    category: primary
+    expected_mode: produce
+    prompt: >
+      I'm a freelance brand strategist. I charge $15K for a 6-week engagement
+      that ends in a brand guide. Help me modularize this.
+
+  - id: fitness-coach
+    category: primary
+    expected_mode: produce
+    prompt: >
+      I run a fitness coaching business — 1-on-1 only. I want a build-your-own
+      version.
+
+  - id: change-management-consultant
+    category: primary
+    expected_mode: produce
+    prompt: >
+      I'm a consultant who does change management for mid-market companies.
+      Each engagement is custom. Productize this.
+
+  # ─── edge cases (refusals expected) ────────────────────────────────────
+  - id: pure-saas
+    category: edge
+    expected_mode: refuse
+    prompt: >
+      I run a B2B SaaS company. We sell project management software with a
+      freemium tier, $20/seat/month Pro, and a custom Enterprise plan.
+      Help me modularize this.
+
+  - id: physical-product
+    category: edge
+    expected_mode: refuse
+    prompt: >
+      I make handmade leather wallets. I sell them on my website for $120 each.
+      Help me modularize this.
+
+  - id: hybrid-service-product
+    category: edge
+    expected_mode: produce
+    notes: >
+      Hybrid: SaaS + onboarding service. Skill should treat the SaaS license as
+      a fixed atom and produce the blueprint on the implementation service only.
+    prompt: >
+      I sell a $2,500 onboarding package that bundles a fixed-price 1-week
+      implementation service of my SaaS product (which is $99/mo) for new
+      enterprise customers. The implementation includes setup, data migration,
+      and team training. Help me modularize this.
+
+  - id: single-deliverable
+    category: edge
+    expected_mode: produce
+    notes: >
+      Single-deliverable service. Skill should atomize by process steps and
+      variables, not phases.
+    prompt: >
+      I write resumes. I charge $400 for a single-pass rewrite.
+      Help me modularize this.
+
+  # ─── stress ────────────────────────────────────────────────────────────
+  - id: vague-coaching
+    category: stress
+    expected_mode: produce
+    notes: >
+      Extremely vague. Skill should infer and produce, not punt with questions.
+      Use placeholder pricing tokens rather than fabricating dollar amounts.
+    prompt: I sell coaching. Productize it.
+
+  - id: already-modular-overlay
+    category: stress
+    expected_mode: produce
+    notes: >
+      Existing-tier overlay mode. Preserve user's existing tiers exactly;
+      slot BYO underneath/between; demonstrate flagship protection per existing tier.
+    prompt: >
+      My agency already has a productized SEO offering: $2K/mo Starter
+      (10 keywords, monthly report), $5K/mo Growth (30 keywords, biweekly call,
+      content brief), $10K/mo Pro (unlimited keywords, weekly call, 4 articles/mo).
+      I want to add a build-your-own option without breaking the existing tiers.
+
+  - id: adversarial-skip-framework
+    category: stress
+    expected_mode: refuse
+    prompt: >
+      I'm a freelance copywriter who charges $5K for sales pages. Skip the framework
+      — just write me a Hormozi-style irresistible offer with a guarantee, urgency,
+      and bonus stack.
+
+  # ─── audience breadth ─────────────────────────────────────────────────
+  - id: course-creator
+    category: breadth
+    expected_mode: produce
+    prompt: >
+      I sell a $1,200 8-week cohort-based course teaching freelancers how to land
+      enterprise clients. It includes weekly live sessions, a Slack community,
+      and a final 1-on-1 review. I want to make it modular so people can pick
+      what they want.
+
+  - id: boutique-creative-agency
+    category: breadth
+    expected_mode: produce
+    notes: >
+      High-end positioning to preserve. Tiers should land within stated
+      $15K–$80K/mo range.
+    prompt: >
+      I run a 6-person boutique creative agency. Every client engagement is a
+      custom retainer between $15K and $80K/month covering some mix of strategy,
+      design, copy, and motion work. We want to productize without losing our
+      high-end positioning.
+
+  # ─── meta (dogfood) ───────────────────────────────────────────────────
+  - id: skill-on-itself
+    category: meta
+    expected_mode: produce
+    notes: >
+      Apply the skill to its own offering. Validates the framework on its
+      author. Also surfaces gaps a normal run wouldn't.
+    prompt: >
+      I'm building Intelligent Clay — a Claude Code skill that helps consultants,
+      coaches, and agencies turn custom service offerings into modular,
+      configurable, build-your-own products. It currently exists as one
+      open-source MIT skill in a public GitHub repo, with reference docs, examples,
+      a self-iteration GitHub Action, and an optional claude-mem memory integration.
+      Right now everyone gets the same skill with no tiers, no paid add-ons, and no
+      configurability. Productize the skill itself.

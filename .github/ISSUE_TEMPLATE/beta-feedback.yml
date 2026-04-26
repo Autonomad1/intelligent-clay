@@ -1,0 +1,98 @@
+name: Beta Feedback
+description: Share a real-world run of Intelligent Clay — what worked, what didn't.
+title: "[beta] "
+labels: ["beta-feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for running Intelligent Clay on a real offering. This is the highest-signal feedback the project gets — synthetic test prompts can't catch domain blindspots; you can.
+
+        **Privacy reminder:** generalize client names, exact revenue figures, and proprietary methodology before you submit. Issues are public.
+
+  - type: input
+    id: domain
+    attributes:
+      label: Domain / vertical
+      description: Brief label — e.g., "freelance brand strategist", "SEO retainer agency", "executive coaching for tech CEOs".
+      placeholder: e.g., M&A integration consultant
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode the skill applied
+      options:
+        - Default (3 fresh tiers + BYO)
+        - Existing-tier overlay
+        - Hybrid (service + product)
+        - Single-deliverable
+        - Refused (out-of-scope) — and you think it shouldn't have
+        - Refused (out-of-scope) — refusal was correct
+        - Other / unsure
+    validations:
+      required: true
+
+  - type: textarea
+    id: input
+    attributes:
+      label: Input prompt (verbatim)
+      description: The exact text you used to invoke the skill. Generalize identifying details first.
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: output_excerpt
+    attributes:
+      label: Output (full or relevant excerpt)
+      description: Paste the skill's output. Long is fine — we want the whole thing if the issue is structural.
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: nailed
+    attributes:
+      label: What the skill nailed
+      description: Specific things you found correct, useful, or surprisingly insightful.
+    validations:
+      required: false
+
+  - type: textarea
+    id: missed
+    attributes:
+      label: What it got wrong, missed, or oversimplified
+      description: Be specific. Which atom is missing? Which dimension didn't fit? Which tier's positioning is off? What dependency would actually break in your domain?
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested_fix
+    attributes:
+      label: Suggested fix (optional)
+      description: A concrete change to SKILL.md or a references/*.md file you think would address the gap.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: attribution
+    attributes:
+      label: Attribution preference if your feedback ships in CHANGELOG
+      options:
+        - Use my GitHub handle
+        - Use my real name (I'll add it in a comment)
+        - Anonymous
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirms
+    attributes:
+      label: Confirmations
+      options:
+        - label: I have generalized identifying client/proprietary details before submitting.
+          required: true
+        - label: I am willing to do one round of follow-up if the maintainer needs clarification.
+          required: true

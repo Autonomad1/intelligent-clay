@@ -126,23 +126,71 @@ See [`examples/brand-strategist.md`](examples/brand-strategist.md) for the full 
 intelligent-clay/
 ├── SKILL.md                                    # The main skill file
 ├── README.md                                   # You are here
-├── LICENSE
-└── examples/
-    ├── brand-strategist.md                     # Real run on a $15K brand engagement
-    ├── fitness-coach.md                        # Real run on 1-on-1 fitness coaching
-    └── change-management-consultant.md         # Real run on mid-market change mgmt
+├── CHANGELOG.md                                # Version history (v1.0 → v1.1)
+├── BETA.md                                     # Beta-tester program for real-world feedback
+├── LICENSE                                     # MIT
+├── references/                                 # Detail loaded on demand by the skill
+│   ├── dimensions.md                           # Standard 6 + when to invent domain-specific
+│   ├── configurator-output.md                  # YAML/JSON spec for Typeform/Webflow paste
+│   ├── existing-tier-overlay.md                # Mode for "add BYO without breaking tiers"
+│   └── memory-integration.md                   # claude-mem schema + retrieval/ingest
+├── examples/
+│   ├── brand-strategist.md                     # Real run on a $15K brand engagement
+│   ├── fitness-coach.md                        # Real run on 1-on-1 fitness coaching
+│   ├── change-management-consultant.md         # Real run on mid-market change mgmt
+│   ├── seo-agency-overlay.md                   # Existing-Tier Overlay mode demo
+│   ├── intelligent-clay-on-itself.md           # Dogfood: skill applied to its own offering
+│   └── robustness-tests.md                     # 9-test edge-case battery summary
+├── tests/
+│   └── prompts.yaml                            # Test prompts used by self-iteration loop
+├── scripts/
+│   └── self_iterate.py                         # Autonomous-iteration script (run weekly)
+└── .github/
+    ├── workflows/
+    │   └── self-iterate.yml                    # Weekly cron + PR-on-gap workflow
+    └── ISSUE_TEMPLATE/
+        └── beta-feedback.yml                   # Structured form for beta participants
 ```
 
 ---
 
 ## Status
 
-✅ **Stable v1.0** — built via TDD-for-skills and validated across **12 prompts** total:
+✅ **Stable v1.1** — see [`CHANGELOG.md`](CHANGELOG.md) for the full release notes. v1.1 keeps the v1.0 contract (atomic decomposition / configuration architecture / tiered packages + BYO) and layers on:
 
-- **3 primary GREEN tests** with baseline-vs-skill comparison (brand strategist, fitness coach, change-management consultant) — all produce the full 3-part blueprint with explicit dimensions, dependencies, and Lite/Core/Premium + BYO. Verbatim outputs in [`examples/brand-strategist.md`](examples/brand-strategist.md), [`fitness-coach.md`](examples/fitness-coach.md), [`change-management-consultant.md`](examples/change-management-consultant.md).
-- **9-test robustness battery** covering edge cases (pure SaaS, physical product, hybrid offerings, single-deliverable services), stress conditions (extremely vague input, already-modular service, adversarial framework-skip), and audience breadth (course creator, boutique agency). All 9 pass — 4/4 boundary refusals are clean and redirect to alternative skills; 5/5 in-scope applications produce correct structured output. Summary in [`examples/robustness-tests.md`](examples/robustness-tests.md).
+- **Mandatory table format for Part 2** — outputs render configuration architecture as a single table with explicit dependencies.
+- **Pricing-Anchor Rule** — explicit guidance on when to use $ figures vs. placeholder tokens, eliminating fabricated prices on vague input.
+- **Existing-Tier Overlay mode** — when the user already has tiers and wants BYO without breaking them. Spec in [`references/existing-tier-overlay.md`](references/existing-tier-overlay.md). Real run in [`examples/seo-agency-overlay.md`](examples/seo-agency-overlay.md).
+- **Domain-specific dimensions** — explicit permission to invent dimensions outside the standard six (e.g., "Discipline Mix" for an agency, "Tracking Scope" for an SEO retainer).
+- **Memory integration via [claude-mem](https://github.com/anthropics/claude-mem)** — optional. The skill saves each run as a tagged observation and queries similar past runs to ground future blueprints. Spec in [`references/memory-integration.md`](references/memory-integration.md).
+- **Configurator output mode** — re-emit Parts 2 and 3 as YAML/JSON for paste into Typeform/Webflow/Stripe. Spec in [`references/configurator-output.md`](references/configurator-output.md).
+- **Five-option follow-up menu** — scope drafting, configurator output, edge-case stress-test, highest-leverage atom, pricing validation.
+- **Autonomous self-iteration loop** — see [Self-iteration](#self-iteration) below.
+- **Dogfood** — the skill applied to its own offering: [`examples/intelligent-clay-on-itself.md`](examples/intelligent-clay-on-itself.md). Produced a real Lite/Core/Premium + BYO for the skill itself, including white-label rights at Premium.
 
-Feedback, issues, and pull requests welcome.
+### Validation surface
+
+- **3 primary GREEN tests** (brand strategist, fitness coach, change-management consultant) re-run against v1.1, all pass with notable quality improvements (table format, math-verified flagship protection, honest placeholder pricing).
+- **9-test robustness battery** (edge cases, stress conditions, audience breadth) — all 9 pass. Summary in [`examples/robustness-tests.md`](examples/robustness-tests.md).
+- **Dogfood** — the skill produces a credible blueprint of itself, validating the framework on its author.
+
+Feedback, issues, and pull requests welcome. See [`BETA.md`](BETA.md) for how to participate as a beta tester running real offerings.
+
+## Self-iteration
+
+The skill iterates on itself, autonomously, every Monday.
+
+[`.github/workflows/self-iterate.yml`](.github/workflows/self-iterate.yml) runs [`scripts/self_iterate.py`](scripts/self_iterate.py) on a weekly cron. The script:
+
+1. Loads the test prompt battery from [`tests/prompts.yaml`](tests/prompts.yaml).
+2. Calls Claude with the current `SKILL.md` and produces a blueprint for each prompt.
+3. Asks Claude (in a second pass) to score each output against the skill's own self-check criteria, flagging gaps where output deviates from spec.
+4. Aggregates the gaps and asks Claude to propose a surgical SKILL.md patch addressing the most-common pattern.
+5. Opens a PR titled `chore(skill): self-iterate ${ts} — proposed SKILL.md improvement` if a patch is proposed.
+
+**Human-gated.** Every proposed SKILL.md change requires human review before merge. The autonomous loop does the work of identifying gaps and drafting fixes; the human makes the final call. That gating is intentional — autonomous self-editing without it would risk drift.
+
+To enable: add `ANTHROPIC_API_KEY` as a repo secret. Without it, the workflow runs but skips the API calls (no exposure on PRs from forks).
 
 ---
 
