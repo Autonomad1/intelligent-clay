@@ -1,7 +1,7 @@
 ---
 name: intelligent-clay
 description: Use when productizing, modularizing, packaging, or repackaging a service — turning consulting, coaching, agency, freelance, or done-for-you offerings into configurable, tiered, build-your-own products. Triggers on phrases like "too custom to scale", "add tiers", "build-your-own version", "turn my service into a product", "modularize my offering", or "scale without doing more 1-on-1 work".
-version: 1.1
+version: 1.2
 ---
 
 # Intelligent Clay
@@ -67,8 +67,17 @@ Then a **Build-Your-Own framework**:
 | Input quality | Anchor approach |
 |---------------|-----------------|
 | User gave concrete prices | Use $ figures; anchor each tier against them |
-| Domain norms are well-known (exec coaching, brand strategy, SEO retainers) | Use $ figures from those benchmarks |
-| Truly vague input | Use placeholder tokens (`+$A`, `+$B`) — do not fabricate |
+| Domain norms are well-known **at the named sub-niche level** (exec coaching, brand strategy, SEO retainers, technical resume writing) | Use $ figures from those benchmarks |
+| Generic category only ("coaching", "consulting", "design", "marketing") with no sub-niche named | Treat as vague — use placeholder tokens |
+| Truly vague input | Use placeholder tokens (`+$A`, `+$B`, `+$C`) — do not fabricate |
+
+**Bright line:** "coaching" alone is vague; "executive coaching for Series B founders" is anchored. When in doubt, use tokens and offer to re-anchor once the niche is named. Never invoke norms for the parent category to justify specific dollar figures.
+
+**Vague-input preamble:** When using placeholder tokens, open with a one-line assumption stub, not a complaint. Format:
+
+> *Assuming [generic-but-plausible reading of the offering]; will re-anchor with $ figures once you name [the specific variable that would unlock norms].*
+
+Do not lampshade the vagueness ("you've given me almost nothing", "this is hard to answer") — infer, stub, produce.
 
 ## Inline Example (compressed)
 

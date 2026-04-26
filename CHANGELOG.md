@@ -4,6 +4,27 @@ All notable changes to Intelligent Clay are documented here. The skill follows [
 
 ---
 
+## [v1.2] — 2026-04-26
+
+The first release authored by the autonomous self-iteration loop. The Monday cron didn't fire yet — this came from a manually-triggered run that surfaced one consistent gap across the 13-prompt battery (12/13 passed) and proposed a surgical fix.
+
+### Changed
+
+- **Pricing-Anchor Rule tightened.** The rule's middle row now requires norms to be known *at the named sub-niche level* (e.g., "executive coaching for Series B founders" is anchored; "coaching" alone is not). A new fourth row makes the implication explicit: generic category-only inputs ("coaching", "consulting", "design", "marketing") are treated as vague and use placeholder tokens.
+- **Bright-line rule added** below the table to prevent fabrication: "Never invoke norms for the parent category to justify specific dollar figures."
+- **Vague-input preamble convention.** When using placeholder tokens, the skill now opens with a productive assumption stub (`*Assuming [reading]; will re-anchor with $ figures once you name [variable]*`) rather than lampshading vagueness ("you've given me almost nothing").
+
+### Why
+
+Across the v1.1 13-prompt regression, the only failure was the `vague-coaching` case — the agent invoked "domain norms" for the parent category "coaching" and fabricated dollar figures rather than using placeholder tokens. The autonomous loop identified this as the single load-bearing gap and proposed the patch above. Merged via [PR #1](https://github.com/Autonomad1/intelligent-clay/pull/1).
+
+### Validated
+
+- Static + unit suite (78 tests) still green.
+- The patched rule now has 4 explicit rows (was 3) — `test_pricing_anchor_rule_three_levels` continues to assert the table has at least 3 data rows (now 4).
+
+---
+
 ## [v1.1] — 2026-04-26
 
 The "make it amazing" release. v1.1 keeps the v1.0 contract (3-part output: atomic decomposition / configuration architecture / tiered packages + BYO) and layers on consistency, dogfooding, and an autonomous self-improvement loop.
