@@ -3,138 +3,115 @@
 **Test prompt (verbatim):**
 > "I'm a freelance brand strategist. I charge $15K for a 6-week engagement that ends in a brand guide. Help me modularize this."
 
-**Run conditions:** Real run of the `intelligent-clay` skill on a fresh agent with the skill loaded as the only directive. No editorialization or post-processing — this is the verbatim output.
+**Run conditions:** v1.1 SKILL.md loaded. The agent followed the skill verbatim — table format for Part 2, math-verified flagship protection in the BYO framework, and explicit anchoring against current $15K flagship.
 
 ---
 
-# Intelligent Clay — Brand Strategy Engagement
+# Brand Strategy Engagement — Productization Blueprint
 
 ## Part 1 — Atomic Decomposition
 
 **Deliverables**
-- Brand audit document (current state assessment)
-- Competitive landscape map (5 / 10 / 15 competitors profiled)
-- Customer/stakeholder interview synthesis report
-- Positioning statement (single page)
-- Messaging hierarchy (tagline, elevator pitch, boilerplate, value props)
-- Brand voice & tone guide (principles + do/don't examples)
-- Naming recommendation (product, feature, or sub-brand)
-- Visual identity direction (mood boards, not full system)
-- Brand guide PDF (the flagship artifact)
-- One-page brand summary (executive cheat sheet)
-- Launch/rollout playbook (how to operationalize the guide)
+- Brand audit (competitive landscape + internal brand perception synthesis)
+- Audience/segment map (1-pager per priority segment)
+- Positioning statement (single canonical sentence + rationale memo)
+- Messaging hierarchy (tagline · primary message · 3 pillar messages · proof points)
+- Voice & tone guide (principles + do/don't examples)
+- Naming recommendation (brand, sub-brand, or product)
+- Visual direction brief (mood, not execution — handed to designer)
+- Brand guide PDF (compiled artifact)
+- Internal rollout deck (talking points for the team)
+- Agency/handoff package (specs + exportable assets bundle)
 
 **Time blocks**
-- 60-min kickoff workshop
-- 45-min stakeholder interview (per person)
-- 30-min customer interview (per person)
-- 90-min positioning workshop (live, with leadership)
+- 60-min kickoff
+- 45-min stakeholder interview (per stakeholder)
+- 45-min customer interview (per customer)
+- 90-min positioning workshop
 - 60-min messaging workshop
-- 45-min review/feedback session (per round)
-- 60-min handoff session with internal team or external designer
+- 60-min voice workshop
+- 30-min mid-engagement checkpoint
+- 60-min final presentation
+- 30-min post-delivery office hours (per session)
 
 **Access tiers**
-- Email-only response (48-hr turnaround)
-- Slack/Loom async (24-hr turnaround)
-- Voxer + scheduled weekly call
-- Direct line during business hours
+- Async-only (Loom + email, 48hr response)
+- Scheduled-only (booked calls inside the engagement window)
+- Direct line (Slack Connect / WhatsApp during engagement, 4hr response)
 
 **Support levels**
-- Single-pass delivery (no revisions)
-- 1 round of revisions per deliverable
-- 2 rounds of revisions per deliverable
-- Async review of internal team's work for 30 / 60 / 90 days post-engagement
-- Office hours retainer (2 hrs/month for 3 months)
+- 1 revision round per deliverable
+- 2 revision rounds per deliverable
+- Unlimited revisions inside engagement window
+- 30-day post-delivery async review
+- 90-day embed (monthly check-in calls)
 
 **Customizations**
-- Industry depth (generalist vs. vertical-specialized research)
 - Number of stakeholder interviews (3 / 6 / 10)
-- Number of customer interviews (0 / 5 / 10)
-- B2B vs. B2C framing
-- Solo founder vs. leadership-team engagement model
-- Internal-only guide vs. agency-handoff-ready guide
+- Number of customer interviews (0 / 3 / 6)
+- B2B vs. B2C vs. hybrid
+- Internal-only vs. agency-handoff-ready
+- Single-brand vs. portfolio (master brand + sub-brands)
+- Industry vertical depth (generalist vs. specialist research add-on)
 
 ---
 
 ## Part 2 — Configuration Architecture
 
-**Depth** — How thorough the inputs are
-- Levels: Light (3 stakeholder interviews, 0 customer) / Standard (6 stakeholder, 5 customer) / Deep (10 stakeholder, 10 customer + competitive deep-dive)
+| Dimension | What it controls | Levels | Dependencies |
+|---|---|---|---|
+| Depth | Research thoroughness (interviews + audit rigor) | Light (3 stakeholder, 0 customer) / Standard (6+3) / Deep (10+6) | Sprint pace blocked at Deep |
+| Breadth | Brand-system scope | Verbal-only (positioning + messaging + voice) / +Visual direction / Full system (incl. naming) | Naming requires Breadth ≥ +Visual |
+| Pace | Calendar | Sprint (2w) / Standard (6w) / Extended (10w) | Sprint blocks Deep depth and Unlimited revisions |
+| Format | Deliverable polish | Working docs / Branded PDF guide / Guide + rollout deck + handoff package | Handoff package requires Breadth = Full system |
+| Support | Revisions + access | 1 round / 2 rounds / Unlimited within window | Unlimited blocked on Sprint |
+| Continuity | Post-delivery presence | None / 30-day async / 90-day embed | 90-day embed requires Format ≥ Branded PDF |
+| Portfolio Scope | Brands covered | Single brand / Master + 1 sub-brand / Master + 2-3 sub-brands | Each additional sub-brand multiplies Depth minimums |
 
-**Breadth** — How much of the brand system is covered
-- Levels: Verbal-only (positioning + messaging + voice) / Verbal + Visual Direction (adds mood boards & visual principles) / Full System (adds naming + rollout playbook)
-
-**Pace** — Calendar duration
-- Levels: Sprint (2 weeks) / Standard (6 weeks) / Deep (10 weeks)
-- Dependency: Sprint pace is invalid with Deep depth (cannot run 10 customer interviews in 2 weeks); Sprint requires Light depth.
-
-**Format** — How the work is delivered
-- Levels: Async (Loom + docs, no live workshops) / Hybrid (kickoff + positioning live, rest async) / Live-led (all workshops live)
-- Dependency: Async format invalid with Deep depth (synthesis requires live calibration).
-
-**Support** — Access and revisions
-- Levels: Single-pass / Standard (1 revision round + email) / High-touch (2 revision rounds + Slack + 60-day async review)
-
-**Add-ons** (atomic, à la carte)
-- Naming sprint (+1 deliverable)
-- Customer interview pack of 5 (+ depth without changing tier)
-- Designer-handoff session (60-min + annotated guide)
-- 90-day office-hours retainer
-- Executive one-pager
-- Launch/rollout playbook (if not already in Breadth)
-
-**Invalid combinations to block**
+**Invalid combinations the configurator must block**
 - Sprint pace + Deep depth
-- Async format + Deep depth
-- Verbal-only breadth + Naming add-on (naming requires at least Verbal + Visual)
+- Sprint pace + Unlimited support
+- Naming add-on without Breadth ≥ +Visual
+- Agency-handoff-ready format without Full system breadth
+- 90-day embed on Working-docs format
+- Portfolio Scope > Single brand on Sprint pace
+- Customer interviews > 0 without Standard or Deep depth
 
 ---
 
-## Part 3 — Tiered Packages + Build-Your-Own
+## Part 3 — Three Tiers + Build-Your-Own
 
-### Lite — "Positioning Sprint" — $6,500
-- **Configuration:** Depth: Light / Breadth: Verbal-only / Pace: Sprint (2 wks) / Format: Async / Support: Single-pass
-- **Positioning line:** For early-stage founders who need a defensible positioning statement and core messaging fast — not a full brand guide.
-- **Pricing logic:** Anchored against the cost of a bad positioning bet (months of wasted launch spend) and roughly 40% of the flagship — clearly the entry point.
+| Tier | Configuration | Positioning line | Price | Pricing logic |
+|---|---|---|---|---|
+| **Lite — Positioning Sprint** | Depth: Light · Breadth: Verbal-only · Pace: Sprint (2w) · Format: Working docs · Support: 1 round · Continuity: None · Portfolio: Single | For early-stage founders who need a defensible positioning statement and core messaging fast — not a brand guide. | **$6,500** | ~43% of flagship; priced against the cost of a bad positioning bet (one wasted ad month). Sits well below the $15K anchor so it never cannibalizes Core. |
+| **Core — Brand Guide** *(flagship)* | Depth: Standard · Breadth: +Visual direction · Pace: Standard (6w) · Format: Branded PDF guide · Support: 2 rounds · Continuity: None · Portfolio: Single | For Series A/B teams ready to operationalize a brand — the guide their next designer, marketer, and agency will all build from. | **$15,000** | User's current anchor. Senior-strategist-only delivery at half the cost of a typical $25–50K agency engagement; the rational default. |
+| **Premium — Brand System + Embed** | Depth: Deep · Breadth: Full system (incl. naming) · Pace: Extended (10w) · Format: Guide + rollout deck + handoff package · Support: Unlimited within window · Continuity: 90-day embed · Portfolio: Single or Master+1 | For funded teams launching/relaunching a brand who need naming, a full handoff-ready system, and a strategist on-call through rollout. | **$32,000** | Below sum-of-parts (Core $15K + naming ~$8K + embed ~$12K + handoff ~$5K = ~$40K) and below the floor of consultancy retainers (~$45K+). |
 
-### Core — "Brand Guide" — $15,000 *(current flagship)*
-- **Configuration:** Depth: Standard / Breadth: Verbal + Visual Direction / Pace: Standard (6 wks) / Format: Hybrid / Support: Standard (1 revision round)
-- **Positioning line:** For funded startups and growth-stage teams who need a complete brand guide their internal team or agency can execute against.
-- **Pricing logic:** Anchored against typical agency brand engagements ($25-50K) — positioned as the senior-strategist-only version at roughly half the price.
-
-### Premium — "Brand System + Embed" — $32,000
-- **Configuration:** Depth: Deep / Breadth: Full System (incl. naming + rollout playbook) / Pace: Deep (10 wks) / Format: Live-led / Support: High-touch (2 revisions + 60-day async review)
-- **Positioning line:** For Series A+ companies rebranding or launching a new product line, where the strategist stays embedded through rollout.
-- **Pricing logic:** Anchored against the cost of a brand consultancy retainer ($40-75K) plus the saved cost of a separate naming engagement ($10-15K). Sum-of-parts feels like ~$45K; tier prices at a discount.
-
----
-
-### Build-Your-Own Framework
+### Build-Your-Own framework
 
 **Base price:** $6,500 (Lite configuration)
 
-**Per-dimension upgrades (additive):**
-- Depth: Light → Standard +$3,500 / Standard → Deep +$5,000
-- Breadth: Verbal-only → +Visual +$2,500 / +Visual → Full System +$4,500
-- Pace: Sprint → Standard +$0 / Standard → Deep +$2,000 (calendar premium)
-- Format: Async → Hybrid +$1,500 / Hybrid → Live-led +$3,000
-- Support: Single-pass → Standard +$1,500 / Standard → High-touch +$3,500
+**Per-dimension upgrade pricing:**
+- Depth: Light → Standard **+$3,500** · Standard → Deep **+$5,000**
+- Breadth: Verbal → +Visual **+$2,500** · +Visual → Full system (naming) **+$5,500**
+- Pace: Sprint → Standard **+$1,500** · Standard → Extended **+$2,500**
+- Format: Working docs → Branded PDF **+$1,500** · Branded PDF → Guide + deck + handoff **+$3,500**
+- Support: 1 round → 2 rounds **+$1,500** · 2 rounds → Unlimited **+$3,000**
+- Continuity: 30-day async **+$2,500** · 90-day embed **+$9,000**
+- Portfolio: +1 sub-brand **+$6,000** each
 
-**Add-ons (flat):**
-- Naming sprint: +$4,000
-- Customer interview pack (5): +$2,500
-- Designer-handoff session: +$1,200
-- 90-day office-hours retainer: +$3,600
-- Executive one-pager: +$800
-- Launch/rollout playbook (standalone): +$2,500
+**Floor:** $6,500 (Lite). Below this, refuse — output isn't defensible.
+**Ceiling:** $28,000. Above this, auto-route to Premium ($32K flagship is cheaper than the BYO equivalent).
 
-**Floor:** $6,500 — below this, the engagement isn't worth the context-switching cost.
+**Configurator-enforced dependencies:**
+- Block Sprint+Deep, Sprint+Unlimited, Sprint+Portfolio>1
+- Block Naming without Breadth ≥ +Visual
+- Block Handoff format without Full system breadth
+- Block 90-day embed on Working-docs format
+- Block customer interviews unless Depth ≥ Standard
 
-**Ceiling:** $28,000 — above this, route to Premium or a custom scope conversation; configurator should not silently sell something that needs hand-holding.
+**Flagship-protection check (verified):**
+- BYO to reach Core config: $6,500 + $3,500 (Std depth) + $2,500 (+Visual) + $1,500 (Std pace) + $1,500 (PDF) + $1,500 (2 rounds) = **$16,500** > $15,000 flagship ✓
+- BYO to reach Premium config: $6,500 + $3,500 + $5,000 + $2,500 + $5,500 + $2,500 + $1,500 + $3,500 + $1,500 + $3,000 + $9,000 = **$44,000** > $32,000 flagship ✓
 
-**Dependencies the configurator must enforce:**
-- Block: Sprint pace + Standard or Deep depth
-- Block: Async format + Deep depth
-- Block: Naming add-on when Breadth = Verbal-only
-- Require: Live-led format if Depth = Deep
-- Note: Sum-of-parts at Premium configuration intentionally exceeds $32K — the tier is the discount.
+Flagships remain the rational discount.

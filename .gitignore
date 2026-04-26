@@ -7,3 +7,14 @@ node_modules/
 __pycache__/
 .env
 .env.local
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Playwright artifacts
+tests/playwright/.auth/
+tests/playwright/screenshots/
+playwright-report/
+test-results/

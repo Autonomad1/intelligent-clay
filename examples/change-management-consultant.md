@@ -37,35 +37,14 @@
 
 ### Part 2 — Configuration Architecture
 
-**Depth — how thorough the diagnostic and design phase is**
-- Levels: Light (5 interviews, 1 readiness survey) / Standard (12 interviews, survey + 2 focus groups) / Deep (25+ interviews, survey + focus groups + ethnographic observation)
-- Dependency: Deep depth required if org headcount > 1,500 or > 3 business units in scope
-
-**Breadth — how much of the change lifecycle is covered**
-- Levels: Diagnostic-only / Diagnostic + Plan / Plan + Enablement / Full lifecycle (Diagnostic → Plan → Enablement → Sustainment)
-- Dependency: Sustainment cannot be selected without Enablement
-
-**Pace — engagement duration**
-- Levels: Sprint (4 weeks) / Standard (10 weeks) / Extended (6 months)
-- Dependency: Sprint pace invalid with Deep depth or Full-lifecycle breadth
-
-**Format — how delivery happens**
-- Levels: Async-led (docs + recorded modules + email review) / Hybrid (mostly async + key live sessions) / Live-led (on-site or live-virtual throughout)
-- Dependency: Live-led required if executive sponsor sessions exceed 4
-
-**Support — access level during engagement**
-- Levels: Scheduled-only (booked sessions, 48-hr email) / + Async office hours (Slack/Teams, weekly cap) / + On-call retainer (named escalation line, same-day)
-- Dependency: On-call retainer requires Pace = Standard or Extended
-
-**Add-ons — extensions on top of base**
-- Train-the-trainer
-- Change champion network build
-- Adoption dashboard build
-- Pulse survey series (3-pack)
-- 30/60/90 sustainment check-ins
-- Executive 1:1 coaching block (per leader)
-- Methodology overlay (ADKAR or Kotter formalization)
-- Dependency: Pulse series and Sustainment check-ins require Breadth ≥ Plan + Enablement
+| Dimension | What it controls | Levels | Dependencies |
+|---|---|---|---|
+| **Depth** | Thoroughness of diagnostic and design phase | Light (5 interviews, 1 readiness survey) / Standard (12 interviews, survey + 2 focus groups) / Deep (25+ interviews, survey + focus groups + ethnographic observation) | Deep required if org headcount > 1,500 or > 3 business units in scope |
+| **Breadth** | How much of the change lifecycle is covered | Diagnostic-only / Diagnostic + Plan / Plan + Enablement / Full lifecycle (Diagnostic → Plan → Enablement → Sustainment) | Sustainment cannot be selected without Enablement |
+| **Pace** | Engagement duration | Sprint (4 weeks) / Standard (10 weeks) / Extended (6 months) | Sprint pace invalid with Deep depth or Full-lifecycle breadth |
+| **Format** | How delivery happens | Async-led (docs + recorded modules + email review) / Hybrid (mostly async + key live sessions) / Live-led (on-site or live-virtual throughout) | Live-led required if executive sponsor sessions exceed 4 |
+| **Support** | Access level during engagement | Scheduled-only (booked sessions, 48-hr email) / + Async office hours (Slack/Teams, weekly cap) / + On-call retainer (named escalation line, same-day) | On-call retainer requires Pace = Standard or Extended |
+| **Add-ons** | Modular extensions priced independently | Train-the-trainer · Change champion network build · Adoption dashboard build · Pulse survey series (3-pack) · 30/60/90 sustainment check-ins · Executive 1:1 coaching block · Methodology overlay (ADKAR / Kotter formalization) | Pulse series and Sustainment check-ins require Breadth ≥ Plan + Enablement |
 
 ### Part 3 — Tiered Packages + Build-Your-Own
 
