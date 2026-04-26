@@ -87,26 +87,36 @@ You can also invoke it directly:
 
 ## Example output (abbreviated)
 
-**Input:** "I'm a freelance brand strategist charging $15K for a 6-week engagement."
+> Excerpted from a real run of the skill on a fresh agent. Full transcripts for all three test prompts are in [`examples/`](examples/).
 
-**Atomic decomposition:**
-- Discovery interviews (3 × 60min)
-- Competitor audit (deliverable)
-- Positioning workshop (1 × 3hr)
-- Brand guide draft (deliverable)
-- Revision rounds (2 included)
-- Implementation handoff call (1 × 60min)
+**Input:** "I'm a freelance brand strategist. I charge $15K for a 6-week engagement that ends in a brand guide. Help me modularize this."
 
-**Configuration architecture:**
-- *Depth*: number of discovery interviews (1, 3, or 5)
-- *Breadth*: brand guide scope (verbal-only, verbal + visual, full system)
-- *Pace*: 3-week sprint vs. 6-week standard vs. 12-week deep
-- *Support*: workshop-only vs. workshop + revisions vs. ongoing retainer
+**Atomic decomposition (excerpt):**
+- *Deliverables:* Brand audit, competitive landscape map, positioning statement, messaging hierarchy, brand voice guide, naming recommendation, visual identity direction, brand guide PDF, one-page summary, launch playbook
+- *Time blocks:* 60-min kickoff workshop · 45-min stakeholder interview · 30-min customer interview · 90-min positioning workshop · 60-min handoff session
+- *Access tiers:* Email-only (48-hr) · Slack/Loom async (24-hr) · Voxer + weekly call · Direct line, business hours
+- *Support levels:* Single-pass · 1 revision round · 2 revision rounds · 30/60/90-day async review · Office-hours retainer
+- *Customizations:* Industry depth, # stakeholder interviews (3/6/10), # customer interviews (0/5/10), B2B vs B2C, internal-only vs agency-handoff-ready
 
-**Tiered packages:**
-- **Clay Lite** ($4K) — 1 interview, verbal positioning only, async delivery
-- **Clay Core** ($12K) — 3 interviews, verbal + visual, 6-week pace, 1 revision
-- **Clay Custom** ($15K+) — full configurator with add-ons
+**Configuration architecture (6 dimensions, with dependencies):**
+- *Depth* — Light / Standard / Deep
+- *Breadth* — Verbal-only / Verbal + Visual / Full System
+- *Pace* — Sprint (2w) / Standard (6w) / Deep (10w) — *Sprint pace invalid with Deep depth*
+- *Format* — Async / Hybrid / Live-led — *Async invalid with Deep depth*
+- *Support* — Single-pass / Standard / High-touch
+- *Add-ons* — Naming sprint, customer interview pack, designer handoff, retainer, executive one-pager — *Naming requires Breadth ≥ Verbal+Visual*
+
+**Tiered packages + Build-Your-Own:**
+
+| Tier | Price | Configuration (excerpt) | Pricing logic |
+|------|-------|-------------------------|---------------|
+| **Lite — Positioning Sprint** | $6,500 | Light · Verbal-only · Sprint · Async · Single-pass | Anchored against the cost of a bad positioning bet — ~40% of flagship to be a clear entry point |
+| **Core — Brand Guide** *(current flagship)* | $15,000 | Standard · Verbal + Visual · Standard · Hybrid · 1 revision | Anchored against typical agency engagements ($25–50K) — senior-strategist-only at half the price |
+| **Premium — Brand System + Embed** | $32,000 | Deep · Full System · Deep · Live-led · High-touch | Anchored against consultancy retainer + naming engagement (sum-of-parts ~$45K); tier prices at a discount |
+
+**Build-your-own** uses Lite as the base, with per-dimension upgrade pricing (e.g., +$3,500 for Depth Light → Standard, +$2,500 for Breadth +Visual), a $6,500 floor, a $28,000 ceiling above which the configurator routes to Premium, and dependencies it must enforce (block Sprint+Deep, Async+Deep, Naming without Visual, etc.).
+
+See [`examples/brand-strategist.md`](examples/brand-strategist.md) for the full output, and [`examples/fitness-coach.md`](examples/fitness-coach.md) and [`examples/change-management-consultant.md`](examples/change-management-consultant.md) for the other test runs.
 
 ---
 
@@ -114,20 +124,22 @@ You can also invoke it directly:
 
 ```
 intelligent-clay/
-├── SKILL.md           # The main skill file
-├── README.md          # You are here
+├── SKILL.md                                    # The main skill file
+├── README.md                                   # You are here
 ├── LICENSE
-└── references/
-    ├── decomposition-patterns.md
-    ├── configuration-dimensions.md
-    └── tiering-logic.md
+└── examples/
+    ├── brand-strategist.md                     # Real run on a $15K brand engagement
+    ├── fitness-coach.md                        # Real run on 1-on-1 fitness coaching
+    └── change-management-consultant.md         # Real run on mid-market change mgmt
 ```
 
 ---
 
 ## Status
 
-🚧 **Early draft** — actively iterating. Feedback, issues, and pull requests welcome.
+✅ **Stable v1.0** — tested via TDD-for-skills against three test prompts (brand strategist, fitness coach, change-management consultant) with a baseline-vs-skill comparison. All three GREEN tests produce the full 3-part blueprint with explicit dimensions, dependencies, and a Lite/Core/Premium + BYO framework. See [`examples/`](examples/) for the verbatim outputs.
+
+Feedback, issues, and pull requests welcome.
 
 ---
 
