@@ -137,7 +137,10 @@ intelligent-clay/
 
 ## Status
 
-✅ **Stable v1.0** — tested via TDD-for-skills against three test prompts (brand strategist, fitness coach, change-management consultant) with a baseline-vs-skill comparison. All three GREEN tests produce the full 3-part blueprint with explicit dimensions, dependencies, and a Lite/Core/Premium + BYO framework. See [`examples/`](examples/) for the verbatim outputs.
+✅ **Stable v1.0** — built via TDD-for-skills and validated across **12 prompts** total:
+
+- **3 primary GREEN tests** with baseline-vs-skill comparison (brand strategist, fitness coach, change-management consultant) — all produce the full 3-part blueprint with explicit dimensions, dependencies, and Lite/Core/Premium + BYO. Verbatim outputs in [`examples/brand-strategist.md`](examples/brand-strategist.md), [`fitness-coach.md`](examples/fitness-coach.md), [`change-management-consultant.md`](examples/change-management-consultant.md).
+- **9-test robustness battery** covering edge cases (pure SaaS, physical product, hybrid offerings, single-deliverable services), stress conditions (extremely vague input, already-modular service, adversarial framework-skip), and audience breadth (course creator, boutique agency). All 9 pass — 4/4 boundary refusals are clean and redirect to alternative skills; 5/5 in-scope applications produce correct structured output. Summary in [`examples/robustness-tests.md`](examples/robustness-tests.md).
 
 Feedback, issues, and pull requests welcome.
 
