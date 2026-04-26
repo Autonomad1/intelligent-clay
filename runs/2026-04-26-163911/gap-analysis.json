@@ -1,0 +1,128 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table/pricing-logic mentions BYO sum-of-parts for Core (~$3,200) and Premium (~$8,400), but the Lite tier lacks an explicit BYO sum-of-parts comparison to demonstrate flagship-protection at the entry tier",
+      "SaaS license ($99/mo) is acknowledged as a fixed atom in the preamble but is not listed within Part 1's atomic decomposition (e.g., under Deliverables) for completeness"
+    ],
+    "suggested_fixes": [
+      "Add a BYO-sum comparison line to Lite's pricing logic (e.g., 'BYO equivalent ~$1,100 \u2014 Lite preserves modest discount') to make flagship-protection explicit across all three tiers",
+      "Include the SaaS license as a labeled fixed atom in Part 1 Deliverables (e.g., '$99/mo SaaS license \u2014 fixed, not configurable') so the hybrid decomposition is visible in the structure"
+    ]
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 Pace upgrade pricing shows '\u2013$0 (Deep, included free as quality signal)' which is confusing notation and contradicts Standard being $0 baseline",
+      "Memory preamble not addressed (acceptable if memory unavailable, but no signal given)",
+      "BYO Lite config check not shown \u2014 only Core and Premium flagship-protection math displayed"
+    ],
+    "suggested_fixes": [
+      "Clarify Pace pricing: make Standard the $0 baseline and either price Deep at $0 explicitly or remove the en-dash to avoid implying a discount",
+      "Silently omitting memory preamble is spec-compliant; no fix required unless memory was available",
+      "Add a one-line Lite flagship-protection check or note that Lite equals base by definition"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": false,
+    "gaps": [
+      "Pricing-Anchor Rule violation: Input was 'Extremely vague' per test notes; spec requires placeholder tokens (+$A, +$B) for truly vague input, but output fabricates specific dollar amounts ($3,600, $12,000, $36,000, $600/session, etc.) by invoking 'domain-norm pricing' for generic 'coaching' \u2014 coaching is not a well-defined domain like exec coaching with clear norms until niche is specified",
+      "Preamble tone violation: Opens with 'You've given me almost nothing to work with' which edges toward punting/complaining; spec says infer and produce, not lampshade the vagueness",
+      "Pace dimension levels inconsistency in BYO: 'Monthly\u2192Biweekly included in base' contradicts Lite config which is already Biweekly \u2014 base pricing logic is internally inconsistent"
+    ],
+    "suggested_fixes": [
+      "Replace all dollar figures with placeholder tokens (Lite=base $A, Core=$A+$B flagship, Premium=$A+$B+$C) since 'coaching' alone lacks tight enough norms to anchor \u2014 invoke domain norms only once user names exec/life/career/etc.",
+      "Drop the 'almost nothing to work with' opener; lead with a one-line assumption stub ('Assuming generic professional coaching; will diverge once you name niche') then produce",
+      "Reconcile Pace baseline: either set Lite to Monthly with Biweekly as a +$X upgrade, or remove the 'Monthly\u2192Biweekly included' line"
+    ]
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table lacks an explicit per-tier 'Pricing logic / anchor' column or line \u2014 anchors are given for Starter/Growth/Pro as positioning lines but not labeled as pricing logic anchored to benchmarks or % of flagship",
+      "Flagship-protection check for Starter and Growth initially fails; skill requires flagships to remain the rational discount, and the response flags fixes but does not commit to a final locked spec, leaving the blueprint partially unresolved",
+      "Memory preamble not addressed (no statement that memory is unavailable is required, but SEO retainers are called out in spec as a well-known domain \u2014 anchors could have cited $ benchmarks explicitly)"
+    ],
+    "suggested_fixes": [
+      "Add a 'Pricing logic' line under each existing tier explicitly anchoring price (e.g., 'Starter: ~40% of flagship; entry diagnostic vs. $1.5\u20132.5K market floor')",
+      "Pick one concrete spec-addition path for Starter and Growth and lock it into the blueprint so flagship-protection math passes in the delivered output, not as a recommendation",
+      "Cite SEO retainer domain benchmarks ($ ranges) when anchoring each tier since the spec lists SEO retainers as a well-known-norms domain"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Minor: Pricing-Anchor Rule \u2014 Studio pricing logic claims it 'sits clearly below your historical floor of $15K' but $18K is above the $15K floor, a small internal inconsistency.",
+      "Minor: Part 3 Signature flagship-protection math includes a quarterly hero motion averaged as ~$2.7K/mo but the per-dimension upgrade list prices Hero motion at +$8K each (one-time per piece), making the BYO sum derivation slightly opaque.",
+      "Minor: Follow-up menu offers four options instead of the spec's 'offer one based on context'."
+    ],
+    "suggested_fixes": [
+      "Reword Studio pricing logic to say it sits at/just above the historical floor rather than 'clearly below' $15K.",
+      "Clarify in BYO pricing whether Hero motion is one-time or recurring, and show the Signature BYO math step-by-step using consistent units.",
+      "Trim the follow-up menu to a single contextual recommendation per the spec."
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier count: spec requires exactly three tiers + BYO; output presents Open Source (free) + Operator + Studio + Agency = four tiers, risking the 'five tiers instead of three' anti-pattern even though OSS is framed as 'the funnel'",
+      "Pricing-Anchor Rule application: Operator tier anchor cites '~$500\u20131,500' Maven course and '$300\u2013500' consulting hour without clearly grounding these as domain norms vs. fabricated \u2014 borderline on the 'do not fabricate' rule",
+      "Memory preamble format: spec requires 'I've seen N similar offerings ([verticals]). Load-bearing dimensions historically: [list]' \u2014 output's preamble is freeform meta-commentary, not the prescribed schema",
+      "BYO floor reasoning: floor is stated as $290 but the rule 'anything cheaper routes to free OSS' implies the free tier is actually the floor, creating ambiguity with the three-tier constraint"
+    ],
+    "suggested_fixes": [
+      "Reframe Open Source as a pre-tier 'free funnel/floor' explicitly outside the three-tier count, or collapse it into the BYO floor to preserve the strict 3+BYO structure",
+      "Label the Operator anchor numbers as 'domain benchmarks (Maven cohort pricing, common consulting hourly)' or switch to placeholder tokens if not verifiable",
+      "Rewrite the memory preamble to match the exact spec template: 'Memory note: I've seen N similar offerings ([verticals]). Load-bearing dimensions historically: [list]...'",
+      "Clarify BYO floor: state that the paid floor is $290 and sub-floor demand auto-routes to the free OSS tier, explicitly distinguishing free distribution from the three paid tiers"
+    ]
+  }
+]
