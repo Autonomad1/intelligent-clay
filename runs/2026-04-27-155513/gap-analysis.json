@@ -1,0 +1,122 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Pricing-anchor inconsistency: spec says when concrete prices are given, use $ figures; user gave $400, but Core and Premium use placeholder tokens ($C\u2081, $C\u2082) instead of anchored dollar figures",
+      "Minor: Depth dependency 'Pivot framing requires Interview-min' is awkwardly worded/truncated",
+      "Follow-up menu offers three options instead of one as spec instructs ('offer one based on context')"
+    ],
+    "suggested_fixes": [
+      "Since user provided $400 anchor and named sub-niche could be inferred, provide $ ranges for Core/Premium tiers rather than tokens, or tighten the preamble to justify why tokens remain",
+      "Reword Depth dependency to 'Career-pivot framing requires 45-min interview minimum' for clarity",
+      "Trim follow-up menu to a single most-relevant offer (likely the dollar-anchoring option) per spec's 'offer one' rule"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 flagship-protection proof reveals Starter inversion ($1,450 BYO sum < $2,000 flagship) but ships the ladder as-is with fixes only as suggestions \u2014 spec requires flagship-protection rule to hold, not be optionally repaired",
+      "Ceiling thresholds for Slots A/B/C ($1,800 / $4,500 / $9,000) sit below the existing tier prices ($2,000 / $5,000 / $10,000), creating a dead zone where BYO routes to a tier before matching its price \u2014 should align ceilings to tier prices or above",
+      "Vertical Specialization dimension lists '+20% surcharge' as a level, conflating pricing with configuration; surcharges belong in the pricing ladder, levels should be Generalist/Specialist only (which it also states, creating ambiguity)"
+    ],
+    "suggested_fixes": [
+      "Pick the Foundation floor fix (raise to $950 + adjust ladder) and re-emit the proof table with Starter showing a positive discount, rather than offering it as a follow-up",
+      "Set Slot A ceiling at $2,000, Slot B at $5,000, Slot C at $10,000 so routing triggers at parity with the next tier, not below it",
+      "Remove '+20% surcharge' from the Levels column in Part 2 and keep it solely as a line item in the BYO pricing ladder"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing logic for Lite invokes '$300\u2013500 self-paced course benchmarks' \u2014 this is a generic category norm (online courses) rather than a named sub-niche like 'enterprise sales course for freelancers', borderline against the Pricing-Anchor Rule's bright line",
+      "Premium add-ons line in BYO uses a range ('+$75\u2013150 each') rather than a single price, which a configurator cannot enforce deterministically",
+      "Flagship-protection math for Premium includes a vague '$400 (add-ons)' lump that doesn't reconcile with the per-item '+$75\u2013150 each' line above"
+    ],
+    "suggested_fixes": [
+      "Reframe Lite anchor against the specific sub-niche (e.g., 'priced below comparable freelance-business cohorts like Freelancing School / WorkMade tiers') or convert to placeholder tokens",
+      "Replace '+$75\u2013150 each' with a fixed per-add-on price (e.g., '+$125 each') so the configurator has a single value",
+      "Itemize the Premium add-on stack in the flagship-protection calc (e.g., 4 add-ons \u00d7 $125 = $500) so the sum is auditable"
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Vague-input preamble misused: memory note format ('Memory unavailable; proceeding without preamble') contradicts spec which says to omit silently when memory is unavailable",
+      "Flagship-protection math for Atelier is hand-waved: stated BYO sum is $36K (below $42K flagship) and only reaches $48K via an unstated 'implied volume bump' not in the upgrade table",
+      "Add-on pricing inconsistency: Atelier 'includes 1 add-on (~$4K avg)' and House 'includes 2 add-ons (~$8K)' but per-dimension table lists add-ons ranging $3K\u2013$6K with Animatics priced per-piece, making averages ambiguous"
+    ],
+    "suggested_fixes": [
+      "Remove the 'Memory unavailable' line entirely per spec: 'If memory is unavailable, omit the preamble silently'",
+      "Make the Atelier BYO sum explicit using only listed upgrades (e.g., add a Volume: Standard\u2192High +$8K line item) so the $48K total is auditable against the $42K flagship",
+      "Specify which add-on is included at each tier (or give a fixed included-add-on credit value) instead of '~$4K avg' to make flagship-protection math reproducible"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing logic for Clay Open uses 'Free / MIT' which is a valid anchor but skips the Pricing-Anchor Rule's placeholder-token convention inconsistently \u2014 Pro and Studio use +$B/+$C tokens while BYO uses +$a..+$m, creating two parallel token namespaces that could confuse readers",
+      "Tier names renamed (Clay Open/Pro/Studio) but the Lite/Core/Premium mapping is only shown parenthetically once \u2014 spec says 'rename in the brand's vocabulary' which is fine, but Premium tier's 'Custom dev hours quarterly' blurs the line into bespoke consulting (arguably out-of-scope per the service-vs-product spec)",
+      "Flagship-protection rule states '~15\u201325% above' for Pro and '\u226530%' for Studio but without concrete numbers this is unverifiable \u2014 the rule is asserted, not proven, which the inline example does prove ('$45K naming sum-of-parts')",
+      "Closing follow-up menu offers three options (a/b/c) instead of the spec's 'offer one based on context'"
+    ],
+    "suggested_fixes": [
+      "Unify token namespace: use $A/$B/$C for tiers and $a..$m for BYO atoms with an explicit note that BYO atoms sum toward tier tokens, or collapse to one scheme",
+      "Either drop 'Custom dev hours' from Studio (keep it product-shaped) or flag it explicitly as a bounded add-on atom rather than open-ended consulting",
+      "Add a worked sum-of-parts line proving Pro flagship beats BYO equivalent (e.g., '$a+$b+$c+$e+$g+$i+$j = 1.2\u00d7$B') even with tokens",
+      "Replace the three-option closer with a single recommended follow-up (likely pricing validation, given the open $ variables)"
+    ]
+  }
+]

@@ -5,4 +5,3 @@
 **Detail:** [`gap-analysis.json`](gap-analysis.json)
 
 **Proposed patch:** [`proposed-patch.md`](proposed-patch.md)
-
