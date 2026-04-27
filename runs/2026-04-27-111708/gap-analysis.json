@@ -1,0 +1,124 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing logic field: spec requires each tier to have explicit 'pricing logic \u2014 what the price is anchored against'; Lite's anchor ('your current price \u2014 kept as the entry anchor') is thin and doesn't articulate what it's anchored against beyond status quo",
+      "Vague-input preamble used despite user providing a concrete $400 anchor and 'resume writing' arguably qualifying as a named sub-niche with known norms; the assumption stub about vertical is fine but the framing implies tokens were considered when $ figures were appropriate",
+      "Ceiling logic ($2,200) sits below the Premium flagship ($2,400), which is coherent for routing but should explicitly state it routes *to Premium* as the spec phrases it ('above which auto-route to Premium or custom') \u2014 wording is present but the numeric relationship to flagship could be clarified"
+    ],
+    "suggested_fixes": [
+      "Add explicit anchor sentence for Lite (e.g., 'Anchored at current market entry for single-pass professional rewrites; preserves existing client expectations')",
+      "Drop or tighten the preamble since $400 is concrete \u2014 replace with a one-line scope assumption only if needed",
+      "Clarify ceiling: 'Ceiling: BYO >$2,200 routes to Premium (since Premium flagship at $2,400 delivers more for marginal cost)'"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [
+      "Follow-up menu offers three options (a/b/c) instead of the spec's 'offer one based on context'",
+      "Pricing-anchor table proliferates tokens (+$A through +$L) beyond the spec's example of +$A/+$B/+$C, which risks looking fabricated-by-volume rather than cleanly placeholder"
+    ],
+    "suggested_fixes": [
+      "In 'Optional Follow-Up Menu' execution, pick the single highest-value follow-up (here: re-anchor with real prices) rather than presenting a multiple-choice menu",
+      "Consolidate BYO upgrade tokens into a smaller set (e.g., +$D/+$E/+$F) or label them as 'illustrative deltas' more explicitly to avoid token sprawl"
+    ]
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": false,
+    "gaps": [
+      "Part 3 Flagship-protection check: Growth row math is incoherent \u2014 uses a '+$500 (half-brief proxy)' that contradicts the very rule (no half-briefs in BYO) introduced in the same section, and the totals ('$5,000+' then 'adjust to $5,500') are hand-waved rather than cleanly derived",
+      "Part 3 Flagship-protection: Growth tier protection margin is marginal/tied even after adjustment ($500), violating the spirit of 'flagships must remain the rational discount' \u2014 the per-dimension prices should have been calibrated upward so Growth's BYO-equivalent clearly exceeds $5,000 without retroactive proxies",
+      "Part 3 BYO placement: spec requires BYO slotted 'underneath the cheapest and between existing tiers,' but the floor is set equal to Starter ($2,000) rather than underneath it, collapsing the 'underneath' slot into a routing redirect instead of a real sub-Starter BYO option",
+      "Part 3 Configuration column missing for existing tiers in dimension-language: tiers are restated in original prose but not mapped onto the Part 2 dimensions (Tracking/Cadence/Access/Content/Links/Tech), making the flagship-protection sum-check harder to audit",
+      "Memory Integration: no memory preamble or note about availability \u2014 should either include preamble or silently omit; current output is ambiguous (acceptable per spec, but worth confirming silent omission was intentional)"
+    ],
+    "suggested_fixes": [
+      "Recompute Growth BYO-equivalent cleanly: price the included brief as a standalone $1,200 BYO line (no half-brief proxy), yielding $2,000+$800+$1,200+$500+$1,200 = $5,700 vs $5,000 flagship \u2014 Growth wins by $700",
+      "Raise Cadence: Biweekly+call to +$1,500 or Access: Slack to +$700 so Growth's BYO-equivalent clears flagship by \u226515%, matching the Pro tier's protection margin",
+      "Set BYO floor below Starter (e.g., $1,200/mo for 5kw + quarterly report only) to genuinely slot 'underneath the cheapest,' then route upward to Starter at $2,000",
+      "Add a 'Configuration (in dimension terms)' sub-column to the existing-tiers table so each tier's Tracking/Cadence/Access/Content/Links/Tech levels are explicit and the BYO sum check is line-by-line auditable",
+      "Explicitly state 'Memory unavailable \u2014 preamble omitted' or remove ambiguity by confirming silent omission per spec"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Memory Integration: spec says 'If memory is unavailable, omit the preamble silently' \u2014 output includes 'Memory unavailable \u2014 proceeding without preamble.'",
+      "BYO Per-dimension upgrades: Breadth upgrade line ('Light \u2192 Standard +$9K \u2192 Heavy +$11K (additive)') is ambiguous \u2014 unclear if Heavy total is +$11K or +$20K",
+      "Flagship-protection math: Core BYO sum stated as ~$50K is not transparently itemized from the listed upgrades, making the 15-20% discount claim unverifiable inline"
+    ],
+    "suggested_fixes": [
+      "Remove the 'Memory unavailable' line entirely when memory isn't available, per the silent-omit rule",
+      "Restate Breadth upgrade unambiguously, e.g., 'Standard +$9K, Heavy +$20K (cumulative from base)'",
+      "Show a one-line BYO sum breakdown for Core and Atelier configs to make flagship-protection math auditable"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table/pricing-logic format: spec example shows tier rows with explicit price + anchor; output uses prose blocks with token prices, which is acceptable but Tier 1 ($0) lacks a 'discount vs. flagship' framing and Tier 2/3 anchors mix justification with pricing logic rather than cleanly separating",
+      "Vague-input preamble names two unlock variables (buyer + revenue benchmarks) but spec format implies one specific variable; minor drift from the single-variable stub pattern",
+      "Flagship-protection rule is stated as a percentage band rule rather than demonstrated \u2014 no worked sum showing BYO-to-Practitioner > $B, so the rule is asserted not proven",
+      "Follow-up menu offers three options ('a/b/c') but spec says offer ONE based on context"
+    ],
+    "suggested_fixes": [
+      "Render Part 3 tiers as a table with columns Tier | Price | Anchor matching the inline example's format for consistency",
+      "Tighten preamble to a single unlock variable (e.g., 'once you name target buyer') rather than listing two",
+      "Add a one-line worked check: 'BYO sum to Practitioner config = base + $b1 + $s_async \u2248 1.2\u00d7$B \u2713' to demonstrate flagship protection",
+      "Pick one follow-up (most likely pricing validation or configurator export) instead of presenting a three-option menu"
+    ]
+  }
+]
