@@ -1,0 +1,124 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing logic mixes anchored claims (Big-4 $400K+, M&A 70% fail rate, 2-5x engagement fee) with placeholder tokens (+$A/+$B/+$C) \u2014 borderline fabrication of norms for a generic 'mid-market change management' input that the preamble itself flagged as vague",
+      "Vague-input preamble cites a specific '$150\u2013250K custom-engagement range' which contradicts the spec's bright line: generic category without named sub-niche should use tokens, not fabricated dollar ranges",
+      "Floor is stated as '+$A (Lite config)' which is identical to base price \u2014 floor should represent a minimum viable config below the Lite default, or the distinction should be clarified"
+    ],
+    "suggested_fixes": [
+      "Strip the '$150\u2013250K' figure from the preamble and the '$400K+ Big-4' / '2-5x' / '70% fail' anchors from Part 3 pricing logic, replacing with token-based or qualitative anchors until sub-niche is named",
+      "Define Floor as a sub-Lite minimum (e.g., assessment-only single-function at <+$A) or explicitly state 'Floor = Lite base; no sub-Lite BYO permitted'",
+      "Add explicit note that anchor benchmarks will be substituted once user names change-type sub-niche or shares past pricing"
+    ]
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 Premium pricing logic invokes 'career-coach packages ($2,500\u20134,000)' as a benchmark while the preamble explicitly stubs the niche as unanchored \u2014 borderline violation of the Pricing-Anchor Rule's bright line against invoking norms for vague input",
+      "Vague-input preamble was used (placeholder tokens expected) but output uses concrete $ figures throughout \u2014 inconsistent with the stub's promise to 're-anchor with $ figures once you name...'"
+    ],
+    "suggested_fixes": [
+      "Either drop the preamble (since concrete $ figures are being used, anchored on the user-supplied $400) or convert tier prices to placeholder tokens (+$A/+$B/+$C) to match the stub",
+      "Remove the unsourced '$2,500\u20134,000 career-coach' benchmark or gate it behind a named sub-niche, per the bright-line rule"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": false,
+    "gaps": [
+      "Part 3 existing-tier overlay: BYO is not slotted 'underneath the cheapest and between existing tiers' as the overlay reference requires \u2014 output presents only a single base BYO with upgrade pricing, never positioning a BYO slot below Starter or between Starter/Growth and Growth/Pro.",
+      "Flagship-protection rule violation surfaced but not cleanly resolved in-place: the table shows a failing Growth row ($4,600 < $5,000) and instructs the reader to mentally apply a correction rather than emitting the corrected pricing table directly, leaving the published artifact internally inconsistent.",
+      "Starter flagship-protection is explicitly conceded as failing ($1,500 BYO vs $2,000 Starter); spec requires each existing tier to win on price vs. its BYO-summed equivalent \u2014 handwaving to 'packaging simplicity' does not satisfy the rule."
+    ],
+    "suggested_fixes": [
+      "Add explicit BYO slot positioning (e.g., 'BYO Lite <$2K under Starter; BYO Mid between Starter and Growth; BYO Plus between Growth and Pro') per existing-tier-overlay reference.",
+      "Re-emit the upgrade pricing table with the corrected Briefs-only (4/mo) value of $1,600 inline rather than as a post-hoc instruction.",
+      "Reprice BYO atoms (or adjust Starter's included scope) so Starter's BYO-sum equivalent exceeds $2,000, satisfying flagship-protection for all three tiers."
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table format: spec's inline example shows tiers can be summarized in a table, but blueprint uses prose sections \u2014 acceptable but pricing logic for Self-Study cites '~33% of flagship' which is fine; minor: no explicit memory preamble check mentioned (acceptable since memory is optional and silently omitted)",
+      "BYO upgrade math has minor inconsistency: '+$500 group' includes peer pod free, but pod is also listed as '+$100 (free with Group depth)' \u2014 slightly redundant labeling could confuse configurator logic"
+    ],
+    "suggested_fixes": [
+      "Consider rendering Part 3 tiers as a compact table matching the inline example's format for consistency",
+      "Clarify in BYO that peer pod is bundled into Group depth upgrade and remove standalone +$100 line, or mark it explicitly as 'standalone only if Depth=Self-serve' (though that's blocked) \u2014 simplify to avoid double-listing"
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Memory Integration: spec says 'If memory is unavailable, omit the preamble silently.' Output includes '*Memory unavailable \u2014 proceeding without preamble.*' which violates the silent-omit rule.",
+      "Part 3 pricing-logic for Studio Lite: claims '$3K premium for productized predictability' over a $15K floor, but the user's stated range starts at $15K for current custom retainers \u2014 the anchor logic is slightly inverted (productization should arguably not cost more than the current floor without clearer justification)."
+    ],
+    "suggested_fixes": [
+      "Remove the '*Memory unavailable*' line entirely \u2014 per spec, omit silently when memory is absent.",
+      "Re-anchor Studio Lite either at $15K to match the stated floor, or justify the $18K against a clearer external benchmark rather than an internal premium."
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-logic uses placeholder tokens (+$A/+$B/+$C) but the vague-input preamble only flagged buyer/delivery-model as the unlock variable \u2014 the spec's Pricing-Anchor Rule treats 'consulting tools / dev-tools licensing' as a generic category, which is correct, but the flagship-protection rule is stated in relative terms (1.3\u00d7) without concrete token math showing the BYO sum exceeds $B, weakening verifiability",
+      "Part 1 atom 'Audit report on a user's existing service \u2192 blueprint deliverable' is borderline \u2014 it's really a packaged service output, not a standalone purchasable atom of the *skill product*; should be clarified as a service-wrap atom or moved",
+      "No explicit memory preamble shown despite the skill itself documenting claude-mem integration \u2014 minor, since memory may be unavailable, but a self-application run is the exact case where acknowledging 'memory unavailable in this context' would demonstrate the spec",
+      "BYO per-dimension upgrades use undefined lowercase tokens (x, y, z, v, w, q, f, F, s, S, SS, t, T, R, b, B, m, M) which proliferate beyond the spec's clean +$A/+$B/+$C convention and reduce readability"
+    ],
+    "suggested_fixes": [
+      "Add a one-line numerical sketch under Flagship-protection showing token-level math, e.g., '+y + 4\u00d7v + +S + +t + +m  >  $B' to make the rule auditable without dollar figures",
+      "Reclassify 'Audit report' as a Done-for-you service deliverable under Support, or drop it from the atom list since it's a bundle output not an atom",
+      "Add a single-line memory stub: 'Memory unavailable in this run; producing without prior-domain priors.' or omit silently per spec \u2014 current output does neither explicitly",
+      "Collapse BYO upgrade tokens into the spec's +$A/+$B/+$C family or use a compact table with named deltas (e.g., \u0394_depth_live, \u0394_seat_team) instead of 18 single letters"
+    ]
+  }
+]

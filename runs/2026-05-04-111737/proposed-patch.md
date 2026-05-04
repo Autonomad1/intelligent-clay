@@ -1,0 +1,16 @@
+## Proposed change
+
+The dominant failure pattern is in **existing-tier overlay mode**: runs produce a single generic BYO with upgrade pricing instead of the multiple BYO *slots* the overlay reference requires, and they fail to enforce flagship-protection arithmetically — sometimes even publishing tables where an existing tier loses to its BYO-sum equivalent and asking the reader to mentally correct it. The fix is to make the overlay-mode requirements concrete and load-bearing inside SKILL.md itself (not just in the reference), with an explicit "must emit corrected numbers, not corrections-as-prose" rule. This keeps the edit surgical: one bullet expanded in the Modes section, plus a tightened line in Part 3.
+
+```diff
+@@ ## When to Use → Modes
+-- **Existing-tier overlay mode** — user already has tiers and wants BYO without breaking them. Preserve existing tiers exactly; slot BYO **underneath** the cheapest and **between** existing tiers; prove each existing tier still wins on price vs. its BYO-summed equivalent. See [`references/existing-tier-overlay.md`](references/existing-tier-overlay.md).
++- **Existing-tier overlay mode** — user already has tiers and wants BYO without breaking them. Preserve existing tiers exactly. Required output:
++  1. **Multiple BYO slots, not one.** Emit a BYO slot *underneath* the cheapest existing tier (priced below it) and one *between* each adjacent pair of existing tiers. Name and price each slot explicitly (e.g., "BYO Lite <$2K — under Starter"; "BYO Mid — between Starter and Growth").
++  2. **Flagship-protection must hold arithmetically for every existing tier.** For each tier, show the BYO-summed equivalent and confirm the tier's price is lower. If the math fails, **reprice the BYO atoms or adjust included scope and re-emit the corrected table inline** — do not publish a failing table with a prose correction. "Packaging simplicity" is not an acceptable justification.
++  3. **All numbers in the final tables must be internally consistent.** No "mentally apply this fix" instructions to the reader.
++  See [`references/existing-tier-overlay.md`](references/existing-tier-overlay.md).
+@@ ## Self-Check Before Responding
+-Atoms truly atomic? Part 2 in table form with dependencies? Three tiers + BYO (or existing-tier overlay)? Each tier has configuration + positioning + pricing logic anchored, not just $? BYO has floor, ceiling, configurator dependencies, flagship-protection rule? Domain-specific dimensions added if needed? Stayed structural — no marketing or positioning drift?
++Atoms truly atomic? Part 2 in table form with dependencies? Three tiers + BYO (or existing-tier overlay)? Each tier has configuration + positioning + pricing logic anchored, not just $? BYO has floor, ceiling, configurator dependencies, flagship-protection rule? Domain-specific dimensions added if needed? **Overlay mode only:** multiple BYO slots emitted (under cheapest + between each pair)? Flagship-protection arithmetic shown and passing for *every* existing tier, with corrected numbers inline (no prose-only corrections)? Stayed structural — no marketing or positioning drift?
+```
