@@ -1,0 +1,124 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [
+      "Memory preamble not addressed (acceptable if memory unavailable, but no explicit handling shown)",
+      "BYO Pace upgrade shows 'Sprint -$200 credit' which could allow a Sprint BYO build to undercut Lite's $1,200 floor in edge cases \u2014 floor enforcement not explicitly reconciled with negative upgrade",
+      "Lite tier lists 'Sprint pace' as its default but BYO base ($1,200) treats Standard as default pace (+$0), creating a minor inconsistency between Lite's stated config and the BYO base configuration"
+    ],
+    "suggested_fixes": [
+      "Add a one-line note that memory was unavailable or silently omit per spec (already silent \u2014 acceptable, but worth confirming)",
+      "Clarify that the Sprint -$200 credit cannot drop a build below the $1,200 floor, or remove the negative credit",
+      "Reconcile Lite's pace (Sprint) with the BYO base pace default (Standard) \u2014 either make Lite's base pace Standard or set BYO base pace to Sprint with Standard as +$200"
+    ]
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 2 standard dimension 'Pace' levels are framed as turnaround speeds but dependency only blocks Rush+Worksheet; spec's standard Pace also implies calendar cadence \u2014 minor drift but acceptable for single-deliverable context",
+      "Auto-route thresholds ($900 to Core, $1,600 to Premium) are introduced in BYO but not explicitly tied to the Ceiling ($1,950) \u2014 slight internal inconsistency since crossing $1,600 routes to Premium yet ceiling is $1,950",
+      "Vague-input preamble technically fires despite 'resume writing' being a reasonably named sub-niche with known norms ($400 anchor was given); preamble may be unnecessary given concrete price input"
+    ],
+    "suggested_fixes": [
+      "Clarify Pace dimension framing or note that for single-deliverable services Pace = turnaround (acceptable adaptation)",
+      "Reconcile BYO auto-suggest thresholds with the stated Ceiling \u2014 either raise Premium-suggest to match ceiling or lower ceiling to $1,600",
+      "Skip the assumption-stub preamble when user supplies a concrete anchor price ($400) \u2014 anchor is already established"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": false,
+    "gaps": [
+      "Part 3 Flagship-Protection: Starter fails the rule (BYO sum $1,450 < $2,000 flagship) and the output rationalizes it rather than fixing it \u2014 spec says 'BYO sum to reach each tier's configuration must price above that tier's flagship'",
+      "Part 3 Flagship-Protection: Growth also fails ($4,450 < $5,000) and the fix is offered as optional rather than applied; output should ship a compliant blueprint, not a choose-your-own-fix",
+      "Memory Integration: no memory preamble or silent-omit confirmation \u2014 acceptable if unavailable, but no indication either way (minor)",
+      "Follow-Up Menu: offers only one option as a directive ('Want me to...') rather than presenting it as a menu choice based on context \u2014 spec says offer one, which is met, but framing presumes the answer"
+    ],
+    "suggested_fixes": [
+      "Re-price BYO add-ons upward (e.g., +5 keywords to $600, Monthly call to $700) so Starter BYO-equivalent exceeds $2,000, satisfying flagship-protection for all three tiers",
+      "Apply fix (A) directly \u2014 bake '2 briefs + 1 article' into Growth or raise BYO unit prices \u2014 and present a single compliant table rather than a diagnostic with options",
+      "Add a one-line note like 'Memory unavailable; proceeding without prior-run priors' or omit entirely per spec",
+      "Reframe follow-up as 'Want any of: configurator JSON/YAML \u00b7 scope language \u00b7 edge-case stress-test \u00b7 highest-leverage atom \u00b7 pricing validation?'"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table format: spec's inline example shows tiers can use a table with Price/Anchor columns, but output uses prose blocks \u2014 minor stylistic deviation, still spec-compliant",
+      "Floor of $15K/mo equals the user's stated low end but BYO base is $18K, making the floor technically unreachable via BYO upgrades (you can only go up from $18K base) \u2014 floor is redundant/inert as written"
+    ],
+    "suggested_fixes": [
+      "Optional: condense tier headers into a summary table matching the inline example's Tier/Price/Anchor format for at-a-glance scanning",
+      "Set BYO floor to $18K (matching base) or allow a sub-base downgrade path (e.g., single-craft -$3K) so the floor actually gates something"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table format: the inline example shows tiers rendered as a compact table with Price and Anchor columns, but the output uses prose bullets per tier (acceptable per spec which requires configuration+positioning+pricing logic, but less scannable)",
+      "Vague-input preamble format deviates from spec: opens with a memory-unavailability note and meta-commentary about recursion rather than the prescribed 'Assuming [X]; will re-anchor with $ figures once you name [Y]' stub",
+      "Anchor for Clay tier ('cost of not productizing \u2014 one lost custom engagement worth +$X') mixes a placeholder token into prose rather than using clean +$A/+$B/+$C tokens consistently across all three tiers \u2014 Studio uses +$B, Foundry uses +$C, but Clay uses +$X breaking the token sequence",
+      "Floor definition is ambiguous: 'anything paid starts at Vertical-tuned depth OR Async-SLA support' describes an entry gate, not a minimum-viable-config floor price as spec implies",
+      "Ceiling rule uses dimension-count heuristic ('4+ premium-level dimensions') rather than a price ceiling above which auto-route triggers, which is the spec's framing"
+    ],
+    "suggested_fixes": [
+      "Render Part 3 tiers as a table with columns Tier | Configuration summary | Positioning | Price | Anchor for parity with the inline example",
+      "Replace the memory/recursion preamble with the prescribed one-liner: 'Assuming a maintainer-led open-source skill monetizing via tuned/supported/licensed upgrades; will re-anchor with $ figures once you name target ACV or comparable tool pricing.'",
+      "Standardize placeholder tokens as +$A (Clay=free baseline), +$B (Studio), +$C (Foundry) and use +$A through +$H for the eight BYO dimensions instead of mixed D1/Br1/S1 notation",
+      "Restate Floor as a minimum viable paid config (e.g., 'Floor: Clay+Vertical-tune+Async-SLA = $Floor; below this, stay free') and Ceiling as a price threshold ('Ceiling: any BYO summing above $Ceiling auto-routes to Foundry')",
+      "Add an explicit invalid-combination bullet for the spec's implied case where BYO sum undercuts Studio, reinforcing flagship-protection at the configurator layer not just as a rule"
+    ]
+  }
+]
