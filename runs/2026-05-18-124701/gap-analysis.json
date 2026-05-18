@@ -1,0 +1,110 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [
+      "Part 2 table contains a typo/artifact: 'Standard (ial 4 mo)' in the Pace row",
+      "BYO per-dimension upgrade pricing is deferred ('to be set once $ anchors are confirmed') rather than expressed in placeholder tokens, leaving the BYO math unspecified",
+      "Flagship-protection rule is stated as a percentage premium but no token-level arithmetic demonstrates BYO-sum > flagship, so the rule isn't verifiable from the output"
+    ],
+    "suggested_fixes": [
+      "Fix typo: change 'Standard (ial 4 mo)' to 'Standard (4 mo)'",
+      "Express per-dimension upgrades as placeholder tokens (e.g., Depth +$d1/+$d2, Breadth +$b1/+$b2, etc.) consistent with the vague-input pricing convention",
+      "Show a one-line worked sum proving BYO-to-Core > +$B and BYO-to-Premium > +$C using the tokens, to make the flagship-protection rule auditable"
+    ]
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": false,
+    "gaps": [
+      "Part 3 Flagship-protection: Starter is under-protected (BYO $1,600 < $2,000) \u2014 output identifies the violation but ships the broken pricing rather than fixing it, violating the spec's requirement that BYO sum MUST price above each tier",
+      "Part 3 Flagship-protection: Pro savings shown as only $300/mo ($10,300 vs $10,000) which is within rounding and not a meaningful 'rational discount' \u2014 flagship protection is weak",
+      "Part 3 Growth-equivalent BYO row: 'Savings' column left as '\u2014' instead of showing the $1,250/mo gap, and the output again diagnoses the over-protection problem without applying the fix in the delivered pricing table",
+      "Pricing-Anchor Rule: Each tier's 'Pricing logic / what the price is anchored against' is missing \u2014 existing tiers are listed with config only, no anchor rationale (e.g., vs. competitive SEO retainer benchmarks)",
+      "Part 3 BYO framework: 'Base price' line says Lite is typical base, but here base is set below Starter at $1,200 without explicit justification tied to the overlay-mode reference's guidance on slotting beneath cheapest tier"
+    ],
+    "suggested_fixes": [
+      "Actually apply fix (b) for Starter and the upward tightening for Growth in the delivered pricing tables, then re-run the flagship-protection proof showing all three tiers protected",
+      "Add a 'Pricing logic / anchor' line to each existing tier (e.g., Starter vs. freelance SEO ~$1.5\u20132.5K, Pro vs. boutique agency retainers $8\u201315K)",
+      "Fill the Growth row 'Savings' cell with the actual delta and ensure post-fix BYO sum exceeds $5,000",
+      "Increase Pro-equivalent BYO sum to a clearer premium (e.g., $11,500+) so the flagship discount is unambiguous",
+      "Add one-line justification for the $1,200 sub-Starter base referencing the overlay-mode rule about slotting BYO underneath the cheapest tier for non-standard shapes"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table omits an explicit Lite pricing-logic anchor row treatment consistent with Core/Premium (states 'Free / MIT' but doesn't follow the same anchor-sentence pattern as cleanly)",
+      "BYO 'Base price' states $0 but spec example shows base typically equals Lite price \u2014 consistent here, but the minimum paid configuration ($v + $r) functions as a de facto floor that isn't labeled as the true economic floor, creating mild ambiguity",
+      "No memory preamble shown despite skill explicitly supporting it; acceptable per spec ('omit silently' if unavailable) but worth noting the self-application didn't demonstrate the feature",
+      "Invented domain-specific dimensions (Vertical Pack, Anchor Calibration) overlap conceptually with Add-ons row (which also lists Domain-pack and Anchor-benchmark dataset) \u2014 minor double-representation"
+    ],
+    "suggested_fixes": [
+      "In Part 3 tier table, rewrite Lite pricing logic as a single anchor sentence matching Core/Premium structure (e.g., 'Anchored at $0; lead-magnet economics \u2014 the skill is the funnel').",
+      "Relabel BYO 'Floor' to distinguish 'Free floor: $0 (Lite)' vs 'Paid floor: $v + $r' for clarity.",
+      "Either remove Domain-pack/Anchor-benchmark from Add-ons row or remove the standalone Vertical Pack/Anchor Calibration dimensions to eliminate overlap.",
+      "Optionally add a one-line note that memory preamble was omitted because no prior runs exist, to demonstrate the feature's intended behavior."
+    ]
+  }
+]
