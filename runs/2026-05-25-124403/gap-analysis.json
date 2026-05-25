@@ -1,0 +1,134 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [
+      "Part 3 BYO Support upgrade math inconsistency: per-dimension list shows Tier 2 \u2192 Tier 3 as +$6,000, but flagship-protection check for Premium uses +$8,000 for support upgrades (sum of $2,000 + $6,000 = $8,000 is correct as cumulative Tier1\u2192Tier3, but the line item labeling is ambiguous)",
+      "Memory preamble references the skill's own canonical example rather than prior runs, which slightly misuses the memory-integration intent (it should reference past actual runs, not the inline example in SKILL.md)"
+    ],
+    "suggested_fixes": [
+      "Clarify in BYO that the $8,000 in the Premium check = cumulative Tier1\u2192Tier3 ($2,000 + $6,000), or restate support upgrades as cumulative-from-base to avoid reader confusion",
+      "Remove or rephrase the memory note so it only fires on genuine prior-run recall, not recognition of the SKILL.md inline example"
+    ]
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [
+      "Part 3 follow-up menu offers three options instead of the spec's 'offer one based on context'",
+      "Pricing anchor for Lite uses '~35\u201340% of flagship' percentage language while using placeholder tokens \u2014 slight mixing of anchor modes",
+      "Per-dimension upgrade pricing uses many tokens (D through O) which is verbose; spec example shows simpler +$A/+$B/+$C style"
+    ],
+    "suggested_fixes": [
+      "Trim the follow-up menu to a single contextual offer per spec ('After delivering, offer one')",
+      "When using placeholder tokens, express Lite's anchor relationally without percentage figures, or commit to $ once re-anchored",
+      "Consolidate BYO upgrade tokens or group them to reduce token sprawl while preserving per-dimension clarity"
+    ]
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 mixes placeholder tokens inconsistently: Lite is given a concrete $400 (anchored from user input) but Core/Premium use +$B/+$C tokens AND simultaneously give multiplier ranges (~2.25\u20132.5\u00d7, ~2\u00d7) which implicitly anchor dollar figures (~$900\u20131000, ~$1800\u20132000) \u2014 this is a soft violation of the Pricing-Anchor Rule's 'do not fabricate' clause.",
+      "BYO per-dimension upgrades use an undefined $X variable without tying it to the $400 base or the token system, making the framework non-actionable as stated.",
+      "Follow-up menu offers two options ('a' and 'b') instead of the spec's instruction to offer ONE based on context."
+    ],
+    "suggested_fixes": [
+      "Either commit to tokens for Core/Premium (drop the multiplier ranges) or commit to $ figures derived from the $400 anchor (e.g., Core ~$950, Premium ~$1,900) \u2014 don't half-anchor.",
+      "Define $X explicitly (e.g., '$X = $75 base upgrade unit') or replace with concrete dollar increments scaled from the $400 base.",
+      "Offer a single follow-up per spec ('Optional Follow-Up Menu ... offer one based on context')."
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": false,
+    "gaps": [
+      "Part 3 flagship-protection math for Pro is internally inconsistent: itemized upgrades don't sum to the stated $15,700 (e.g., tracking upgrades listed as $6,300 but per-dimension table sums to $6,300 only if including base steps incorrectly; cadence to weekly shown as $2,200 but table shows $300+$700+$1,200=$2,200 ok; dedicated shown as $1,300 but table says $400+$900=$1,300 ok; embedded shown as $2,100 but table says $600+$1,500=$2,100 ok) \u2014 the tracking line $1,200 + $6,300 double-counts base, making the arithmetic unverifiable at a glance",
+      "Starter flagship protection fails ($1,600 BYO < $2,000 Starter); spec requires each existing tier to win on price vs BYO-summed equivalent. The 'intentional exception' contradicts the skill's flagship-protection rule rather than satisfying it",
+      "Growth BYO sum ($5,500) shown but arithmetic includes an unexplained $400 Access line twice (Slack appears once in upgrades but is added in the sum as +$400 alongside the listed items) \u2014 sum should be re-derived cleanly"
+    ],
+    "suggested_fixes": [
+      "Re-derive Pro BYO sum line-by-line using only the per-dimension upgrade table values without restating base, so each addend maps 1:1 to a table row",
+      "Raise BYO base price or Tracking 5\u219210 upgrade so that BYO-at-Starter-config strictly exceeds $2,000, satisfying flagship protection for all three tiers rather than declaring Starter an exception",
+      "Show Growth BYO addends as an explicit checklist matching exact table rows (base + 10kw + 30kw + monthly-call + biweekly + briefs + Slack + advisory) and recompute"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [
+      "Part 3 Pricing logic for Core states BYO sum is ~$1,550 but the explicit flagship-protection check below computes $1,624 \u2014 minor internal inconsistency",
+      "Lite tier omits Alumni Slack continuity but Core's BYO-to-flagship math adds the $75 Alumni Slack, which is fine, though the Lite 'No continuity' could be clearer that Alumni Slack is an unlock not a default",
+      "Follow-up menu offers three options; spec says offer 'one' based on context"
+    ],
+    "suggested_fixes": [
+      "Reconcile the Core pricing-logic sentence to match the $1,624 figure shown in the flagship-protection check",
+      "Clarify in Lite config that Alumni Slack is explicitly excluded (currently implied by 'No continuity')",
+      "Trim the follow-up menu to a single best-fit option per the spec's 'offer one' rule"
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing uses placeholder tokens (+$A/+$B/+$C) despite user providing concrete $15K\u2013$80K/mo range \u2014 spec's Pricing-Anchor Rule says 'User gave concrete prices \u2192 Use $ figures'",
+      "BYO per-dimension upgrades use abstract tokens ($X/$Y/$Z/$W/$V/$U) instead of concrete dollar figures derivable from the stated range",
+      "Vague-input preamble was used despite the input not being vague on price \u2014 the $15K\u2013$80K range is concrete enough to anchor"
+    ],
+    "suggested_fixes": [
+      "Replace +$A/+$B/+$C with concrete figures anchored to the $15K\u2013$80K range (e.g., Studio ~$15\u201320K, Signature ~$35\u201345K, Atelier ~$70\u201380K) per Pricing-Anchor Rule row 1",
+      "Assign concrete dollar deltas to each BYO upgrade lever so the floor/ceiling math actually computes against the user's stated band",
+      "Drop the assumption-stub preamble (or narrow it to vertical only, not pricing) since the user supplied a concrete price range"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Pricing-anchor consistency: Part 3 uses placeholder tokens (+$A/+$B/+$C) per the vague-input rule, but tier pricing logic cites specific $ benchmarks ($200\u2013500 course, $2\u20135K/mo, $20\u201360K/yr) \u2014 mixing tokens with concrete anchors blurs the bright line.",
+      "Memory preamble absent: no statement about whether claude-mem was queried or unavailable; spec says omit silently if unavailable, but given this is the skill applied to itself, a note would strengthen fidelity.",
+      "Follow-up menu offers two options ('re-anchor' and 'JSON/YAML emit') instead of one as spec requires ('offer one based on context')."
+    ],
+    "suggested_fixes": [
+      "Either commit to tokens throughout Part 3 pricing logic or name the sub-niche up front and use $ figures consistently \u2014 don't mix.",
+      "Add a one-line note confirming memory was unavailable/not queried, or omit benchmark $ ranges to stay token-pure.",
+      "Pick the single highest-leverage follow-up (re-anchoring) and drop the second offer."
+    ]
+  }
+]
