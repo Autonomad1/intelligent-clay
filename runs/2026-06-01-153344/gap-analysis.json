@@ -1,0 +1,120 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [
+      "Part 1 'Customizations' lists '# of integrations' and 'Training format' which are then promoted to dimensions in Part 2 \u2014 minor redundancy but acceptable",
+      "Lite tier's '5 seats' configuration with BYO base includes 5 seats, but BYO upgrade table shows '25 (+$300)' implying 5\u219225 jump without an intermediate, which is fine but could be clearer",
+      "No explicit mention that the $99/mo SaaS is excluded from BYO math / sits alongside as a fixed atom in the final tier pricing presentation"
+    ],
+    "suggested_fixes": [
+      "Note in Part 3 that all tier prices are implementation-only and stack on top of the $99/mo SaaS subscription",
+      "Clarify in BYO that Seat Scale levels are discrete (5/25/100+) not interpolated",
+      "Minor: deduplicate customizations in Part 1 that reappear as Part 2 dimensions"
+    ]
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier rows lack an explicit 'Pricing logic / anchor' field \u2014 anchors are implied in positioning but not labeled as required by spec ('Each tier has configuration + positioning + pricing logic anchored').",
+      "Flagship-protection math initially shows Starter and Growth FAILING protection at stated unit prices; spec requires BYO sum to price above each tier's flagship. The fix is offered inline rather than baked into the delivered BYO pricing, so the 'as-delivered' BYO unit table still violates the rule until the reader applies the revision.",
+      "Vague-input preamble is used ('Assuming a US-based digital agency...') even though the user gave concrete prices ($2K/$5K/$10K) \u2014 per Pricing-Anchor Rule, concrete prices should anchor directly without a vague-input stub.",
+      "Memory preamble not addressed (acceptable if memory unavailable, but no indication either way \u2014 minor)."
+    ],
+    "suggested_fixes": [
+      "Add a 'Pricing logic / anchor' column or sub-bullet to each tier row in Part 3 explicitly naming what each price anchors against (e.g., Starter anchored at 40% of Growth flagship).",
+      "Replace the BYO unit table with the revised numbers ($1,500 base + $750 BYO premium, $75/keyword) so the delivered pricing passes flagship protection on first read, rather than presenting failing math then patching it.",
+      "Drop the 'Assuming US-based digital agency' preamble \u2014 user gave concrete $ figures, so anchor directly without a vague-input stub.",
+      "Optionally note memory status (or omit silently per spec)."
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-logic for Studio states it 'anchors at ~22% of your stated ceiling' but does not explicitly state what fraction-of-flagship logic applies (spec example shows Lite ~40% of flagship); minor anchor-articulation drift",
+      "BYO upgrade pricing for Discipline Mix says '+$8K per added discipline' but \u00e0 la carte math for Atelier uses $16K for Full quad (Dual\u2192Full = 2 added), which is internally consistent but the rule as written could be misread as a flat +$8K \u2014 could be clearer",
+      "Always-on pace dependency in Part 2 says 'blocked at Production-led depth' but BYO dependency restates it as 'forces minimum Senior-reviewed depth' \u2014 same intent, slight wording inconsistency could confuse a configurator implementer",
+      "Floor stated as $15K but BYO base is $18K with no shown downgrade path summing to $15K (Async -$2K + 1 round -$2K + Sprint -$3K = $11K reduction, would go below floor) \u2014 floor enforcement logic not fully reconciled with downgrade stack"
+    ],
+    "suggested_fixes": [
+      "Add explicit '~25% of flagship' or similar fraction-of-flagship phrasing to Studio pricing logic to match spec's anchor pattern",
+      "Reword Discipline Mix BYO line to '+$8K per discipline added beyond Dual base (Tri +$8K, Full quad +$16K)' for unambiguity",
+      "Align Always-on dependency wording across Part 2 and BYO to one phrasing (e.g., 'Always-on requires Senior-reviewed depth or higher')",
+      "Add a one-line note that BYO downgrades cannot stack below the $15K floor, or raise base/cap downgrades so minimum configuration lands at exactly $15K"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": false,
+    "gaps": [
+      "Part 3 tier table omits explicit 'Positioning line' as a discrete one-sentence element per spec \u2014 positioning is collapsed into a table cell rather than rendered as the named sub-field alongside Configuration and Pricing logic",
+      "Pricing-Anchor Rule application is inconsistent: spec says when input is vague, use placeholder tokens like +$A/+$B/+$C uniformly \u2014 but Lite is given a concrete 'Free / MIT' anchor while Core/Premium use tokens, and BYO uses a third token scheme ($d1, $b1, etc.) without reconciling to $A/$B/$C",
+      "Flagship-protection rule is stated abstractly with variables but never demonstrates that Core's flagship price ($B) is actually less than the summed BYO equivalent \u2014 spec requires proving each tier wins on price vs. its BYO sum",
+      "Missing Self-Check confirmation that 'truly atomic' test was applied \u2014 'Worked example library (per-vertical)' and 'Vertical-specific prompt packs' appear to overlap/duplicate as atoms",
+      "No memory preamble or note that memory was unavailable \u2014 spec says omit silently if unavailable, which is fine, but the meta-nature of skill-on-itself should have triggered consideration"
+    ],
+    "suggested_fixes": [
+      "Render each tier with explicit bolded sub-labels: **Configuration:** / **Positioning:** / **Pricing logic:** rather than a 3-column table that flattens the structure",
+      "Use consistent placeholder tokens throughout (+$A for Lite-if-paid, +$B for Core, +$C for Premium) and map BYO per-dimension upgrades as fractions of those tokens, or state explicitly that Lite=$0 is the anchored exception",
+      "Add a worked inequality under Flagship-protection showing the BYO sum for Core's exact config exceeds $B (e.g., 'd1 + b1\u00d72 + p1 + f1 + s1 + s2 + ds1 + br1 \u2248 1.3\u00d7$B')",
+      "Deduplicate atoms: merge 'Worked example library' and 'Vertical-specific prompt packs' or distinguish them sharply (examples = read-only reference; packs = installable prompts)",
+      "Either add a one-line note that memory was checked/unavailable, or confirm in self-check that omission was intentional"
+    ]
+  }
+]
