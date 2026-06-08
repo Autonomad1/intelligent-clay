@@ -1,0 +1,126 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing logic uses token +$A/+$B/+$C but Lite's 'anchored ~30% of flagship' and Core's '~85% of the experience' invoke quasi-numeric anchoring without a named sub-niche, brushing against the Pricing-Anchor bright line",
+      "Follow-up menu offers only one option (pricing validation) which matches spec ('offer one'), but framing as a single suggestion rather than a menu may reduce user optionality"
+    ],
+    "suggested_fixes": [
+      "Soften Lite/Core anchor language to structural logic (e.g., 'entry tier below flagship; re-anchor % once sub-niche named') until $ figures are provided",
+      "Consider surfacing 2 follow-up options (e.g., pricing validation + highest-leverage atom) so user picks, while still defaulting to one recommendation"
+    ]
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing uses mixed tokens (+$A, +$B) alongside multiplier ranges (~2.5\u20133\u00d7, ~5\u20136\u00d7) which edges toward fabricated norms for a category the preamble flagged as vague",
+      "Flagship-protection rule states '~15\u201320% above' but with token pricing this can't actually be verified \u2014 it's asserted, not demonstrated",
+      "Lite tier includes 1 revision in configuration but user's current $400 offer is explicitly 'single-pass' \u2014 slight drift from the anchor input"
+    ],
+    "suggested_fixes": [
+      "Drop the multiplier ranges or move them to a separate 're-anchor once sub-niche named' note to stay consistent with the vague-input stance",
+      "Add a worked example showing BYO-sum > flagship using the tokens (e.g., 'Core BYO sum = $400 + $d2 + $b1 + $b2 + $s1 must exceed +$A by ~15\u201320%')",
+      "Align Lite with the stated $400 single-pass offer, or explicitly note that 1 revision was added and flag it as a change from current scope"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 table formatting: the Pro row of the Flagship-Protection Proof table is rendered outside the table (after the Option A/B prose block), breaking the table structure.",
+      "Starter flagship-protection row is hand-waved \u2014 BYO base ($1,200) at same config as Starter ($2,000) is not proven to sum above Starter; the 'onboarding & account mgmt' justification is asserted, not structurally enforced via an atom or upgrade line.",
+      "BYO base config (10 keywords, monthly, email, local) is identical to Starter's config, which violates overlay-mode intent of slotting BYO *underneath* with a differentiated floor \u2014 no atom is removed or downgraded to justify the lower price."
+    ],
+    "suggested_fixes": [
+      "Reformat the Flagship-Protection Proof as a single contiguous table with all three tier rows, moving the Option A/B remediation prose below the complete table.",
+      "Add an explicit 'Managed onboarding + named account manager' atom to Part 1 and price it as a $800/mo line item that Starter includes but BYO base excludes, so Starter's $2,000 vs BYO-summed $2,000 is structurally proven.",
+      "Differentiate the BYO floor from Starter by removing an atom (e.g., self-serve dashboard only, no human-written monthly report \u2014 just automated export) so BYO base at $1,200 is genuinely a tier below Starter."
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-logic for Tier 1 cites a '$300\u2013500 self-paced course' benchmark for 'freelance-education market' \u2014 this is the generic-category level, not a named sub-niche, so per the Pricing-Anchor Rule it should use placeholder tokens or be tied to the user-provided $1,200 anchor only",
+      "Tier 3 pricing-logic invokes 'mid-market consulting hour with a procurement specialist ($400\u2013600/hr)' and 'freelance-business coach \u2026 $4\u20136K' \u2014 these are fabricated norms for a parent category, violating the bright-line rule"
+    ],
+    "suggested_fixes": [
+      "Re-anchor Tier 1 and Tier 3 against the user-provided $1,200 flagship using ratios/tokens only, or explicitly stub the sub-niche assumption before citing $ benchmarks",
+      "Replace fabricated hourly/coach benchmarks with placeholder tokens (+$A, +$B) or a one-line assumption stub naming the sub-niche that would unlock those norms"
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing logic claims Core must price below BYO sum (~$48-52K) but the BYO math section later shows Core sums to ~$50K \u2014 minor inconsistency in the stated range vs. the worked figure",
+      "Per-dimension upgrade pricing is labeled 'placeholder tokens' but uses concrete $ figures rather than $A/$B/$C tokens as spec prescribes for vague pricing inputs",
+      "Follow-up menu offers only one option with rationale baked in, rather than presenting a clean single choice per spec ('offer one based on context') \u2014 acceptable but the hypothesis injection slightly drifts toward advice"
+    ],
+    "suggested_fixes": [
+      "Reconcile the Core BYO-sum figure: state one number (e.g., ~$50K) consistently in both the Pricing Logic cell and the Flagship-protection math block",
+      "Either convert BYO upgrades to $A/$B/$C tokens (since user gave a range, not unit economics) or drop the 'placeholder tokens' label and own the figures as anchored to the stated $15K\u2013$80K band",
+      "Trim the follow-up to a single clean offer without embedding a hypothesis inside it; save the hypothesis for if the user accepts"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table omits explicit 'Configuration / Positioning / Pricing logic' as separate labeled fields per spec \u2014 they're merged into table cells, which is acceptable but the spec lists them as three named bullets per tier",
+      "Follow-up menu offers three options instead of the spec's 'offer one based on context'",
+      "BYO framework uses token variables ($v, $m, $r, etc.) rather than the spec's example tokens (+$A, +$B, +$C) \u2014 consistent with vague-input rule but proliferates tokens beyond what spec models",
+      "Flagship-protection rule states '30% above' for Core and '40% above' Premium without showing the sum-check math, so the reader can't verify the rule holds"
+    ],
+    "suggested_fixes": [
+      "In Part 3, render each tier with explicit 'Configuration:', 'Positioning:', 'Pricing logic:' sub-bullets beneath the table or instead of it",
+      "Trim follow-up menu to a single best-fit option (likely 'highest-leverage atom' given build-order is the live question)",
+      "Consolidate BYO upgrade tokens to a smaller alphabet (+$A/+$B/+$C tiers of upgrade) matching the spec's example style",
+      "Add a one-line worked sum under the flagship-protection rule showing Core \u00e0 la carte total > Core bundle price"
+    ]
+  }
+]
