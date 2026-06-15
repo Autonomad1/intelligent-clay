@@ -1,0 +1,148 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-anchor cites specific market figures ($25\u201350K agency, $8\u201315K naming, $45K+ retainers) for 'freelance brand strategist' \u2014 the spec's bright line treats generic category inputs without a named sub-niche as vague, requiring placeholder tokens",
+      "Follow-up menu offers three options instead of the spec's 'offer one based on context'"
+    ],
+    "suggested_fixes": [
+      "Either use placeholder tokens (+$A/+$B/+$C) with a vague-input preamble, or treat 'brand strategy' as a well-known sub-niche and state that assumption explicitly in an assumption stub",
+      "Trim the follow-up menu to a single context-appropriate option per the spec"
+    ]
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [
+      "Part 1 atomic decomposition does not explicitly call out the $99/mo SaaS license as the one fixed product atom in the atom list itself \u2014 it's only mentioned in the preamble, which slightly under-delivers on the hybrid-mode instruction to treat the SaaS as 'one fixed atom'.",
+      "Memory Integration preamble is absent; acceptable if memory unavailable, but no silent confirmation either way (minor, spec says omit silently so not a true gap).",
+      "Pace upgrade pricing note ('extended often reduces internal cost but is priced for the calendar slot') is mild positioning/rationale drift bordering on commentary rather than pure structure."
+    ],
+    "suggested_fixes": [
+      "In Part 1 Deliverables, add an explicit line item: 'SaaS license ($99/mo/seat) \u2014 fixed product atom, not decomposed' so the hybrid handling is visible in the atom list.",
+      "Optionally add a one-line memory status note or rely on silent omission per spec (no change needed if memory truly unavailable).",
+      "Trim the parenthetical rationale on the Pace upgrade to keep Part 3 strictly structural."
+    ]
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Vague-input preamble names a re-anchor variable (target niche) but the output still uses concrete $ figures throughout rather than placeholder tokens, slightly contradicting the Pricing-Anchor Rule's 'generic category \u2192 use tokens' guidance",
+      "Pricing-anchor logic for Core cites sum-of-parts ~$1,150 in the tier table but the flagship-protection check below computes $1,075 \u2014 minor internal inconsistency",
+      "Depth dependency says 'Deep requires \u22657-day turnaround' while Pace row says 'Rush/Emergency block Deep Depth' \u2014 redundant phrasing across rows could be consolidated"
+    ],
+    "suggested_fixes": [
+      "Since user gave a concrete anchor ($400) but no sub-niche, either commit to $ figures without the vague-input preamble, or switch upgrade deltas to tokens; don't mix both signals",
+      "Reconcile the Core sum-of-parts figure: update tier table to '~$1,075' to match the flagship-protection math",
+      "Express each dependency in exactly one row to avoid duplication (keep it on Pace, drop from Depth)"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing logic references 'sum-of-parts of equivalent BYO build' and '~35% of flagship' without concrete tokens, slightly hand-wavy given token-only pricing",
+      "Follow-up menu offers only one option (pricing re-anchor) rather than selecting one from the spec's menu \u2014 acceptable but the spec says offer ONE based on context, which it does; borderline fine",
+      "Ceiling rule uses '~85% of Premium' but Premium itself is a token (+$C), making the ceiling computation underspecified"
+    ],
+    "suggested_fixes": [
+      "Express per-dimension deltas and ceiling as token math (e.g., ceiling = 0.85 \u00d7 (+$C)) to keep token discipline consistent",
+      "Optionally tighten Lite anchor to a token relationship (e.g., +$A \u2248 0.35 \u00d7 (+$B)) rather than a bare percentage",
+      "Confirm the follow-up is drawn from the spec's menu (pricing validation) \u2014 it is, so no change needed"
+    ]
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 heading deviates slightly from spec language \u2014 spec says BYO slots 'underneath the cheapest and between existing tiers'; output only explicitly slots one BYO base below Starter and uses price-range nudges for between-tier routing rather than defining discrete between-tier BYO slots",
+      "Vague-input preamble not applicable here, but no memory preamble check mentioned (acceptable since optional)",
+      "Pricing-Anchor Rule: output uses concrete $ figures for BYO add-ons without explicitly stating the anchor logic per add-on (anchor column/explanation missing for BYO upgrades)",
+      "Flagship-protection math initially fails for 2 of 3 tiers \u2014 spec implies the BYO framework should be constructed to protect flagships, not retroactively patched; the self-correction is shown but the delivered add-on table still contains the violating prices"
+    ],
+    "suggested_fixes": [
+      "In Part 3, add explicit between-tier BYO slot descriptions (e.g., 'Starter+' and 'Growth+' positioning) rather than only price-range nudges",
+      "Add a one-line anchor note for BYO base pricing (e.g., 'Base anchored at 75% of Starter to ensure entry below cheapest tier')",
+      "Replace the original BYO add-on prices with the corrected values inline so the delivered framework passes flagship-protection on first read, moving the 'before/after' math to a footnote"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-anchor table format: spec's inline example shows tiers can be rendered as a table, but spec text says 'For each tier' with bullet sub-items \u2014 output uses bullets correctly, minor: Lite anchor cites '$200\u2013600 self-paced courses in the freelance-business space' which borders on fabricated norms for a sub-niche not explicitly benchmarked by user",
+      "Flagship-protection check for Core substitutes '+$250 async review' as 'proxy for 1-on-1' \u2014 the Core config actually includes a 1-on-1 review, so the BYO sum should price the real 1-on-1 upgrade (+$500), not a cheaper proxy; this weakens the protection math",
+      "Memory preamble omitted without indication memory was checked \u2014 acceptable per spec (silent omit), no gap",
+      "Support dimension lists 'Group live Q&A: included with Live cohort' as an upgrade row with no price, which is structurally inconsistent with other priced rows"
+    ],
+    "suggested_fixes": [
+      "Replace Lite anchor's specific '$200\u2013600' claim with a placeholder or qualify as 'rough category band' since user didn't name self-paced comp prices",
+      "In Core flagship-protection math, use the actual 1-on-1 review upgrade (+$500) instead of async review proxy (+$250) to honestly reflect Core's configuration",
+      "Move 'Group live Q&A included with Live cohort' out of the priced upgrade list and into the dependencies block to keep the BYO price ladder clean"
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 Pricing-Anchor table: spec says when user gives concrete prices ($15K-$80K range), use $ figures \u2014 done, but the vague-input preamble was still used despite anchored input, creating a slight tonal mismatch",
+      "BYO floor-protection check for Studio tier is trivially true ($18K = $18K) \u2014 spec's flagship-protection rule implies BYO-sum should price *above* tier flagship, which fails at entry tier (acknowledged in output but worth flagging as edge case)",
+      "Memory preamble omitted with no indication whether memory was queried (spec says omit silently if unavailable, so technically compliant, but ambiguous)"
+    ],
+    "suggested_fixes": [
+      "Drop the 'will re-anchor specific tier prices' preamble when user has provided a concrete price range \u2014 reserve preamble for genuinely vague inputs",
+      "Clarify in BYO framework that flagship-protection applies to Core/Premium only; entry tier (Lite/Studio) is the BYO base by definition",
+      "No fix needed for memory \u2014 current silent-omit behavior matches spec"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table absence: spec's inline example shows tiers rendered with explicit price/anchor columns; output uses prose blocks with token placeholders only, which is acceptable per Pricing-Anchor Rule but omits a consolidated anchor summary",
+      "Pricing-Anchor token usage is inconsistent: introduces +$A, +$C, +$E, +$P, +$S, +$R, +$M, +$I, +$U, +$X without a legend, making the BYO math hard to validate against flagship-protection rule",
+      "Flagship-protection rule is asserted (~20-30%, ~30-40%) but not demonstrated \u2014 with all tokens unbound, the reader cannot verify BYO sum > flagship, which is the rule's whole point",
+      "MIT Core is described as 'the floor' but BYO floor is set at Open+ (+$A/mo); slight conceptual muddle between free-floor and paid-BYO-floor",
+      "Memory Integration preamble not included or explicitly noted as omitted (spec says omit silently if unavailable, so acceptable, but no signal given)"
+    ],
+    "suggested_fixes": [
+      "Add a compact tier summary table (Tier | Price | Anchor) mirroring the inline example, even if prices are tokens",
+      "Add a one-line token legend (e.g., 'A = Open+ monthly; P = per-pack; R = per-review/mo; ...') immediately above the BYO upgrade list",
+      "Show at least one worked flagship-protection inequality in tokens (e.g., 'A + 3P\u00d70.7 + S + 3R\u00d70.8 + M + 2.5I + U > Studio flagship') to prove the rule binds",
+      "Clarify that MIT Core = free floor (non-purchasable) and Open+ = BYO floor (minimum paid config) in one sentence under Floor",
+      "Optionally add an explicit 'Memory unavailable \u2014 no preamble' note, or rely on silent omission as spec permits"
+    ]
+  }
+]
