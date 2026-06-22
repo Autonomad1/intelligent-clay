@@ -1,0 +1,116 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table lacks explicit per-tier 'Positioning line' and 'Pricing logic' fields as required by spec (existing tiers shown only as price + configuration row)",
+      "Starter flagship-protection math fails on raw config ($1,000 BYO vs $2,000 Starter) and is resolved only by adding intangible moats post-hoc, rather than by pricing components so the BYO sum exceeds Starter",
+      "Growth flagship-protection offers an adjustment but does not commit to it in the upgrade table \u2014 the table still shows +$1,000 for 30kw and +$600 for 1 brief, leaving BYO sum at $3,550 < $5,000 Growth"
+    ],
+    "suggested_fixes": [
+      "Add explicit 'Positioning line' and 'Pricing logic / anchor' bullets under each preserved tier (Starter/Growth/Pro), not just config",
+      "Raise base BYO component prices (e.g., 30kw jump, brief, cadence upgrades) so BYO-summed equivalent of Starter's config exceeds $2,000 before invoking intangible moats",
+      "Commit the proposed Growth adjustment into the upgrade table itself so the published BYO math demonstrates flagship protection without a separate 'recommended adjustment' note"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [
+      "Part 1 Customizations lists 'Cohort pace' and 'Stage of freelancer' / 'Service type' as customization atoms, but these aren't surfaced as buyable atoms or mapped into Part 2 dimensions (Stage and Service type drop out entirely).",
+      "Add-ons in Part 2 are placed inside the dimension table rather than treated as discrete atoms with their own pricing logic shown in the dimension row's 'Levels' (minor structural blur between dimensions and \u00e0 la carte items).",
+      "Premium tier configuration says 'Includes proposal teardown + outreach audit' but the configurator dependency 'Proposal teardown requires submitted draft' creates ambiguity for Premium buyers \u2014 dependency enforcement for bundled add-ons not clarified."
+    ],
+    "suggested_fixes": [
+      "Either drop 'Stage of freelancer' and 'Service type' from Part 1 or add them as a 'Learner Profile' domain-specific dimension in Part 2 so every atom maps forward.",
+      "Split Add-ons out of the Part 2 dimension table into a separate '\u00c0 la carte atoms' list to keep dimensions (configurable axes) distinct from discrete add-ons.",
+      "Clarify in the Premium row or dependencies that bundled teardowns still require draft submission within X days, so the configurator rule applies uniformly."
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 Studio pricing logic references '~25% below your current floor of $15K' which is internally inconsistent (Studio is $18K, above $15K) \u2014 minor anchor-statement incoherence",
+      "Vague-input preamble is arguably unnecessary since the user gave a concrete $15K\u201380K range; the stub slightly over-hedges against spec guidance to 'infer, stub, produce' without lampshading",
+      "Memory preamble ('Memory unavailable; proceeding without preamble') violates the spec instruction to 'omit the preamble silently' when memory is unavailable",
+      "Follow-up menu offers two options ('stress-test ... or identify ...') instead of the spec-required single option"
+    ],
+    "suggested_fixes": [
+      "Rewrite Studio pricing logic to coherently anchor at $18K (e.g., 'priced at the threshold where senior-led retainer work beats assembling freelancers')",
+      "Drop or tighten the assumption stub since concrete $ range was provided \u2014 reserve stub for truly vague inputs",
+      "Remove the 'Memory unavailable' line entirely per spec ('omit the preamble silently')",
+      "Offer only one follow-up option based on highest contextual value, not two"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": false,
+    "gaps": [
+      "Part 3 tier pricing logic uses placeholder tokens (+$B, +$C) but does not open with the required vague-input preamble format tying tokens to the unnamed variable \u2014 the preamble at the top mentions re-anchoring on buyer type but doesn't follow the exact 'Assuming X; will re-anchor once you name Y' stub cleanly applied to the pricing tokens",
+      "Flagship-protection math for Premium is asserted ('exceeds +$C substantially') rather than shown \u2014 spec requires proving each tier's BYO-sum prices above its flagship, and Core's math mixes +$B and +$18a without confirming the inequality holds",
+      "BYO upgrade table mixes token scales (+$a, +$b, +$c) without defining their relative magnitudes, making the flagship-protection arithmetic unverifiable",
+      "Follow-up menu offers only one option ('Pricing validation') as instructed, but frames it as 'recommended' rather than presenting it as a clean single offer \u2014 minor tone drift toward advice"
+    ],
+    "suggested_fixes": [
+      "Replace the opening assumption stub with one explicitly tied to pricing: 'Assuming [reading]; will re-anchor with $ figures once you name [primary buyer: solo/agency/platform], which determines tier price points.'",
+      "Show the Premium flagship-protection inequality explicitly: sum the BYO atoms required to reach Premium's config in tokens and state 'Premium at +$C setup < [summed tokens]' the same way Core's ~+$18a comparison is shown",
+      "Add a one-line note defining token scale (e.g., '+$a < +$b < +$c, roughly 1:4:16') so flagship-protection math is checkable",
+      "Reframe the closing as a clean single-option offer ('Offering: pricing validation \u2014 name your primary buyer and I'll re-anchor') rather than 'recommended next step'"
+    ]
+  }
+]
