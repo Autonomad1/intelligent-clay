@@ -1,0 +1,118 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [
+      "Part 3 BYO Premium-config sum ($8,150) exceeds the stated $6,500 ceiling, which would auto-route to Premium flat rate \u2014 making the flagship-protection check on Premium somewhat moot/contradictory",
+      "SaaS license ($99/mo) is acknowledged in the preamble as a fixed atom but is not explicitly listed inside Part 1's atom inventory (e.g., under a 'Fixed product atom' header) for completeness"
+    ],
+    "suggested_fixes": [
+      "Either raise the ceiling above $8,150 or note that the Premium flagship-protection check is illustrative since the ceiling routes customers there first",
+      "Add an explicit 'Fixed product atom: SaaS license @ $99/mo/seat (not decomposed)' line at the top of Part 1 to make the hybrid handling visible in the atom list"
+    ]
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 Existing Tiers table omits per-tier positioning line and pricing logic/anchor (spec requires configuration + positioning + pricing logic for each tier, even in overlay mode)",
+      "Slot A 'SEO Lite' BYO entry is presented as a fixed package with positioning but lacks an explicit pricing-anchor rationale tying $750 to a benchmark",
+      "Flagship-protection fix for Starter introduces a $400 'reporting infrastructure' fee retroactively, but the per-dimension upgrade table above was not revised to reflect it \u2014 creates internal inconsistency between the table and the proof"
+    ],
+    "suggested_fixes": [
+      "Add a one-line positioning sentence and pricing-logic/anchor note for Starter, Growth, and Pro in the preserved-tiers table",
+      "Add an anchor rationale for the $750 SEO Lite floor (e.g., 'below the cost of a freelance SEO audit; on-ramp pricing')",
+      "Revise the per-dimension upgrade table to show the $400 infrastructure line item and updated brief/cadence prices so the BYO math matches the flagship-protection proof"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [
+      "Part 3 flagship-protection for Premium is marginal ($3,550 vs $3,500, only $50 gap) \u2014 skill spec implies flagship must clearly read as the rational discount",
+      "Memory preamble not included (acceptable if memory unavailable, but not explicitly handled)"
+    ],
+    "suggested_fixes": [
+      "Tighten Premium to $3,400 (as the output itself suggests) or raise a per-dimension upgrade price so BYO-equivalent exceeds flagship by a more visible margin (~10%+)",
+      "Silently omit memory preamble per spec when unavailable \u2014 current output complies, no change needed"
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": false,
+    "gaps": [
+      "Pricing-Anchor Rule misapplied: user gave a concrete $15K\u2013$80K/mo range, which per the rule should trigger use of $ figures anchored against them, not placeholder tokens (+$X/+$Y/+$Z).",
+      "Vague-input preamble used despite input not being vague \u2014 the $15K\u2013$80K range plus discipline list is sufficient anchoring input.",
+      "Tier pricing does not land within the stated $15K\u2013$80K/mo range as required by the test notes; tokens leave this unverified."
+    ],
+    "suggested_fixes": [
+      "Replace +$X/+$Y/+$Z with concrete dollar anchors inside the $15K\u2013$80K range (e.g., Studio ~$18\u201322K, Integrated ~$40\u201348K, Embedded ~$72\u201380K) since the user supplied a price band.",
+      "Drop the 'Assuming...' preamble; the input is anchored enough to produce $ figures directly per the Pricing-Anchor Rule.",
+      "Recompute BYO base and upgrade percentages against the concrete Studio anchor so the flagship-protection math is verifiable against the $15K\u2013$80K range."
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing table format: spec's inline example shows tiers rendered as a table with Price and Anchor columns; output uses prose sections instead (minor stylistic deviation, not required by spec)",
+      "Vague-input preamble placement: spec says 'open with' the assumption stub, but output places it inside Part 3 rather than at the very top of the response",
+      "Memory note wording: spec says 'If memory is unavailable, omit the preamble silently' \u2014 output includes an explicit 'Memory note unavailable' line, violating the silent-omit rule",
+      "Follow-up menu: spec says offer ONE follow-up; output offers re-anchoring which is reasonable but isn't one of the five menu options verbatim (closest to 'Pricing validation')"
+    ],
+    "suggested_fixes": [
+      "Optionally render Part 3 tier summaries as a table with Tier | Price | Anchor columns to match the inline example's format",
+      "Move the 'Assuming...' stub to the top of the response, before Part 1, per the vague-input preamble spec",
+      "Delete the 'Memory note unavailable \u2014 proceeding fresh' line entirely; spec requires silent omission when memory is absent",
+      "Frame the follow-up explicitly as 'Pricing validation' from the menu rather than an ad-hoc re-anchor offer"
+    ]
+  }
+]
