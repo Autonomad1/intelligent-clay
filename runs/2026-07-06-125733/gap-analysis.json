@@ -1,0 +1,120 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table omits explicit 'Pricing logic' column as a separate field per spec (each tier should have configuration + positioning + pricing logic); anchors are provided below the table but not per-row",
+      "Premium price is a range ($8,500\u2013$12,000) rather than a single anchored figure, which slightly muddies the flagship-protection math (uses $12,000 ceiling for the check)"
+    ],
+    "suggested_fixes": [
+      "Add a 'Pricing logic' column to the tier table so each row carries its own anchor rationale inline",
+      "Commit to a single Premium anchor price (e.g., $10,000) and run the flagship-protection check against that figure"
+    ]
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Vague-input preamble used despite user providing concrete $400 price \u2014 spec reserves the assumption stub for placeholder-token cases, not anchored inputs",
+      "Part 2 dependency 'Exec seniority requires accomplishment-mining' is stated in the Depth row but not echoed in the invalid-combinations block, creating mild asymmetry",
+      "Follow-up menu offers three options ('a/b/c') where spec says offer exactly one based on context"
+    ],
+    "suggested_fixes": [
+      "Drop the assumption preamble when the user has given a concrete price anchor; instead note the re-anchor caveat inline in Part 3 pricing logic",
+      "Add 'Exec seniority without accomplishment-mining call' to the invalid-combinations bullet list for consistency",
+      "Pick the single highest-value follow-up (likely re-anchoring by seniority) rather than presenting an a/b/c menu"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 Flagship-Protection Proof: initial BYO sums for Starter ($1,600) and Growth ($4,800) come in below flagship prices, violating the flagship-protection rule as stated in the spec \u2014 the fix is offered as a follow-up choice rather than applied in the delivered blueprint, leaving the output technically non-compliant on first read.",
+      "Memory Integration preamble: no mention of memory query attempt (should silently omit only if unavailable, but a brief acknowledgement or silent omission is ambiguous here \u2014 minor)."
+    ],
+    "suggested_fixes": [
+      "Apply the chosen fix (Option 2's $500/mo custom-plan surcharge) directly into the BYO sums table so all three tiers demonstrably beat their BYO-equivalent before delivery, rather than flagging the violation and deferring the fix.",
+      "Either silently omit any memory reference (already done) or make the omission explicit-by-absence; no visible change needed if memory is unavailable."
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-logic for Studio Focus references a freelance-duo benchmark rather than anchoring against the user's stated $15K\u2013$80K range explicitly (minor; range is implied via 'floor of your current range' but comparison anchor is external)",
+      "Flagship-protection math shown parenthetically (18+8+6+7+5=$44K) omits the breadth upgrade needed to reach Signature's Standard breadth from Focused; the arithmetic is hand-waved with '+ motion/reporting parity = ~$49K' which is not transparent",
+      "BYO upgrade menu omits a priced path for Discipline Mix: Single \u2192 Dual (only Dual \u2192 Full-stack is listed), leaving the floor configuration's own dimension partially unpriced for BYO users starting below Dual"
+    ],
+    "suggested_fixes": [
+      "Rewrite Studio Focus pricing logic to anchor explicitly against the $15K\u2013$80K stated range (e.g., 'entry point of your stated range, ~22% of ceiling') before invoking external benchmarks",
+      "Show the full BYO-to-Signature arithmetic line-by-line (base + each specific upgrade = total) so the $7K flagship discount is auditable",
+      "Add a Single \u2192 Dual upgrade price to the BYO menu, or state explicitly that Single-discipline is not offered in BYO and floor starts at Dual"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-logic for Core mixes concrete percentages/dollar figures ($3K loss, 15-25%, $15K engagement) while using placeholder token +$B/mo \u2014 inconsistent with vague-input preamble that promised tokens until re-anchoring",
+      "Premium pricing logic similarly cites specific $150-250K in-house strategist benchmark and 10-20% figure despite token +$C \u2014 anchors a specific dollar range without the sub-niche being named",
+      "Flagship-protection rule uses percentages (30%, 40%) but never shows the BYO-sum-vs-flagship comparison concretely; with all-token pricing the rule is asserted, not proven",
+      "Lite tier's pricing logic ($0, OSS parity) is fine but 'Anchor' field format diverges slightly from spec's 'Pricing logic \u2014 what the price is anchored against' \u2014 minor",
+      "Memory preamble omitted with no indication whether claude-mem was queried (spec says omit silently if unavailable, so acceptable, but given this is the claude-mem author's own skill, a note would be warranted)"
+    ],
+    "suggested_fixes": [
+      "Replace concrete benchmark figures in Core/Premium pricing logic with token-consistent anchors (e.g., 'anchored against cost of one mispriced engagement \u2014 re-anchor once buyer segment named')",
+      "Either commit to tokens throughout Part 3 or drop the vague-input preamble and commit to the cited benchmarks as anchored figures",
+      "Show a worked flagship-protection inequality using tokens (e.g., p1\u00d73 + p2 + p3\u00d74 + p4 + p6 + p5\u00d72 \u2265 1.3 \u00d7 ProPrice) to make the rule verifiable rather than asserted",
+      "Reformat Lite's 'Anchor:' sub-label to match 'Pricing logic:' pattern used in Core/Premium for consistency",
+      "Add a one-line note that memory was not queried (or was queried and returned nothing) since this is a meta-run on the skill's own domain"
+    ]
+  }
+]
