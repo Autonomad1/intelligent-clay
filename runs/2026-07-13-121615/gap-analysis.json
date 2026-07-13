@@ -1,0 +1,114 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing anchors use placeholder tokens (+$A/+$B/+$C) but also cite specific competitor $ figures ($150\u2013200/mo Future/Caliber) \u2014 mild inconsistency with the vague-input token discipline",
+      "BYO per-dimension upgrade pricing uses abstract variables ($X/$Y/$Z/$Q) layered on top of $A base, which compounds placeholder abstraction and makes the flagship-protection math unverifiable as written"
+    ],
+    "suggested_fixes": [
+      "Either commit to tokens throughout Part 3 or note the competitor figures as 'market reference only, not anchor' to keep the vague-input rule clean",
+      "Collapse BYO upgrade pricing to token-relative expressions (e.g., 'each depth bump \u2248 25% of base') so flagship-protection can be checked symbolically without inventing $ figures"
+    ]
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Optional Follow-Up Menu: spec says offer ONE follow-up based on context; output frames it as an open 'go deeper on any of these' but only lists one item, which is slightly ambiguous phrasing",
+      "Pricing-Anchor Rule: input named 'resumes' at $400 but not a sub-niche (tech/exec/federal); output uses concrete $ figures throughout rather than placeholder tokens, arguably crossing the bright line (though $400 anchor was user-given)"
+    ],
+    "suggested_fixes": [
+      "Reword the follow-up as a single clear offer (e.g., 'Want me to identify the highest-leverage atom?') rather than 'go deeper on any of these'",
+      "Since sub-niche wasn't named, either keep the $400 anchor and use tokens for Core/Premium deltas, or explicitly justify the concrete figures as extrapolated from the $400 base"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 \u2014 Existing Tiers Preserved + BYO Overlay: initial 'Slot map' presents three BYO slots (Sub-Starter, between Starter-Growth, between Growth-Pro) but then reverses course mid-section, collapsing slots 2 and 3 into an add-on menu. This violates the spec's requirement to 'slot BYO underneath the cheapest and between existing tiers' cleanly, and the visible reasoning-in-progress reads as thinking-out-loud rather than a finished structural blueprint.",
+      "Part 3 \u2014 BYO pricing formula: the initial formula is invalidated mid-section (Starter-equivalent math fails, base is revised, keyword cap changes from unlimited-routes-to-Pro to 8-keyword hard cap). The final BYO table is never cleanly re-rendered with the corrected caps and prices.",
+      "Part 3 \u2014 Flagship-protection rule: spec requires BYO sum to reach each *existing tier's* configuration to price above that tier's flagship. Because BYO is hard-capped at 8 keywords, BYO literally cannot reach Starter/Growth/Pro configs, so the rule is sidestepped rather than satisfied; the add-on-menu math shown is Starter+add-ons vs Growth, not BYO-sum vs tier."
+    ],
+    "suggested_fixes": [
+      "Decide the overlay structure before writing Part 3 and present only the final version: either three BYO slots with clean pricing, or one BYO Foundation + published add-on menu \u2014 not both with visible reversal.",
+      "Re-render the final BYO pricing table once after the 8-keyword cap and $600 base are locked, so the reader sees only the corrected formula.",
+      "Explicitly state that BYO caps below Starter's config by design (so flagship protection is enforced by routing, not by pricing math), and separately show add-on-sum-vs-next-tier math for each existing tier as the flagship-protection proof."
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Minor: Memory Integration spec says 'If memory is unavailable, omit the preamble silently' \u2014 output includes '*Memory unavailable; proceeding without preamble.*' which violates the silent-omission rule",
+      "Minor: Vague-input preamble was used, but the input provided a concrete $15K\u2013$80K/mo band and named sub-niche (boutique creative agency) \u2014 arguably anchored enough that the assumption stub, while not wrong, leans toward over-hedging"
+    ],
+    "suggested_fixes": [
+      "Remove the '*Memory unavailable*' line entirely \u2014 per spec, absence of memory should be silent",
+      "Consider dropping or tightening the assumption stub when the user has already provided a concrete price band and named vertical; reserve the stub for truly vague inputs"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier pricing uses relative multipliers (B \u2248 3\u20134\u00d7 A, C \u2248 5\u20138\u00d7 B) which edges toward fabricated norms without the sub-niche being named \u2014 the spec's bright line says use pure tokens when vague",
+      "Memory preamble absent \u2014 spec says if claude-mem is available and 2+ similar past runs exist, prepend a memory note; the run neither uses one nor states memory was unavailable (minor, since it's conditional)",
+      "Follow-up menu offers three options; spec says offer ONE based on context"
+    ],
+    "suggested_fixes": [
+      "In Part 3 pricing logic, drop the multiplier ratios and keep pure +$A/+$B/+$C tokens until buyer segment is named",
+      "Silently omit memory preamble is fine per spec, but consider a one-line note only if memory was actually checked \u2014 otherwise no change needed",
+      "Trim the follow-up menu to a single highest-leverage option (likely Pricing validation) per spec's 'offer one' rule"
+    ]
+  }
+]
