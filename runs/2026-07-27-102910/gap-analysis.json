@@ -1,0 +1,117 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-anchor rationale for Lite cites '~60% of current flagship' but the underlying dollar figure is anchored well; minor: the SaaS-as-fixed-atom is called out in a preamble note but not explicitly listed inside Part 1's atom groups"
+    ],
+    "suggested_fixes": [
+      "Add a one-line 'Fixed atoms (non-decomposable)' bullet inside Part 1 listing the $99/mo SaaS license so the hybrid boundary is visible in the decomposition itself, not only in the preamble"
+    ]
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Vague-input preamble triggered on a case that arguably has enough anchoring ($400 concrete price + 'resume writing' as a named sub-niche with well-known norms) \u2014 the stub adds mild friction where direct $ anchoring was already viable",
+      "Follow-up menu offers two options ('a' and 'b') instead of the spec's 'offer one based on context'"
+    ],
+    "suggested_fixes": [
+      "Treat concrete $ + named craft-level niche ('resume writing') as anchored input and skip the placeholder-style preamble, or reserve the stub for cases where no $ figure is provided",
+      "Pick a single highest-leverage follow-up (e.g., configurator JSON emission) rather than presenting a two-option menu"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier rows lack explicit 'positioning line' and 'pricing logic' sub-fields per spec; existing tiers are shown as a config snapshot table only",
+      "BYO Lite slot pricing ($1,400\u2013$1,850) sits below Starter ($2,000), which the skill's own flagship-protection math flags as a violation for Starter \u2014 the resolution is hand-waved rather than resolved (Starter's BYO-equivalent must price above $2,000)",
+      "Base fee was retroactively bumped mid-output ($1,200 \u2192 $1,400) without restating the final BYO menu table, leaving the menu internally inconsistent"
+    ],
+    "suggested_fixes": [
+      "For each preserved tier, add explicit 'Positioning line' and 'Pricing logic' bullets alongside the config snapshot",
+      "Either raise BYO Lite floor above $2,000 or add a Starter-exclusive inclusion (e.g., onboarding audit) so Starter's BYO-equivalent provably exceeds $2,000",
+      "Re-render the final BYO menu table with the corrected $1,400 base and $45/kw unit so the \u00e0 la carte pricing matches the flagship-protection math"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing table format: spec's inline example shows tier pricing in a table with Price and Anchor columns; output uses prose blocks instead (minor stylistic deviation, not a hard requirement).",
+      "Follow-up menu: spec says offer ONE follow-up based on context; output complies with one, but could more explicitly tie choice to context (e.g., why highest-leverage atom vs. configurator JSON for a 6-person agency ready to operationalize).",
+      "Memory preamble omitted \u2014 acceptable per spec ('omit silently' if unavailable), so not a true gap."
+    ],
+    "suggested_fixes": [
+      "Optionally render the three tiers as a compact table (Tier | Price | Anchor) matching the inline example's format for visual consistency.",
+      "Add a half-sentence rationale for why the offered follow-up fits this specific engagement (e.g., 'since standardizing atoms is the fastest path to protecting margin at Lite')."
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table/format: tiers are presented as prose blocks rather than including the concise per-tier price/anchor table shown in the inline example \u2014 acceptable but less scannable",
+      "Pricing-Anchor Rule application: Tier 2 mixes a placeholder token (+$B) with concrete $ ranges ($3\u20138K, 5\u201310\u00d7) for anchors; the spec's bright line says to use tokens when vague and not invoke norms for the parent category \u2014 'boutique consulting productization workshops' is arguably a parent-category norm without a named sub-niche",
+      "Follow-up menu: offers three options ('(a)/(b)/(c)') instead of the spec's instruction to offer ONE based on context",
+      "Self-Iteration dependency contradiction: table says 'Bi-directional requires MIT tier only' but BYO section says bi-directional is 'included with MIT (free)' \u2014 and Clay Pro tier lists Auto-PRs while Studio lists Bi-directional, creating ambiguity about whether bi-directional is a paid or free-only feature",
+      "Memory preamble format: includes a 'no prior runs' note, but spec says to prepend memory preamble only if 2+ similar runs exist and otherwise omit silently"
+    ],
+    "suggested_fixes": [
+      "Add a compact tier summary table (Tier | Price | Anchor) above or replacing the prose blocks in Part 3, matching the inline example format",
+      "Replace the $3\u20138K and 5\u201310\u00d7 figures in Tier 2 pricing logic with placeholder tokens, or explicitly name a sub-niche (e.g., 'productization consulting for boutique agencies') to justify the norms",
+      "Cut the (a)/(b)/(c) menu down to a single contextual follow-up offer",
+      "Resolve the bi-directional self-iteration contradiction: pick one location (dimension table or BYO) as source of truth and align tier configurations accordingly",
+      "Remove the 'Memory note: no prior runs available' line \u2014 spec says omit the preamble silently when memory is unavailable or has <2 prior runs"
+    ]
+  }
+]
