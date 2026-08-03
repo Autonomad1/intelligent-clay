@@ -1,0 +1,14 @@
+## Proposed change
+
+The dominant failure pattern is **flagship-protection math being shown as live correction rather than finalized output**: the model computes BYO-sum equivalents, notices the cushion is thin or a tier is underpriced, and patches the upgrade table inline — leaving two inconsistent tables and exposing working. The related sub-failure is treating a $100 cushion as "passing" the flagship-protection rule when the rule's *spirit* is that the flagship feels like a rational discount. Both are fixed by (a) making cushion a quantified threshold, not a vibe, and (b) requiring the math to be run *before* the tables are emitted, so upgrade prices are already reconciled.
+
+```diff
+@@ Part 3 — Three Tiers + Build-Your-Own @@
+- **Flagship-protection rule:** the BYO sum to reach each tier's configuration must price *above* that tier's flagship — flagships must remain the rational discount.
++ **Flagship-protection rule:** the BYO sum to reach each tier's configuration must price *above* that tier's flagship by a **materially visible cushion — minimum 15% or ~$500, whichever is greater**. A $100 rounding gap fails the rule. Run this math *before* emitting the upgrade-pricing table: if any tier's BYO-sum cushion is too thin, adjust the per-dimension upgrade prices upward until every tier clears the threshold, then emit a single finalized upgrade table. **Never show mid-correction ("actually $5,000 exact; bump X to +$400") in the delivered output — the upgrade table and the flagship-protection math must be internally consistent as delivered.**
+@@ Self-Check Before Responding @@
+- Atoms truly atomic? Part 2 in table form with dependencies? Three tiers + BYO (or existing-tier overlay)? Each tier has configuration + positioning + pricing logic anchored, not just $? BYO has floor, ceiling, configurator dependencies, flagship-protection rule? Domain-specific dimensions added if needed? Stayed structural — no marketing or positioning drift?
++ Atoms truly atomic? Part 2 in table form with dependencies? Three tiers + BYO (or existing-tier overlay)? Each tier has configuration + positioning + pricing logic anchored, not just $? BYO has floor, ceiling, configurator dependencies, flagship-protection rule? **Ran flagship-protection math before emitting the upgrade table — every tier clears the 15%-or-$500 cushion, and no inline corrections leak into the delivered output?** Domain-specific dimensions added if needed? Stayed structural — no marketing or positioning drift?
+```
+
+This adds a numeric threshold (removing the ambiguity that permits $100 cushions), sequences the math before the table (preventing the "correction leak" pattern), and adds a self-check item so the model verifies internal consistency before responding.
