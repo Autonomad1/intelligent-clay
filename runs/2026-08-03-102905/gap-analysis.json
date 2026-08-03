@@ -1,0 +1,120 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table header says 'Price' but spec requires 'Pricing logic' per tier; pricing logic is provided below the table but not per-row as spec implies",
+      "Rush pace upgrade (+$200) combined with the block rule (Rush blocks Unlimited revisions and Deep depth) is consistent, but the BYO ceiling of $1,700 vs Premium $1,850 gives only a $150 gap \u2014 thin flagship protection at the ceiling boundary",
+      "Vague-input preamble is arguably unnecessary here since user gave a concrete $400 anchor and named the service (resume writing) \u2014 borders on lampshading"
+    ],
+    "suggested_fixes": [
+      "Restructure Part 3 tier table to include a 'Pricing logic' column per tier rather than only a 'Price' column with logic below",
+      "Widen the BYO ceiling-to-Premium gap (e.g., ceiling at $1,500) to make the auto-route to Premium more obviously rational",
+      "Skip the assumption-stub preamble when the user provides a concrete price anchor; reserve it for truly vague inputs"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing logic uses relative multipliers (2.5\u20133\u00d7 A, 2\u00d7 B) which edges toward fabrication given the truly vague input \u2014 spec says use placeholder tokens, not invent ratios",
+      "Follow-up menu offers only pricing re-anchor instead of choosing one from the spec's menu (scope language, configurator JSON, edge-case stress-test, highest-leverage atom, pricing validation) \u2014 technically a pricing-validation variant but narrows the menu"
+    ],
+    "suggested_fixes": [
+      "In Part 3, keep tier prices as bare +$A/+$B/+$C tokens without asserting multiplier ratios until sub-niche is named",
+      "Present the full optional follow-up menu (or explicitly pick one) per spec rather than collapsing to a pricing-only prompt"
+    ]
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": false,
+    "gaps": [
+      "Part 3 flagship-protection math is shown mid-correction rather than clean: the Growth row states '$5,000+ \u2192 actually $5,000 exact; bump content brief step to +$400 to yield $5,100' which exposes working rather than presenting a finalized table",
+      "Per-dimension upgrade pricing table lists 'Content: None \u2192 Brief-only' at +$300, but the flagship-protection commentary retroactively instructs adjusting it to +$400 \u2014 the upgrade table and the math table are internally inconsistent as delivered",
+      "Starter equivalent BYO sum shows only $100 cushion ($2,100 vs $2,000), which is razor-thin and arguably violates the spirit of the flagship-protection rule (flagship must feel like a rational discount, not a $100 rounding)",
+      "Optional follow-up menu is truncated to a single option presented as the only option ('One follow-up available') rather than offering one appropriate choice from the menu with awareness of alternatives \u2014 minor spec drift on the follow-up framing",
+      "Memory preamble neither included nor explicitly noted as omitted; spec says omit silently if unavailable, which is fine, but no assumption stub was needed here since input was concrete \u2014 acceptable"
+    ],
+    "suggested_fixes": [
+      "Finalize the upgrade pricing table with 'Content: None \u2192 Brief-only' at +$400 before presenting the math table, so both tables agree without inline corrections",
+      "Rebuild the Starter-equivalent BYO sum to yield at least ~$300\u2013500 cushion (e.g., raise Keywords 5\u219210 to +$500 or Scope Local\u2192National+comp to +$700) so flagship discount is materially visible",
+      "Present the follow-up as 'Want any of these? [list 2\u20133 from the menu]' rather than pre-selecting one, or explicitly state why configurator-output is the highest-leverage next step here"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier rows not rendered as a table like the inline example (minor stylistic divergence, spec doesn't strictly require table format for tiers)",
+      "Follow-up menu offers three options with 'pick one next' rather than presenting a single recommended follow-up as the spec's 'offer one based on context' suggests"
+    ],
+    "suggested_fixes": [
+      "Optionally render the three tiers in a compact table (Tier | Price | Anchor) to mirror the inline example's format",
+      "Recommend one follow-up based on context (e.g., lead with Configurator output mode) rather than presenting a menu of three"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing tokens are inconsistent \u2014 spec prescribes +$A/+$B/+$C placeholder tokens, but output uses $B for Practitioner, $C for Studio, $D for Foundry (skipping $A which would map to Free Core at $0, acceptable but the BYO section then introduces a separate $X\u2081\u2013$X\u2081\u2086 token series without reconciling with the tier tokens).",
+      "Vague-input preamble is borderline \u2014 the input actually named the offering concretely (open-source skill, GitHub, MIT, claude-mem), so treating it as vague and using placeholder tokens may be over-cautious; sub-niche 'developer tools / open-source dev tooling SaaS' arguably has known norms.",
+      "Flagship-protection rule states \u226520% for Studio but doesn't show the arithmetic proof (BYO-sum > flagship) that the spec's overlay/flagship logic implies should be demonstrable.",
+      "Follow-up menu offers only one option ('highest-leverage atom'), which matches spec ('offer one'), but the phrasing 'One follow-up worth naming' slightly editorializes rather than presenting from the menu cleanly."
+    ],
+    "suggested_fixes": [
+      "Unify token scheme: use $A/$B/$C for tiers and $A1..$An for BYO upgrades, or state explicitly that $X tokens are BYO-only and independent of tier tokens.",
+      "Replace vague-input preamble with a sub-niche anchor attempt (e.g., 'anchoring against developer-tool/prosumer-SaaS norms: Practitioner ~$500\u20132K/yr, Studio ~$3\u20138K/yr, Foundry ~$15K+/yr license floor') since the offering is concretely described.",
+      "Add a one-line arithmetic check under flagship-protection: 'BYO to reach Studio config = base + [sum of relevant $X upgrades] \u2248 1.2\u20131.4\u00d7 Studio flagship.'",
+      "Present the follow-up as a bulleted single-choice from the spec's menu rather than a prose recommendation, to match the skill's own format."
+    ]
+  }
+]
