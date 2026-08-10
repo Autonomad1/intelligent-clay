@@ -1,0 +1,133 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing logic uses +$A/+$B/+$C tokens which is correct for vague input, but the Lite positioning line technically doesn't identify a distinct customer segment as sharply as spec's 'who it's for, what they get' \u2014 minor",
+      "BYO per-dimension pricing uses generic +$X/+$Y/+$Z placeholders rather than distinct tokens tied to the +$A/+$B/+$C anchors, creating slight ambiguity about relative magnitudes"
+    ],
+    "suggested_fixes": [
+      "Tighten Lite positioning to name the client type more concretely (e.g., 'returning lifter' or 'self-motivated intermediate') even under token pricing",
+      "Tie BYO upgrade tokens to the tier anchors (e.g., '+~15% of $A per step') so the flagship-protection math is inspectable without real dollars"
+    ]
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [
+      "Minor: SaaS license ($99/mo) is mentioned as a fixed atom in the preamble but not explicitly listed within Part 1's atomic decomposition groups (e.g., as a separate 'Fixed product atom' line)",
+      "Minor: Depth upgrade pricing shows Configured\u2192Bespoke as +$2,200 but the flagship-protection math uses +$3,000 for Bespoke, an internal inconsistency",
+      "Minor: Live per-team pricing listed as +$400/team but flagship-protection calc uses $1,600 for 4 teams which is consistent, though Core tier includes Live group not per-team \u2014 BYO-to-Core math correctly uses +$500, OK; however Premium BYO omits the base Live group\u2192per-team differential clarity"
+    ],
+    "suggested_fixes": [
+      "Add a 'Fixed product atom' bullet in Part 1 explicitly naming the $99/mo SaaS license as out-of-scope-for-decomposition",
+      "Reconcile Bespoke depth upgrade: either change per-dimension pricing to +$3,000 or update the flagship-protection calculation to use +$2,200",
+      "Clarify in BYO that Live per-team replaces (not stacks on) Live group, and show the substitution delta explicitly in the Premium sum-of-parts calc"
+    ]
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 Core flagship-protection math inconsistency: the tier table claims BYO-equivalent ~$1,050 (saves ~$200), but the explicit flagship-protection calculation shows $975 (saves $125)",
+      "Minor: Core BYO sum of $975 is below the stated $1,050 in the tier anchor row, creating internal contradiction"
+    ],
+    "suggested_fixes": [
+      "Reconcile Core BYO-equivalent figure: either adjust per-dimension upgrade prices so BYO sums to ~$1,050, or update the tier anchor row to reflect the actual $975 sum and $125 savings"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [
+      "Optional Follow-Up Menu: spec says offer ONE follow-up based on context; output instead asks a multi-part re-anchor question that reads closer to clarifying questions than a menu pick",
+      "Part 3 pricing logic for Lite uses a numeric range ('~35\u201340% of flagship') which edges toward fabrication given vague input; tokens should carry the anchor without percentage specificity",
+      "Premium pricing logic similarly asserts '2.5\u20133\u00d7 flagship' multiplier without user-provided anchor, mildly violating the 'do not fabricate' bright line for vague input"
+    ],
+    "suggested_fixes": [
+      "Replace the closing re-anchor paragraph with a single menu-style offer, e.g., 'Want me to (a) re-anchor with $ figures once you name the sub-niche, or (b) stress-test against an extreme scenario?'",
+      "Drop the '~35\u201340% of flagship' phrasing and state the anchor purely in token terms (e.g., '+$A, positioned as decisive entry vs. one-off session bundles')",
+      "Remove the '2.5\u20133\u00d7 flagship' multiplier from Premium and keep the benchmark description qualitative until real numbers are provided"
+    ]
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing self-correction is exposed mid-output ('Wait \u2014 this would make Starter cheaper as BYO') rather than resolved silently, which reads as thinking-out-loud instead of finished structure",
+      "Starter flagship-protection shows break-even ($2,000 vs $2,000) rather than BYO pricing strictly above the tier price, violating the spirit of the flagship-protection rule that flagships must remain the rational discount",
+      "Pro's 'unlimited \u2248 60 kw' assumption for math is stated but not justified as a configurator ceiling rule \u2014 leaves ambiguity about how unlimited is priced in BYO",
+      "Positioning lines for existing tiers are labeled 'unchanged, for reference' but the spec requires each tier to have configuration + positioning + pricing logic anchored; pricing logic/anchor per tier is not explicitly stated"
+    ],
+    "suggested_fixes": [
+      "Revise pricing table cleanly on first pass (bundle report as $500 line item from the start) instead of narrating the correction",
+      "Adjust Starter BYO equivalent to price strictly above $2,000 (e.g., $2,100\u2013$2,200) so Starter wins, not ties",
+      "Add an explicit BYO rule: 'Keywords above 50 auto-route to Pro' to close the 'unlimited' pricing ambiguity",
+      "Add a one-line pricing-anchor rationale under each preserved tier (e.g., 'Growth anchored at mid-market retainer benchmark $4\u20136K/mo')"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier headers: pricing logic mentions Signature BYO sum-of-parts as ~$52K, but the actual BYO math at the bottom computes ~$61K \u2014 internal inconsistency in flagship-protection numbers.",
+      "Follow-up menu offers three options; SKILL.md says 'offer one based on context' (minor wording \u2014 'pick one' is presented but three are listed, which matches the spec's menu pattern but borders on the anti-pattern of over-optioning)."
+    ],
+    "suggested_fixes": [
+      "Reconcile the Signature sum-of-parts figure: update the tier's pricing-logic line to match the ~$61K computed in the flagship-protection math (or recompute both to a single number).",
+      "Tighten the follow-up to a single recommended option with the others as secondary, per 'offer one based on context'."
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table format: the inline example shows tiers rendered as a table with Price and Anchor columns, but the output uses prose bullets per tier \u2014 minor stylistic deviation, still contains configuration/positioning/pricing logic",
+      "Pricing-Anchor Rule application: input names 'Claude Code skill for consultants/coaches/agencies' which arguably reaches sub-niche specificity (dev-tool/skill market has some norms), but output treats as vague with tokens \u2014 defensible but borderline; no explicit justification given for token choice",
+      "Foundry pricing logic references '$C/mo range once named' introducing a third token mid-tier without listing it in the BYO token legend \u2014 small inconsistency",
+      "Flagship-protection rule for Studio uses '$S1\u00d74' (4 quarters) but Studio config specifies 'Async blueprint review (3/quarter)' not 4/year of the quarterly bundle \u2014 the arithmetic conflates quarters-of-service with review-count and could mislead the builder"
+    ],
+    "suggested_fixes": [
+      "Consider rendering the three tiers as a compact table (Tier | Price | Configuration summary | Anchor) to match the inline example's Part 3 format",
+      "Add a one-line note explaining why 'Claude Code skill' was treated as token-worthy despite naming a platform (e.g., 'no established $ norms for paid Claude skills yet')",
+      "Add $C to the BYO token legend or remove it from Foundry's anchor prose to keep the token set self-contained",
+      "Clarify the Studio flagship-protection formula: either '$S1 \u00d7 4 quarters' with $S1 defined as the quarterly bundle price, or restate as '4 \u00d7 (3-review quarterly bundle)' so the builder can plug numbers unambiguously"
+    ]
+  }
+]
