@@ -1,0 +1,144 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing anchor tokens use '+$A/+$B/+$C' but the spec's example uses standalone tokens; minor \u2014 acceptable but the '+' prefix implies delta rather than absolute price for tier rows",
+      "Follow-up menu offers two options ('re-anchor' and 'stress-test') in one question; spec says offer ONE follow-up based on context"
+    ],
+    "suggested_fixes": [
+      "In the Part 3 tier table, use bare tokens ($A/$B/$C) for absolute tier prices and reserve '+$' prefix for BYO deltas to avoid ambiguity",
+      "Pick a single highest-leverage follow-up (e.g., just the re-anchor offer) rather than bundling two"
+    ]
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [
+      "Part 1 atoms are grouped but not all pass the standalone-value test strictly (e.g., '30-min kickoff call' or 'Data migration mapping doc' as sellable-alone atoms are borderline) \u2014 spec requires each atom to answer 'could a customer buy just this and get value?'",
+      "SaaS $99/mo fixed atom is acknowledged in the preamble but not explicitly listed as a fixed atom inside Part 1's decomposition, making the hybrid treatment implicit rather than structural",
+      "Follow-up menu offers three options instead of the spec's 'offer one based on context'"
+    ],
+    "suggested_fixes": [
+      "Add a 'Fixed atoms (not decomposed)' subsection in Part 1 listing the $99/mo SaaS seat to make hybrid handling explicit",
+      "Audit Part 1 atoms and either merge sub-atomic items (e.g., kickoff call) into time-block bundles or annotate which are sellable standalone vs. only-in-bundle",
+      "Trim the follow-up menu to a single most-relevant option per spec ('offer one based on context')"
+    ]
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 Flagship-protection check: initial BYO sum to Core ($1,150) equals flagship exactly, violating the 'flagship must feel like a discount vs. parts' rule; the inline self-correction adjusts LinkedIn to $300 but leaves the per-dimension upgrade table above still showing $250, creating an internal inconsistency.",
+      "Part 2 dependency 'Bio only unlocks at Senior+' in Breadth row is slightly redundant with the separate 'Career Level' dimension's invalid-combo entry, but not contradictory \u2014 minor."
+    ],
+    "suggested_fixes": [
+      "Update the per-dimension upgrade pricing table to show LinkedIn at +$300 (matching the corrected flagship-protection math) so the BYO table and the check agree.",
+      "Consolidate the Bio-level gating into a single location (either the Breadth dependency or the invalid-combinations list) to avoid duplicate rule statements."
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table format inconsistency \u2014 inline example shows tiers can be rendered as a table with Price/Anchor columns, but output uses bulleted sub-sections; minor stylistic drift, not a spec violation",
+      "Flagship-protection rule numbers (~15% above +$B, ~20% above +$C) are asserted but the per-dimension upgrade increments are left undefined, so the rule isn't verifiable from the blueprint alone",
+      "Ceiling rule uses '+$C \u00d7 0.9' which is below Premium's own price \u2014 logically the ceiling should be at or above Premium, not below it"
+    ],
+    "suggested_fixes": [
+      "Optionally render tiers as a compact table (Tier | Price | Config summary | Anchor) to match the inline example's style",
+      "Define placeholder increments (e.g., +$a per Depth level, +$b per Cadence step) so the flagship-protection math is inspectable",
+      "Change ceiling to something like 'if BYO sums above +$C, auto-route to Premium or custom' \u2014 \u00d70.9 makes the ceiling lower than Premium itself"
+    ]
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-anchor rationale: each existing tier is preserved with price + configuration, but no explicit 'positioning line' (who it's for) or 'pricing logic' anchor sentence per tier as required by the spec's Part 3 structure \u2014 the overlay mode inherits tier prices but the spec still expects each tier to have configuration + positioning + pricing logic articulated.",
+      "Flagship-protection presented as a post-hoc validation with a discovered failure (Starter collision) rather than a clean pre-validated result; Option A is 'assumed going forward' but the BYO upgrade table above still shows the old $1,200 base, creating internal inconsistency between the table and the validation math.",
+      "Follow-up menu offers three options instead of the spec's 'offer one based on context'."
+    ],
+    "suggested_fixes": [
+      "Add a one-line positioning + pricing-logic sentence under each of Starter/Growth/Pro (e.g., 'Starter \u2014 for solo founders validating SEO; anchored as sub-agency entry point').",
+      "Re-emit the BYO base row and upgrade table with the $2,200 Option A base baked in (or present both options cleanly before the validation) so the numbers in the table and the flagship-protection math agree.",
+      "Trim the follow-up menu to a single most-relevant offer (likely the JSON/YAML configurator emit, given this is a build-your-own overlay)."
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing logic for Tier 2 (Cohort) states 'Unchanged' as anchor but doesn't fully articulate what it's anchored against beyond the payback ratio \u2014 minor thinness vs. Tier 1 and Tier 3 which have clearer anchor logic",
+      "Memory preamble omitted \u2014 acceptable if memory unavailable, but not explicitly signaled"
+    ],
+    "suggested_fixes": [
+      "Expand Cohort anchor to name the comparable (e.g., 'anchored against 1:1 coaching packages at $3\u20135K; cohort delivers 80% of outcome at \u2153 price')",
+      "No fix needed if memory truly unavailable; spec permits silent omission"
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Vague-input preamble used despite pricing anchors ($15K\u2013$80K/mo) being provided \u2014 spec says use $ figures when user gives concrete prices, not placeholder stubs; the stub language ('will re-anchor if you share...') is slightly misapplied since anchors were given",
+      "Studio pricing logic references '$12\u201320K senior freelancer + PM bundles' \u2014 a fabricated benchmark for a generic comparison not grounded in the user's stated numbers",
+      "Atelier configuration says 'Partner-led (waiver on volume cap with dedicated pod)' which technically violates the Part 2 dependency 'Partner-led blocks High volume' \u2014 the waiver is hand-waved rather than resolved cleanly"
+    ],
+    "suggested_fixes": [
+      "Drop the vague-input preamble since $15K\u2013$80K range was provided; open directly with Part 1",
+      "Anchor Studio pricing logic against the user's stated $15K floor without inventing external freelancer-bundle benchmarks",
+      "Either remove High volume from Atelier or add an explicit 'Dedicated Pod' dimension/exception in Part 2 so the Partner-led + High volume combination is a defined configuration, not a waiver"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier pricing uses placeholder tokens (+$B, +$C) but the vague-input preamble appears at the end rather than opening the response, violating the spec's 'open with a one-line assumption stub' instruction",
+      "Tier 1 (Clay Open) pricing logic lists $0 concretely while Tiers 2/3 use tokens \u2014 mixing anchored and token pricing without explanation of why $0 is defensible as a concrete anchor",
+      "BYO per-dimension pricing uses lowercase single-letter tokens (+$r, +$d, +$t, etc.) which deviates from the spec's demonstrated +$A/+$B/+$C convention and creates inconsistency with the tier-level +$B/+$C tokens (collision: $B means two different things)",
+      "Flagship-protection rule states the sum 'must be > Pro's $B' but since all values are tokens, the rule is unverifiable as written \u2014 no arithmetic demonstration that tokens sum correctly",
+      "Memory preamble is absent \u2014 spec says to query claude-mem before producing; given this is the skill applied to its own domain (productization), a note on memory availability or its omission would be appropriate",
+      "Follow-up menu offers three options ('(a)\u2026(b)\u2026(c)\u2026') rather than the spec's 'offer one based on context'"
+    ],
+    "suggested_fixes": [
+      "Move the 'Assuming...' preamble to the very top of the response, before Part 1",
+      "Either tokenize Clay Open as well or justify $0 explicitly as a strategic anchor (loss-leader) distinct from norm-based pricing",
+      "Rename BYO per-dimension tokens to avoid collision with tier tokens \u2014 e.g., use +$D1, +$D2\u2026 or +$\u03b1, +$\u03b2\u2026 reserving +$A/+$B/+$C for tier-level anchors",
+      "Add a worked token-arithmetic line showing r+d+t+a+p+x+action > $B to make flagship-protection verifiable symbolically",
+      "Add a one-line note: 'Memory unavailable / no prior runs on meta-productization; proceeding from first principles' to comply with memory-integration section",
+      "Reduce follow-up menu to a single contextual offer (most likely: re-anchor with concrete $ once a benchmark is named)"
+    ]
+  }
+]
