@@ -1,0 +1,116 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier pricing uses tokens (+$A/+$B/+$C) but tier table format from inline example (Tier | Price | Anchor) is not used \u2014 minor formatting divergence, still spec-compliant since spec requires configuration + positioning + pricing logic per tier",
+      "Follow-up menu offers three options instead of the spec's 'offer one based on context'"
+    ],
+    "suggested_fixes": [
+      "Optionally render Part 3 tiers as a table matching the inline example's Tier|Price|Anchor format for consistency",
+      "Trim follow-up menu to a single context-appropriate suggestion (likely 'Re-anchor with real $') per spec's 'offer one' directive"
+    ]
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing anchor for Lite lacks explicit dollar benchmark beyond '50% of current flagship' \u2014 acceptable since user gave concrete price, but could tie to competitive SMB onboarding norms",
+      "Flagship-protection math shown for Core and Premium but not explicitly for Lite (minor, since Lite = floor)"
+    ],
+    "suggested_fixes": [
+      "Add one-line competitive anchor for Lite (e.g., 'vs. typical $500\u20131,500 SMB onboarding packages')",
+      "Optionally note that Lite = BYO floor so flagship-protection is trivially satisfied"
+    ]
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing anchor: existing tiers table lists price and configuration but omits explicit 'pricing logic / anchor' field required by spec (though anchor is implicit via flagship-protection math)",
+      "Flagship-protection math for Starter exposed a mid-output correction rather than presenting resolved numbers cleanly; slightly undermines 'produce, don't lampshade' discipline",
+      "BYO zones use price bands but Zone 2 and Zone 3 lack explicit floor/ceiling justification tied to adjacent flagship parity math (only Zone 1 states its ceiling logic)"
+    ],
+    "suggested_fixes": [
+      "Add a 'Pricing logic' line to each existing tier row (e.g., 'Anchored at 40% of Growth; entry price for SEO-curious SMBs') to satisfy Part 3's tier requirements",
+      "Resolve the Starter math silently and present only the final base=$1,200 + Starter-includes-check-in framing, moving the reasoning to a brief footnote",
+      "Add explicit floor/ceiling values and adjacent-flagship parity math for Zones 2 and 3 mirroring Zone 1's treatment"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing anchor for Studio Core shows a minor arithmetic inconsistency: the flagship-protection calc lists '$18K + $8K + $9K + $11K + $5K = $51K' but states the sum as ~$48K in the same sentence",
+      "BYO upgrade math for Premium (~$91K) exceeds the stated $72K ceiling, which would auto-route to Premium \u2014 the ceiling/BYO-sum relationship isn't reconciled explicitly",
+      "Follow-up menu offers only one option (edge-case stress-test) \u2014 spec says offer 'one based on context' which is satisfied, but no acknowledgment of alternatives"
+    ],
+    "suggested_fixes": [
+      "Fix Core BYO sum: state '$18K+$8K+$9K+$11K+$5K = $51K' consistently and recompute discount (~$42K vs $51K = ~18%)",
+      "Add a sentence clarifying that BYO configurations summing above the $72K ceiling are exactly what triggers the auto-route to Premium \u2014 making ceiling and flagship-protection consistent",
+      "No fix needed for follow-up menu \u2014 spec allows single contextual offer"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing logic uses token placeholders (+$A/+$B/+$C) but the vague-input preamble only cited buyer segment as the unlock variable \u2014 the spec's Pricing-Anchor Rule treats 'coaching/consulting' generically as vague, which is fine, but the tier count is technically four (Free + Pro + Studio + Enterprise) rather than the mandated three + BYO; Free is hand-waved as 'funnel, not a tier' but still occupies a tier row in the table, risking the 'five tiers' anti-pattern drift",
+      "BYO per-dimension upgrade pricing uses nested sub-tokens (+$a1, +$b1, etc.) without defining their relationship to the top-level +$A/+$B/+$C anchors, making the flagship-protection inequality unverifiable as written",
+      "Follow-up menu offers three options ('(a)/(b)/(c)') instead of the spec's 'offer one based on context'"
+    ],
+    "suggested_fixes": [
+      "Explicitly label Free as 'Tier 0 / funnel' outside the three-tier count, or collapse it into a one-line prefatory note above the Pro/Studio/Enterprise table to preserve the 'three tiers + BYO' structural rule",
+      "Define sub-tokens as fractions of the tier deltas (e.g., 'a1+a2 \u2248 0.4\u00d7($B\u2212$A)') so the flagship-protection inequality is checkable",
+      "Pick one follow-up (e.g., just the JSON configurator emit) rather than presenting a menu of three"
+    ]
+  }
+]
