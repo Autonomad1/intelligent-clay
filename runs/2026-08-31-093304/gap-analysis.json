@@ -1,0 +1,142 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [
+      "Memory preamble uses '*Memory unavailable \u2014 proceeding fresh.*' when spec says to omit the preamble silently if memory is unavailable",
+      "Pricing-Anchor Rule: input named 'freelance brand strategist' with $15K concrete price \u2014 anchoring is fine, but sub-niche is generic ('brand strategy'); use of specific $ benchmarks like '$25\u201350K agency' and '$40\u201375K consultancy retainers' is borderline since user only gave their own price, not competitive set"
+    ],
+    "suggested_fixes": [
+      "Remove the '*Memory unavailable*' line entirely \u2014 spec says omit silently when memory isn't there",
+      "Either caveat the competitive benchmarks as illustrative or offer pricing validation as the follow-up instead of highest-leverage atom"
+    ]
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [
+      "Vague-input preamble format deviates slightly from spec \u2014 spec requires 'will re-anchor with $ figures once you name [variable]' phrasing, but output uses concrete $ figures throughout so the preamble arguably shouldn't invoke the vague-input stub at all (user gave concrete $2,500 anchor)",
+      "SaaS $99/mo atom is mentioned in preamble but not explicitly listed as a fixed atom in Part 1 decomposition"
+    ],
+    "suggested_fixes": [
+      "Drop the 'Assuming...' stub since user provided concrete pricing ($2,500, $99/mo) \u2014 anchor is not vague; reserve that preamble for token-based outputs",
+      "Add an explicit '**Fixed atom (not decomposed):** SaaS license @ $99/mo/seat' line at the top of Part 1 to make the hybrid boundary visible in the structure itself"
+    ]
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-logic for Lite does not explicitly reference the sub-niche anchor (general resume writing norms) but the preamble already flagged vague-input; minor tension since tier prices are concrete $ figures despite the assumption stub saying figures would be re-anchored",
+      "Follow-up menu offers only one option (configurator JSON/YAML) which matches spec, but phrased as a direct question rather than presenting the highest-leverage single pick with rationale \u2014 acceptable but borderline"
+    ],
+    "suggested_fixes": [
+      "Either commit to concrete $ figures (drop the 'will re-anchor' hedge) or use placeholder tokens throughout Part 3 \u2014 don't do both",
+      "Optionally add a one-line rationale for why configurator JSON is the chosen follow-up given this context"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [
+      "Follow-Up Menu offers only one option (pricing re-anchor) rather than selecting one from the menu with awareness of alternatives; spec says offer one based on context, which is satisfied, but the phrasing doesn't clearly signal it's from a menu \u2014 minor.",
+      "Part 3 tier table's 'Configuration' column compresses all dimensions into one cell rather than showing level-per-dimension explicitly as a sub-structure; readable but slightly less scannable than spec's 'level on each dimension' intent."
+    ],
+    "suggested_fixes": [
+      "Optionally name the follow-up as one of the menu options (e.g., 'Pricing validation') to make the menu-selection explicit.",
+      "Consider a per-tier bullet list mapping each dimension \u2192 level for maximum clarity, though inline comma format is acceptable."
+    ]
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing anchor rationale: each existing tier lacks an explicit 'Pricing logic / anchor' line (SKILL requires configuration + positioning + pricing logic per tier); overlay preserves tiers but omits positioning lines for each",
+      "BYO 'Base price' convention: SKILL specifies base is 'typically Lite' \u2014 output uses a sub-Starter $750 base without explicitly flagging the deviation from the Lite-as-base convention",
+      "Flagship-protection for Starter is shown as broken and left as a recommendation rather than resolved in the emitted blueprint \u2014 spec says flagships 'must remain the rational discount,' so the delivered BYO should already enforce it",
+      "Follow-up menu offers three options instead of the spec's 'offer one'",
+      "No memory preamble or explicit silent-omit note (minor; spec allows silent omit, so acceptable but worth confirming)"
+    ],
+    "suggested_fixes": [
+      "Add a one-line positioning + pricing-anchor sentence under each preserved tier (Starter/Growth/Pro) in Part 3",
+      "Explicitly note that BYO base sits *below* Starter per overlay mode, deviating from the default Lite-as-base convention",
+      "Bake the Starter fix into the emitted BYO (e.g., raise base to $1,200 or add inclusions) so flagship protection holds on delivery, not as a TODO",
+      "Collapse the three follow-up options into a single recommended next step per SKILL's 'offer one' rule"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [
+      "Follow-up menu offers only one option phrased as a single suggestion; spec says 'offer one based on context' which is satisfied, but the phrasing bundles it with a rhetorical question rather than a clean menu-style offer",
+      "Pricing anchor for Lite cites 'generic Udemy/Gumroad courses' \u2014 arguably a parent-category norm rather than sub-niche (enterprise-sales course) benchmark, brushing the Pricing-Anchor bright line",
+      "No memory preamble or note about memory unavailability \u2014 acceptable per spec (silent omit), not a gap"
+    ],
+    "suggested_fixes": [
+      "Present the follow-up as an explicit single-option offer (e.g., 'Follow-up available: highest-leverage atom identification \u2014 want it?') to match menu format",
+      "Re-anchor Lite against enterprise-sales-specific self-paced products or state the benchmark as a placeholder if no sub-niche norm exists"
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table format: spec's inline example shows a compact tier table with Price and Anchor columns, but output uses prose sections per tier \u2014 this is acceptable since spec requires configuration/positioning/pricing logic per tier, not a specific table format",
+      "Studio tier flagship-protection note is soft: BYO sum equals Studio base exactly ($18K = $18K), so Studio doesn't 'win' on price at all \u2014 flagship-protection rule states BYO sum must price *above* the tier's flagship",
+      "Base-price upgrade math has a minor inconsistency: Studio is Dual-discipline Senior-led at $18K base, but adding 'CD-led +$16K' from Senior-led baseline while Atelier config (Full-stack +$13K, Heavy +$14K, Strategy-led +$14K, CD-led +$16K, Expedited +$4K, +CD bundled, Dedicated pod +$18K) sums to $18K+$79K=$97K, close to stated $96K \u2014 acceptable rounding"
+    ],
+    "suggested_fixes": [
+      "For Studio flagship-protection: either raise Studio price slightly above $18K base OR explicitly reframe as 'Studio ties BYO on price but wins on bundled account-lead + onboarding value' rather than implying price protection",
+      "Optionally render Part 3 tiers as a summary table matching the inline example's Price/Anchor format before the detailed per-tier breakdown",
+      "Double-check BYO upgrade math sums to stated Signature ($55K) and Atelier ($96K) figures and show the arithmetic explicitly to make flagship-protection verifiable"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing anchors: Studio and Foundry use placeholder tokens (+$B, +$C) but the Anchor column references concrete comparisons ('one afternoon of billable time', '~$15\u201330K') \u2014 mixing token pricing with narrative anchors is inconsistent with the Pricing-Anchor Rule which says to use tokens OR figures based on input quality",
+      "Part 1 Time blocks: 'Half-day custom-skill authoring sprint' is borderline a phase/bundle rather than an atom \u2014 could a customer buy just this and get standalone value? Slightly ambiguous",
+      "Part 3 Forge base: states 'Open ($0) + Studio seat (+$B)' as base, but spec says base is 'typically Lite' \u2014 here Lite (Open) is free and BYO floor jumps to Studio, which is defensible but the framing conflates the free tier with the BYO base confusingly",
+      "Memory preamble: skill spec says to prepend memory note if 2+ similar past runs exist; output omits any mention \u2014 acceptable if memory unavailable, but no acknowledgment either way",
+      "Part 2 dependency 'Native integrations + no paid tier' in invalid combinations is redundant with the dependency column already stating 'Native integrations require paid'"
+    ],
+    "suggested_fixes": [
+      "Either commit to full token pricing (remove '$15\u201330K' and 'billable afternoon' specifics) or anchor with real figures throughout \u2014 don't mix",
+      "Reframe 'Half-day custom-skill authoring sprint' as a concrete deliverable (e.g., 'Custom vertical skill file authored to spec') to pass the atomicity test",
+      "Clarify Forge base as 'Studio seat ($B) \u2014 free Open tier is fixed and non-configurable' to separate the free product from the BYO floor",
+      "Add a silent-omission line or explicit 'No prior runs in memory' note to make memory-integration behavior transparent",
+      "Remove the redundant 'Native integrations + no paid tier' bullet from invalid combinations since it's already enforced via the Format dimension dependency"
+    ]
+  }
+]
