@@ -1,0 +1,136 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [
+      "Part 2 table contains a typo/artifact in Pace levels: 'Standard (ial 4\u20136 mo)' \u2014 stray 'ial' fragment",
+      "Follow-up menu offers only 'pricing validation / re-anchor' phrased as a question rather than presenting one option from the spec's menu list explicitly"
+    ],
+    "suggested_fixes": [
+      "Fix Pace level to 'Standard (4\u20136 mo)' \u2014 remove the 'ial' artifact",
+      "Frame the closing follow-up as one explicit option from the spec's menu (e.g., 'Pricing validation \u2014 re-anchor tokens to $ figures') to match the Optional Follow-Up Menu format"
+    ]
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing for Core and Premium mixes placeholder tokens (+$B, +$C) with concrete dollar ranges ($1,000\u2013$1,200; $2,000\u2013$2,500), which straddles the Pricing-Anchor Rule's bright line for vague input",
+      "BYO per-dimension upgrades are presented as concrete dollar figures despite the vague-input preamble declaring tokens will be used until sub-niche is named",
+      "Positioning lines for tiers lean slightly descriptive/marketing-flavored ('cohesive presence', 'coaching outcome without the coaching retainer') rather than pure structural who/what"
+    ],
+    "suggested_fixes": [
+      "Replace concrete $ ranges in Core/Premium rows with pure tokens (+$B, +$C) and move the numeric ranges into a separate 'if re-anchored as mid-market generalist' note",
+      "Convert BYO upgrade prices to token deltas (+$b1, +$b2, etc.) or explicitly label the section 'illustrative pending re-anchor' at the top rather than inline",
+      "Tighten positioning lines to structural who-it's-for / what-they-get without evocative phrasing"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [
+      "Part 2 renders Focus Scope as a separate second table rather than a single unified dimensions table as specified ('always a table', 'one row per dimension')",
+      "Follow-up menu offers two options ('a' or 'b') instead of the spec's 'offer one based on context'"
+    ],
+    "suggested_fixes": [
+      "Merge the invented 'Focus Scope' dimension as an additional row inside the single Part 2 table rather than a second table",
+      "Present only one follow-up option (e.g., re-anchor with $ figures) instead of an a/b choice"
+    ]
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 slotting: spec requires BYO slot 'underneath the cheapest AND between existing tiers' \u2014 the output covers this via slotting rules, but there are no discrete named BYO tier slots (e.g., 'BYO-Micro' below Starter, 'BYO-Flex' between tiers); it's presented as a single continuous configurator rather than positioned slots.",
+      "Flagship-protection: Starter and Growth explicitly FAIL the BYO-sum-must-exceed-flagship rule in the output itself; spec says flagships 'must remain the rational discount' \u2014 shipping a blueprint that admits two of three flagships lose is a spec violation, even with a repricing offer at the end.",
+      "Anchor for BYO base ($900) and all per-dimension prices are fabricated $ figures without stated benchmark; SEO retainers are a named sub-niche so $ is allowed, but no anchor logic is shown per the Pricing-Anchor Rule."
+    ],
+    "suggested_fixes": [
+      "Name 1\u20132 discrete BYO slot positions (e.g., 'BYO-Lite <$2K' and 'BYO-Custom between tiers') rather than a pure continuous configurator, to match 'slot BYO underneath the cheapest and between existing tiers'.",
+      "Reprice the BYO line items inline before delivering so all three flagship-protection checks pass in the blueprint itself \u2014 don't ship a blueprint where 2/3 flagships fail and defer the fix to a follow-up.",
+      "Add a one-line anchor rationale for BYO base and key upgrades (e.g., 'base anchored against freelance SEO audits ~$800\u20131,200/mo')."
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing anchor: Lite anchor references '$200 book/Udemy' as a benchmark for a generic 'freelance course' category, which borders on the vague-category fabrication the Pricing-Anchor Rule warns against",
+      "Premium tier configuration is ambiguous ('Accelerated 1:1 OR cohort + Ongoing') \u2014 a tier should specify one configuration, not an either/or"
+    ],
+    "suggested_fixes": [
+      "Reframe Lite anchor around the sub-niche (enterprise-freelance education) or use a placeholder token rather than citing generic course-market prices",
+      "Pick one canonical Premium configuration (e.g., Accelerated 1:1 + Ongoing DM) and move the alternative into BYO territory"
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": false,
+    "gaps": [
+      "Memory Integration: Skill spec says 'If memory is unavailable, omit the preamble silently' \u2014 output leads with '*Memory unavailable \u2014 proceeding without preamble.*' which violates the silent-omit rule.",
+      "Pricing-Anchor Rule: User provided concrete $15K\u2013$80K/mo range (concrete prices), so anchors should use $ figures per the rule, but output uses placeholder tokens (+$X/+$Y/+$Z) and defers pricing \u2014 misapplies the anchor decision table.",
+      "Vague-input preamble: Preamble is used despite input not being vague (concrete range + clear scope), and it lampshades by asking for vertical/length before producing anchored numbers.",
+      "Part 3 Pricing logic: Tier pricing logic references tokens rather than concrete $ figures within the stated $15K\u2013$80K/mo band, failing 'Tiers should land within stated $15K\u2013$80K/mo range' note."
+    ],
+    "suggested_fixes": [
+      "Remove the 'Memory unavailable' line entirely \u2014 omit silently when memory is absent.",
+      "Treat the $15K\u2013$80K/mo range as concrete input and assign Studio ~$15\u201320K, Signature ~$35\u201345K, Atelier ~$70\u201380K rather than +$X/Y/Z tokens.",
+      "Drop the vague-input preamble; go straight to Part 1 since the user supplied a concrete price band and scope.",
+      "Rewrite BYO upgrade deltas as $ figures anchored to the given range so flagship-protection math is verifiable in-output."
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table format: spec's inline example shows tiers can be rendered as a table with Price/Anchor columns, but the output uses prose blocks \u2014 acceptable but less scannable",
+      "Memory Integration preamble: spec says to prepend memory note if claude-mem available with 2+ prior runs; output omits it (acceptable if unavailable, but not stated)",
+      "Follow-up menu: spec says offer ONE follow-up based on context; output offers three options ('pick one')",
+      "Pricing-Anchor Rule application: input named a specific sub-niche ('Claude Code skill for consultants/coaches/agencies productizing services') but output used placeholder tokens ($A, $B) rather than attempting benchmarked figures from comparable dev-tool/prosumer SaaS pricing",
+      "Vague-input preamble slightly lampshades ('will re-anchor once you name the target buyer') rather than fully inferring \u2014 buyer segment was arguably named in the prompt"
+    ],
+    "suggested_fixes": [
+      "Render Part 3 tiers as a summary table (Tier | Price | Anchor) matching the inline example format, with prose details below",
+      "Add a one-line note when memory is unavailable-or-empty is intentional, or silently omit per spec \u2014 current output is compliant but ambiguous",
+      "Offer exactly ONE follow-up option chosen for this context (likely 'Pricing validation' given token usage), not a menu of three",
+      "Given the prompt named the sub-niche (Claude Code skills / dev-tool prosumer SaaS), attempt anchored $ figures (e.g., Pro ~$29\u201379/mo vs. Cursor/Raycast Pro; Studio ~$300\u2013800/mo vs. team dev tools) instead of tokens",
+      "Tighten preamble to infer buyer segment from prompt ('solo consultants productizing their own offerings, with agency/embed as expansion') rather than asking user to name it"
+    ]
+  }
+]
