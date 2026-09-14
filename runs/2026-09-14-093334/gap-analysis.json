@@ -1,0 +1,133 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing logic uses token +$B alongside the concrete $15K anchor the user provided \u2014 spec says when user gave concrete prices, use $ figures across tiers",
+      "Follow-up menu offers only one option but spec says offer 'one based on context' \u2014 acceptable, though pricing validation is offered without other context-driven alternatives (minor)"
+    ],
+    "suggested_fixes": [
+      "Since user gave $15K, anchor all three tiers in $ figures (e.g., Lite ~$6K, Core $15K, Premium ~$32K) rather than mixing tokens with the known anchor",
+      "Confirm single follow-up is the highest-leverage given user provided a concrete price \u2014 pricing validation is reasonable but could instead offer configurator output or scope language"
+    ]
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [
+      "Part 2 table includes 7 dimensions but the invented domain-specific one (Data Volume) is not explicitly flagged as an invented/domain-specific dimension per the spec's guidance",
+      "Lite tier pricing uses '+$A' token in the table but then contradicts itself with a concrete '$999\u2013$1,200' range in pricing logic and '$999' as BYO base \u2014 mixes token and concrete anchoring inconsistently",
+      "Premium pricing shown as '+$C' token but immediately resolved to '$6,500\u2013$7,500' \u2014 same token/concrete inconsistency",
+      "BYO per-dimension upgrades use concrete dollar figures despite the preamble claiming the anchor is vague and will be re-anchored later"
+    ],
+    "suggested_fixes": [
+      "Add a brief note calling out 'Data Volume' as an invented domain-specific dimension for SaaS onboarding",
+      "Commit to one anchor mode per tier: since Core is concretely $2,500, resolve Lite and Premium to concrete figures too and drop the +$A/+$C tokens (or keep tokens throughout and remove the concrete ranges)",
+      "Either present BYO upgrades as tokens (+$a1, +$a2...) to match the vague-input stance, or drop the 'illustrative \u2014 re-anchor' hedge and commit to the figures",
+      "Ensure token vs. concrete pricing is consistent across the tier table, pricing logic, and BYO section"
+    ]
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 Pricing column mixes anchor with $ figure but Core's anchor references sum-of-parts (~$950) while flagship is $850 \u2014 this is fine, but the Considered pace shows '\u2013$0 (Considered \u2014 no discount)' which is stylistically odd formatting",
+      "BYO per-dimension upgrades don't explicitly restate the flagship-protection rule as a rule statement before the check (minor \u2014 the check itself is present)"
+    ],
+    "suggested_fixes": [
+      "Clean the Considered pace line to just '$0 (Standard/Considered)' to avoid the confusing '\u2013$0' notation",
+      "Add a one-line 'Flagship-protection rule:' label before the two BYO-vs-flagship comparison bullets for clarity"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 initial atom-price table produced a broken flagship-protection proof before being replaced \u2014 the skill's Self-Check requires the delivered blueprint to have BYO already protecting flagships, not to show the user a failed first attempt",
+      "BYO-Foundation slots underneath Starter but the overlay reference implies BYO should demonstrate each existing tier wins; Foundation's ceiling ($1,800) is below Starter and its own summed check isn't shown",
+      "Option A is presented then abandoned mid-calculation ('still under \u2014 need...OR raise base') leaving visible unresolved math in the final artifact"
+    ],
+    "suggested_fixes": [
+      "Do the pricing calibration internally and present only the final, verified atom-price table with a clean flagship-protection proof",
+      "Add a one-line note confirming BYO-Foundation is intentionally a sub-Starter entry point (not subject to flagship protection since nothing sits below it)",
+      "Remove the failed Option A working and the \u26a0\ufe0f intermediate table; keep only the verified Option B result as the delivered blueprint"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [
+      "Part 3 Toolkit configuration lists 'Full breadth (templates only)' which is inconsistent with the BYO upgrade table charging +$200 each to add Proposals and Close/Retain modules on top of the $350 base \u2014 implying Toolkit base is Outreach-only, not Full breadth",
+      "No memory preamble or explicit note about memory availability (minor; spec says omit silently if unavailable, so acceptable)"
+    ],
+    "suggested_fixes": [
+      "Change Toolkit configuration to 'Outreach-only breadth' (or clarify Toolkit includes all template modules and adjust BYO breadth upgrades to reflect pace/support only), so the BYO flagship-protection math and base definition stay consistent"
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table format: spec's inline example shows a compact tier table with Price and Anchor columns, but output uses bulleted per-tier format (acceptable per spec which requires configuration/positioning/pricing logic per tier, not a specific format)",
+      "Flagship-protection on Atelier is tight at ~5% \u2014 spec says flagship must remain the 'rational discount' but doesn't quantify; 5% may feel weak to a buyer comparing BYO",
+      "Vague-input preamble used despite input being reasonably anchored ($15K\u2013$80K/mo range given) \u2014 preamble is intended for vague input, not anchored input; a lighter framing note would suffice"
+    ],
+    "suggested_fixes": [
+      "Keep bulleted tier format (spec-compliant) but consider adding a summary table for scanability",
+      "Widen Atelier's BYO delta by nudging one upgrade price up ~$3\u20135K so flagship discount lands at 10%+",
+      "Replace the 'Assuming...will re-anchor' preamble with a brief scope-assumption note since $ anchors were provided"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier count: spec mandates 'Three packages. Not two. Not five.' but output delivers four named tiers (Open Clay, Shaped Clay, Fired Clay, Kiln) \u2014 even though Open Clay is framed as free/distribution, it's still presented as a tier row alongside the others, violating the strict 3+BYO structure.",
+      "Pricing-Anchor Rule application is inconsistent: preamble correctly uses placeholder tokens ($A/$B/$C) because no sub-niche is named, but then injects concrete $ benchmark ranges ($500\u20131,500, $5\u201315K, $8\u201320K/mo) inside the pricing logic \u2014 this edges into fabricating norms for a generic category ('productization consultant' isn't a well-established sub-niche with known benchmarks).",
+      "Flagship-protection rule is stated but not proven \u2014 spec's existing-tier-overlay logic (and the flagship rule generally) expects a demonstration that BYO-summed equivalent prices above flagship; output asserts '~15\u201325% higher' without showing the sum.",
+      "Memory preamble is present-adjacent (assumption stub) but no actual claude-mem query note is included or explicitly omitted \u2014 minor ambiguity given this is a meta run where memory relevance is high."
+    ],
+    "suggested_fixes": [
+      "Collapse Open Clay into a 'Free tier / top-of-funnel' note outside the three-tier structure, and present exactly three paid tiers (or explicitly rename this as existing-tier-overlay mode with Open Clay as the preserved free anchor).",
+      "Replace concrete $ ranges in pricing logic with pure tokens (or move ranges into a clearly-labeled 'if buyer = X, anchor becomes Y' conditional) to honor the bright-line rule against category-level norm invocation.",
+      "Add an explicit BYO-sum line per tier showing token math (e.g., '$A + $D1 + $B1\u00d72 + $M1 + $X2 + $R1 + $E2 + $C1 > $B') to prove flagship protection rather than assert it.",
+      "Add one line stating 'Memory unavailable / no prior intelligent-clay:run observations loaded' to make the memory-integration step visible."
+    ]
+  }
+]
