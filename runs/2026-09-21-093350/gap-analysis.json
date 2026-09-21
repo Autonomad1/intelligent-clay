@@ -1,0 +1,135 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [
+      "Part 3 tiers do not explicitly break out 'Configuration / Positioning line / Pricing logic' as three labeled fields per tier \u2014 they are merged into a table row, which technically satisfies the content but blurs the spec's three-field structure",
+      "No vague-input preamble was needed (concrete $ given), but the sub-niche 'freelance brand strategist' was treated as anchored enough to invoke agency benchmarks ($25\u201350K, naming $8\u201312K) without the user naming a sub-niche like B2B SaaS vs. CPG \u2014 borderline against the bright-line rule"
+    ],
+    "suggested_fixes": [
+      "Render each tier as a labeled block (Configuration: \u2026 / Positioning: \u2026 / Pricing logic: \u2026) rather than a single table row to match the spec's per-tier structure",
+      "Add a one-line caveat that agency/naming benchmarks are generic brand-strategy norms and offer to re-anchor once the user names a vertical (e.g., B2B SaaS, DTC, healthcare)"
+    ]
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier rows show a 'Price' column but omit an explicit 'Pricing logic' per-tier field as required ('Pricing logic \u2014 what the price is anchored against'); anchors are consolidated in a separate block below the table rather than per-tier.",
+      "Follow-up menu offers only one option in prose form but the skill says 'offer one based on context' \u2014 acceptable, though it doesn't surface the menu structure; minor."
+    ],
+    "suggested_fixes": [
+      "Add a 'Pricing logic' column (or sub-bullet) to each tier row so each tier explicitly carries configuration + positioning + pricing logic inline, per spec.",
+      "Optionally note the single follow-up is chosen from the menu to make the framework visible."
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing anchors for Core and Premium reference concrete benchmarks ('12-session package at your standard rate, discounted 10-15%', 'sum-of-parts would exceed this by ~25%') alongside placeholder tokens, which slightly muddies the vague-input pricing discipline",
+      "BYO per-dimension upgrade pricing uses undefined tokens (+$X, +$Y, +$Z) without tying them back to the +$A/+$B/+$C system, leaving the pricing ladder ungrounded",
+      "Follow-up menu offers two options ('re-anchor' and 'highest-leverage atom') instead of the spec's 'offer one'"
+    ],
+    "suggested_fixes": [
+      "Keep Core/Premium anchors purely token-based (e.g., '+$B, anchored against N-session equivalent; re-anchor once rate is named') without embedding specific percentages",
+      "Define BYO upgrades as fractions of the token base (e.g., 'Depth Standard\u2192Deep = ~15% of +$A') so the ladder is internally consistent",
+      "Present a single follow-up per the spec's 'offer one' rule, not a two-option choice"
+    ]
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 flagship-protection: initial Starter-equivalent BYO math ($1,350) violated the flagship-protection rule and was fixed mid-output by retroactively changing the base price, which reads as a live correction rather than a clean blueprint.",
+      "Part 3 pricing anchor: Pricing logic per tier is described loosely ('includes overhead/margin') rather than as an explicit anchor line per the spec's 'Pricing logic \u2014 what the price is anchored against' requirement.",
+      "Memory Integration: No memory preamble or note on absence \u2014 spec says omit silently if unavailable, which is compliant, but no save-observation acknowledgment either (minor, spec allows silent omission).",
+      "Follow-up menu: Offers three options instead of 'one based on context' as spec directs."
+    ],
+    "suggested_fixes": [
+      "Recompute BYO base cleanly upfront so Starter-equivalent BYO exceeds $2K on first pass, avoiding visible self-correction.",
+      "Add an explicit one-line 'Pricing logic / anchor' bullet for each of Starter, Growth, and Pro (e.g., anchored vs. in-house SEO hire cost or competitor retainers).",
+      "Trim the closing menu to a single most-relevant follow-up (likely the configurator JSON emission)."
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [
+      "Part 3 Premium anchor: BYO sum ($2,600) is lower than Premium price ($3,200), so the flagship-protection framing ('stays the rational buy') is weak \u2014 Premium is more expensive than parts, not a discount",
+      "Ceiling logic inconsistency: ceiling set at $2,400 auto-routes to Premium ($3,200), but routing to a *more expensive* tier isn't 'cheaper' as claimed in the parenthetical"
+    ],
+    "suggested_fixes": [
+      "Reprice Premium below the BYO-equivalent sum (e.g., $2,400\u20132,800) OR raise BYO component prices so Premium sum-of-parts exceeds $3,200, preserving the flagship-as-discount rule",
+      "Fix the ceiling parenthetical: either state Premium is the rational buy because it includes the non-BYO-able intensive, or lower Premium price so the 'cheaper' claim is literally true"
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Pricing-Anchor Rule: input was generic 'creative agency' without a named sub-niche, so per spec bright line this should use placeholder tokens rather than concrete $ figures \u2014 though user did provide the $15K\u2013$80K band, which arguably anchors it",
+      "Vague-input preamble was used despite concrete $ figures being given; the preamble format is reserved for token-based pricing, creating minor inconsistency",
+      "Part 3 tier table merges 'Positioning' and 'Pricing logic' into a table rather than the per-tier structure implied by the spec's bullet format (configuration/positioning/pricing logic per tier)"
+    ],
+    "suggested_fixes": [
+      "Clarify in Pricing-Anchor Rule that a user-supplied $ band counts as 'concrete prices' even without sub-niche, to remove ambiguity",
+      "Reserve the 'Assuming... will re-anchor' preamble strictly for token pricing; use a different framing when $ figures are user-supplied",
+      "Explicitly permit table format for Part 3 tier presentation, or require bullet-per-tier structure to match the spec's wording"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing logic for Core tier references '+$A' but the Pricing-Anchor Rule specifies placeholder tokens should be used consistently \u2014 mixing '+$A/+$C' tier tokens with lowercase '+$a...+$l' BYO tokens is fine, but Core's anchor prose says 'below $5\u201315K' and 'above <$100', invoking concrete category norms for a generic 'productization' category that isn't a named sub-niche, which the Bright Line rule forbids",
+      "Memory Integration preamble is omitted with no indication whether memory was checked \u2014 spec says omit silently if unavailable, so acceptable, but a meta-run productizing the skill itself is exactly where a memory note would be expected if any prior runs exist",
+      "Follow-up menu offers three options ('a/b/c') instead of the spec's 'offer one based on context'",
+      "Part 1 Access tiers lack response-time specificity (spec example: 'channels and response time') \u2014 e.g. 'Private Discord/Slack' has no SLA attached",
+      "BYO framework lists 12 upgrade tokens but Flagship-protection rule only validates two aggregate sums; no per-dimension check that individual high-value atoms (White-label, Private branch) are priced to make bundles rational"
+    ],
+    "suggested_fixes": [
+      "Replace '$5\u201315K engagements' and '<$100' in Core's pricing logic with placeholder tokens or explicitly name the sub-niche being anchored against",
+      "Add a one-line note like 'No prior intelligent-clay:run observations found for self-productization domain' or omit entirely per spec \u2014 current silence is spec-compliant but ambiguous for a meta-run",
+      "Collapse the three follow-up offers into a single context-driven recommendation (likely 'pricing validation' since tokens dominate)",
+      "Add response-time to each access tier row (e.g. 'Private Discord \u2014 24hr', 'Direct Claude-thread \u2014 same-day')",
+      "Add an explicit line to Flagship-protection: 'White-label (+$h) alone must price >0.5\u00d7 $C; Private branch (+$i \u00d7 12mo) must price >0.6\u00d7 $C annually'"
+    ]
+  }
+]
