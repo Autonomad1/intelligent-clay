@@ -1,0 +1,124 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [
+      "Follow-up menu offers two options instead of one as spec instructs ('offer one based on context')",
+      "Pricing anchor for Signature Coaching references 'sum of Self-Guided+ plus every upgrade' as being above flagship, which inverts the flagship-protection rule (BYO sum should be above flagship, so flagship is the discount \u2014 wording is slightly muddled)"
+    ],
+    "suggested_fixes": [
+      "Trim follow-up menu to a single most-relevant option per spec ('offer one based on context')",
+      "Reword Signature Coaching anchor to: 'priced below the BYO sum-of-parts to reach this config, making flagship the rational discount'"
+    ]
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table's 'Pricing' column states dollar figures but the 'Pricing logic'/anchor rationale is compressed into the same cell; spec asks for pricing logic as its own explicit element per tier",
+      "Vague-input preamble was used despite the user providing a concrete $400 anchor \u2014 per Pricing-Anchor Rule, concrete prices should be used without a placeholder-style stub",
+      "Follow-up menu offers three options instead of the spec's 'offer one based on context'"
+    ],
+    "suggested_fixes": [
+      "Split each tier's pricing cell into '$ figure' + separate 'Pricing logic/anchor' line to match the spec's tier structure",
+      "Drop the assumption-stub preamble when the user supplies a concrete price; reserve it for token-based anchoring",
+      "Present a single best-fit follow-up option rather than a menu of three"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [
+      "Part 3 BYO per-dimension upgrade pricing uses unbound tokens (X, Y, Z, W, V, U, Q, P) that are never tied back to the +$A/+$B/+$C anchors, leaving the flagship-protection math unverifiable",
+      "Ceiling is expressed as '~90% of Premium price' rather than a concrete configuration threshold (which dimension levels trigger the auto-route), making it less actionable for a configurator"
+    ],
+    "suggested_fixes": [
+      "Express BYO upgrades as fractions/percentages of the +$A base (e.g., 'Depth upgrade = +15% of base/mo') so flagship-protection math is checkable against the token anchors",
+      "Restate the ceiling as a configuration trigger (e.g., 'Deep + Weekly + Same-day + Unlimited \u2192 auto-route to Premium') rather than a % of an unknown price"
+    ]
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 Flagship-Protection Math shows visible mid-calculation self-correction ('wait \u2014 that undercuts. Adjust:') which is a process artifact, not a clean blueprint deliverable",
+      "Starter BYO-equivalent math yields exact parity ($2,000 = $2,000), violating the flagship-protection rule that BYO sum must price *above* the tier \u2014 spec says flagships must remain the rational discount, not break even",
+      "Pricing-Anchor Rule: user gave concrete prices for existing tiers, but new BYO per-unit prices ($60/kw, $350/brief, etc.) are fabricated without stated anchor to domain norms or user input"
+    ],
+    "suggested_fixes": [
+      "Rewrite the flagship-protection section to present only the final, corrected pricing table with clean math \u2014 move the iteration to internal reasoning",
+      "Raise Starter BYO-equivalent above $2,000 (e.g., bump base or monthly report line) so Starter also wins on price, not just convenience",
+      "Add a one-line anchor note explaining BYO per-unit prices are derived by back-solving from the three fixed tier prices, or flag them as starting hypotheses to validate"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": false,
+    "gaps": [
+      "Part 3 Flagship-protection rule: Principal tier ($75K) is priced ABOVE its BYO sum ($69K), which violates the spec requirement that 'the BYO sum to reach each tier's configuration must price above that tier's flagship \u2014 flagships must remain the rational discount.' The output acknowledges this but ships it anyway rather than fixing it.",
+      "Part 3 Principal tier BYO-sum math is internally inconsistent: text shows '$18K + $8K + $20K + $5K + $6K + $5K + $7K = $69K' but per-dimension upgrades list Depth 20\u219270%+ as $6K+$14K=$20K \u2713, Support Unlimited+90 as $3K+$4K=$7K \u2713, but omits the Vertical Overlay (+$4K) which is part of Principal's config as 'optional' \u2014 ambiguity means BYO-protection can't be verified cleanly."
+    ],
+    "suggested_fixes": [
+      "Drop Principal to $66K (or raise Direct-to-principal BYO upgrade to $9K) as the output itself suggests \u2014 pick one and ship it rather than leaving the violation in the deliverable.",
+      "Clarify whether Vertical Overlay is included in Principal's baseline config or a true add-on, and recompute the BYO-sum comparison accordingly so flagship-protection math is unambiguous."
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table lacks explicit separate 'Configuration / Positioning / Pricing logic' fields as three distinct labeled elements \u2014 they're merged into table cells, which is acceptable but slightly compresses the spec's required per-tier structure",
+      "Open Clay pricing logic doesn't explicitly reference an anchor comparison the way spec examples do (e.g., '% of flagship') \u2014 it's described as top-of-funnel rather than anchored against a benchmark",
+      "BYO base is $0 (Open Clay), which makes per-dimension upgrade math ambiguous \u2014 spec says base is 'typically Lite' but a $0 base means the floor rule (`+$x + $L`) is doing the real base-price work; could be stated more cleanly",
+      "Flagship-protection rule is stated for Studio and Foundry but the Open Clay $0 tier has no sum-of-parts check, which is fine but not explicitly acknowledged"
+    ],
+    "suggested_fixes": [
+      "In Part 3 tier table, split the merged cell into three explicit sub-rows or bullets labeled Configuration / Positioning / Pricing logic per spec",
+      "Add an explicit anchor phrase for Open Clay such as 'Anchor: $0 permanent free tier as funnel; ~0% of Studio flagship'",
+      "Restate BYO base as 'effective paid base = Private repo + Team license (floor)' rather than '$0' to make upgrade math coherent",
+      "Add one line noting Open Clay is exempt from flagship-protection since it's the free anchor"
+    ]
+  }
+]
