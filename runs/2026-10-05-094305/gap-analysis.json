@@ -1,0 +1,128 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-logic for Implementation flagship cites BYO-sum of ~$3,100 but the flagship-protection check below computes $3,700 \u2014 minor internal inconsistency",
+      "SaaS $99/mo atom is acknowledged in the preamble but not explicitly listed as a fixed/non-decomposable atom in Part 1, slightly weakening the hybrid-handling signal",
+      "Follow-up menu offers three options instead of the spec's 'one based on context'"
+    ],
+    "suggested_fixes": [
+      "Reconcile the two BYO-sum figures for the Implementation tier so the pricing-logic prose matches the flagship-protection math",
+      "Add a 'Fixed atom (not decomposable)' line in Part 1 explicitly naming the $99/mo SaaS license to make hybrid handling visible in the structure",
+      "Trim the follow-up menu to a single highest-value offer per the Optional Follow-Up Menu rule"
+    ]
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier rows merge 'Positioning' and 'Pricing logic' into adjacent columns but the pricing-anchor rationale is pulled out below the table rather than appearing as a per-tier 'Pricing logic' field as specified",
+      "Vague-input preamble was used despite 'resume writing' being arguably a named sub-niche with known norms ($400 anchor was given), creating minor inconsistency with the Pricing-Anchor Rule"
+    ],
+    "suggested_fixes": [
+      "Include a 'Pricing logic' cell per tier row (anchor rationale inline) rather than consolidating anchors in a separate block below",
+      "Skip the vague-input preamble when the user has provided a concrete price anchor ($400) \u2014 reserve the stub for truly tokenized outputs"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-logic per tier: existing tiers are listed with price + configuration but lack an explicit 'positioning line' (one sentence: who it's for) and 'pricing logic/anchor' rationale as required by the spec for each tier.",
+      "Flagship-protection math for Starter tier is not shown \u2014 spec requires proving each existing tier still wins vs. its BYO-summed equivalent; only Growth and Pro are demonstrated.",
+      "Follow-up menu offers only one option but spec says offer 'one based on context' \u2014 acceptable, though no acknowledgment of alternatives; minor."
+    ],
+    "suggested_fixes": [
+      "Add a one-line positioning sentence and explicit pricing-anchor rationale under each of Starter/Growth/Pro, not just price + config.",
+      "Add a third flagship-protection calculation showing Monitor BYO ($750) + upgrades to reach Starter config sums above $2,000.",
+      "(Optional) Acknowledge the single follow-up is chosen deliberately for overlay context."
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-anchor rule: 'cohort-based course for freelancers' sits closer to generic category than a named sub-niche with well-known norms; concrete dollar figures for Lite ($400) and Premium ($3,200) are inferred rather than user-provided \u2014 only the $1,200 Core was given. Spec says use placeholder tokens when norms aren't established at sub-niche level.",
+      "Missing vague-input preamble / assumption stub for the inferred Lite and Premium prices, since only the Core price was anchored by the user."
+    ],
+    "suggested_fixes": [
+      "Either use placeholder tokens (e.g., Lite = $400 [\u00b1], Premium = +$B above Core) or prepend a one-line assumption stub noting Lite/Premium figures are inferred from the $1,200 anchor and offering to re-anchor.",
+      "Add an opening line: 'Assuming cohort course norms where Lite \u2248 \u2153 flagship and Premium \u2248 2.5\u20133\u00d7 flagship; will re-anchor if you share competitor pricing.'"
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table format from the inline example (Tier | Price | Anchor) not used \u2014 tiers rendered as prose blocks instead, slightly reducing scannability",
+      "BYO upgrade prices are presented as concrete $ figures but labeled 'tokens' \u2014 mild inconsistency with the Pricing-Anchor Rule which treats tokens as placeholders (+$A/+$B), not dollar amounts",
+      "Studio tier positioning line omits an explicit 'who it's for' + 'what they get' split in one clean sentence (merges them, acceptable but less crisp)",
+      "Memory preamble absent \u2014 acceptable if memory unavailable, but no silent-omission signal to verify"
+    ],
+    "suggested_fixes": [
+      "Consider rendering Part 3 tiers as a compact table matching the inline example before the detailed breakdowns",
+      "Either label BYO upgrades as firm $ (consistent with anchored input) or convert to true +$A/+$B tokens \u2014 don't mix",
+      "Tighten Studio positioning to explicit who-for / what-they-get structure",
+      "No fix needed if memory unavailable; otherwise add the one-line memory preamble per spec"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Memory Integration section specifies silently omitting the preamble when memory is unavailable, but output includes an explicit '*Memory unavailable \u2014 proceeding without preamble.*' line",
+      "Part 1 atom 'Prompt packs for upstream/downstream skills' and 'White-label / rebrand kit' are listed under Deliverables but arguably belong under Customizations/Access given they're configurable rather than standalone artifacts \u2014 minor categorization fuzziness",
+      "Tier pricing table uses '+$A/yr', '+$B/yr', '+$C' tokens but Lite is 'Free' not '+$0', creating slight token inconsistency; also '+$' prefix implies additive-to-base but these are absolute tier prices",
+      "BYO ceiling lists three independent auto-route triggers (Self-hosted OR Embedded OR White-label) but Premium tier already includes White-label (Co-branded) and Agency allows White-label per dependency table \u2014 contradiction between 'White-label requires Agency+' and 'White-label auto-routes to Enterprise'"
+    ],
+    "suggested_fixes": [
+      "Remove the '*Memory unavailable*' line entirely per spec: 'If memory is unavailable, omit the preamble silently'",
+      "Move 'White-label kit' and 'Prompt packs' to Customizations/Access tiers, or justify why they're standalone purchasable deliverables",
+      "Normalize pricing tokens: use '$A', '$B', '$C' as absolute tier prices (matching the inline example's '+$A/+$B/+$C' BYO-upgrade convention only in the BYO section)",
+      "Resolve white-label contradiction: either Agency gets Co-brand only (White-label is Enterprise-exclusive and triggers auto-route), or White-label is Agency+ and removed from the Enterprise auto-route list"
+    ]
+  }
+]
