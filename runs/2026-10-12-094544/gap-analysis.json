@@ -1,0 +1,106 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": false,
+    "gaps": [
+      "Run failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.'}, 'request_id': 'req_011Cfx8SsLWB1Kg6bpcAac6k'}"
+    ],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": false,
+    "gaps": [
+      "Run failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.'}, 'request_id': 'req_011Cfx8StVCbm2eBvk7T9e2b'}"
+    ],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": false,
+    "gaps": [
+      "Run failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.'}, 'request_id': 'req_011Cfx8Su4Scv4fvDBDkB2bs'}"
+    ],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": false,
+    "gaps": [
+      "Run failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.'}, 'request_id': 'req_011Cfx8SunqRMUnp7k6T7r6G'}"
+    ],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": false,
+    "gaps": [
+      "Run failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.'}, 'request_id': 'req_011Cfx8SvPouM6bKfcPGcySM'}"
+    ],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": false,
+    "gaps": [
+      "Run failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.'}, 'request_id': 'req_011Cfx8Svy2fAET9zwKjzSrw'}"
+    ],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": false,
+    "gaps": [
+      "Run failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.'}, 'request_id': 'req_011Cfx8SwdDUnHkPwM8m2oJS'}"
+    ],
+    "suggested_fixes": []
+  },
+  {
+    "id": "vague-coaching",
+    "passed": false,
+    "gaps": [
+      "Run failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.'}, 'request_id': 'req_011Cfx8SxDSD1z2TKsDm9X3f'}"
+    ],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": false,
+    "gaps": [
+      "Run failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.'}, 'request_id': 'req_011Cfx8SxmvkpWCRE5vsT2oV'}"
+    ],
+    "suggested_fixes": []
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": false,
+    "gaps": [
+      "Run failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.'}, 'request_id': 'req_011Cfx8SyQdNAY9mMkD7hbd6'}"
+    ],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": false,
+    "gaps": [
+      "Run failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.'}, 'request_id': 'req_011Cfx8SyzMb7HKFZfykrDqu'}"
+    ],
+    "suggested_fixes": []
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": false,
+    "gaps": [
+      "Run failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.'}, 'request_id': 'req_011Cfx8Szb4ijP8kCajah8t7'}"
+    ],
+    "suggested_fixes": []
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": false,
+    "gaps": [
+      "Run failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.'}, 'request_id': 'req_011Cfx8T1B2wpzQmy6ET5AyU'}"
+    ],
+    "suggested_fixes": []
+  }
+]
