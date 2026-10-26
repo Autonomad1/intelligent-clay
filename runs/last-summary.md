@@ -1,6 +1,6 @@
-# Self-iteration run — 2026-10-19-093620
+# Self-iteration run — 2026-10-26-093942
 
-**Pass rate:** 13/13
+**Pass rate:** 11/13
 
 **Detail:** [`gap-analysis.json`](gap-analysis.json)
 

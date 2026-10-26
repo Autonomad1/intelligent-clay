@@ -1,0 +1,139 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [
+      "Pricing-Anchor Rule compliance: input is generic 'brand strategist' with no sub-niche named, so per spec this should use placeholder tokens (+$A, +$B), but output uses concrete $ figures throughout \u2014 the preamble acknowledges no sub-vertical but still anchors in dollars",
+      "Vague-input preamble mildly lampshades by hedging ('no sub-vertical specialization named') rather than cleanly stubbing an assumption"
+    ],
+    "suggested_fixes": [
+      "Per Pricing-Anchor bright line, treat unqualified 'brand strategist' as vague and use token pricing (+$A/+$B/+$C) unless user-provided $15K anchor is explicitly extended \u2014 or tighten preamble to justify dollar use via the user's stated $15K anchor only",
+      "Rewrite preamble as a clean assumption stub (e.g., 'Assuming mid-market B2B brand strategy; will re-anchor once you name the sub-niche') without noting what's missing"
+    ]
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [
+      "Follow-up menu offers two options instead of one ('re-anchor pricing' and 'highest-leverage atoms'), violating the 'offer one' instruction in the Optional Follow-Up Menu section",
+      "Pricing-anchor table in Part 3 mixes placeholder tokens (+$A/mo) with concrete benchmark figures ($20-30/mo for apps, '60-70% of your current 1-on-1 rate') \u2014 borderline since sub-niche wasn't named, but defensible as relative anchoring"
+    ],
+    "suggested_fixes": [
+      "Pick a single follow-up (the re-anchor offer is highest-value here) and drop the second option to comply with 'offer one' rule",
+      "Either fully commit to tokens with no numeric benchmarks until niche is named, or lead with a tighter sub-niche assumption to justify the comparative figures"
+    ]
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing anchor rows duplicate the token (+$A/+$B/+$C) without clearly separating the anchor logic from the price token \u2014 spec asks for 'pricing logic' (what the price is anchored against), which is present but could be cleaner",
+      "BYO 'per-dimension upgrades' says 'publish the increments transparently' but does not actually define increments even as tokens (e.g., +$x per Depth level) \u2014 slightly under-specified vs. spec's 'per-dimension upgrade pricing'",
+      "No memory preamble shown; acceptable if memory unavailable, but silent omission is correct \u2014 not a true gap"
+    ],
+    "suggested_fixes": [
+      "Split the Part 3 pricing column into two: 'Price (token)' and 'Anchor logic' for clarity",
+      "Add token-level per-dimension upgrade increments in BYO (e.g., 'Depth upgrade: +$d1 to Standard, +$d2 to Deep') to fully satisfy 'per-dimension upgrade pricing'",
+      "No fix needed for memory \u2014 silent omission matches spec"
+    ]
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": false,
+    "gaps": [
+      "Part 3 \u2014 Flagship-protection proof: Growth reconstruction openly fails ($3,850 < $5,000) and the 'fix' retroactively rewrites the upgrade price table mid-output rather than presenting a coherent final price list, leaving two conflicting pricing tables.",
+      "Part 3 \u2014 Per-dimension upgrade pricing: table is presented as final but is then invalidated by the fix section; no single authoritative upgrade price list remains.",
+      "Part 3 \u2014 Starter flagship-protection row: BYO sum ($800) is *below* tier price ($2,000), which inverts the flagship-protection rule; the handwave about 'onboarding/setup' is not a structural fix and leaves Starter unprotected against the Essentials BYO slot.",
+      "Part 3 \u2014 Slot 2 (Builder BYO) base $2,100: sits only $100 above Starter ($2,000) while offering 'Starter + one upgrade', meaning Builder dominates Starter on value-per-dollar \u2014 violates flagship protection for Starter.",
+      "Memory Integration: preamble says 'Memory system not detected' \u2014 spec requires omitting the preamble silently when memory is unavailable.",
+      "Optional Follow-Up Menu: spec says offer ONE follow-up based on context; output offers three."
+    ],
+    "suggested_fixes": [
+      "Recompute upgrade prices once so the final table alone reconstructs Growth to ~$5,600 and Pro to >$10,000, and present only the corrected table (delete the 'Fix for Growth' narrative).",
+      "Reprice Essentials BYO base or restrict its configuration ceiling so reconstructing Starter's config sums above $2,000, satisfying flagship protection structurally rather than by narrative.",
+      "Raise Builder BYO base above $2,500 (or require a managed-fee floor) so Starter remains the rational discount against any sub-Growth BYO build.",
+      "Remove the 'Memory note: Memory system not detected' line \u2014 per spec, omit silently when unavailable.",
+      "Trim the follow-up menu to a single, context-appropriate offer (e.g., JSON/YAML configurator emit)."
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-logic column labeled 'Anchor' is solid, but Lite's anchor references a 'cohort tax' without naming a concrete competitor benchmark (e.g., typical self-paced course price range), which is thinner than Core/Premium anchors",
+      "Memory preamble omitted silently (acceptable per spec if memory unavailable, but not explicitly confirmed)"
+    ],
+    "suggested_fixes": [
+      "Tighten Lite anchor to reference a concrete benchmark, e.g., 'priced in the $300\u2013500 band typical for premium self-paced freelance courses (vs. $1K+ cohort tax)'",
+      "No fix needed if claude-mem unavailable; spec permits silent omission"
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-logic for Signature claims BYO sums to ~$46K but using the stated per-dimension upgrades from $15K base, the Signature config actually sums higher (e.g., +2 disciplines $12K + Depth Standard $4K + Breadth t2 $5K + Access scheduled+async $2K + Lead CD $3K + Rights multi $3K = $44K, close but worth verifying); minor arithmetic transparency gap.",
+      "Flagship-protection math for Principal (~$81K vs $72K = 11%) is tight but not shown step-by-step, making the 'rational discount' claim hard to audit.",
+      "Follow-up menu offers three options instead of the spec's 'offer one based on context.'"
+    ],
+    "suggested_fixes": [
+      "Show the explicit BYO sum calculation inline (one line per tier) so the flagship-protection rule is auditable.",
+      "Verify Signature BYO sum against stated upgrade prices and reconcile the $46K figure, or adjust upgrade pricing to match.",
+      "Pick the single most contextually relevant follow-up (likely highest-leverage atom) rather than listing three."
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": false,
+    "gaps": [
+      "Part 3 tier table omits explicit 'Configuration \u2014 level on each dimension' per tier as required by spec (only prose descriptions given, not mapped to the 8 dimensions from Part 2)",
+      "Pricing-anchor rule misapplied: spec says 'coaching' alone is vague, but output mixes concrete $ ranges ($49\u201399, $299, $999\u20132,500, $4\u20138K) with placeholder tokens ($A, $B) without the sub-niche being named \u2014 should be pure tokens since buyer segment is explicitly unknown",
+      "Follow-up menu offers only one option as instructed, but spec says 'offer one based on context' \u2014 acceptable, though no explicit framing as a menu choice",
+      "Lite tier pricing logic is anchoring narrative, not a clear 'what the price is anchored against' line in the required format",
+      "Vague-input preamble is slightly lampshaded with the re-anchor clause tied to buyer segment, which is fine, but Premium's $4\u20138K/mo consultant anchor fabricates a norm for a category (productization consulting) that has no established sub-niche benchmark"
+    ],
+    "suggested_fixes": [
+      "Add a 'Configuration' sub-row or bullet list per tier in Part 3 mapping each of the 8 dimensions (Depth/Breadth/Pace/Format/Support/Memory Scope/Configurator Export/Audit Rights) to its level",
+      "Replace all concrete $ ranges in Part 3 tier table with pure placeholder tokens ($A, $B) since no sub-niche buyer was named; move the $49\u201399/$299/$999 suggestions into the follow-up offer",
+      "Reformat each tier's pricing logic as an explicit 'Pricing logic:' line separate from positioning",
+      "Remove the '~$4\u20138K/mo part-time productization consultant' anchor or flag it as a hypothesis, since productization consulting lacks established norms",
+      "Add explicit 'Configuration:' label per tier listing dimension\u2192level pairs in a compact format"
+    ]
+  }
+]
