@@ -1,0 +1,136 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-logic for Signature introduces an undefined token `+$D` (in-person trainer anchor) without declaring it in the token set",
+      "Flagship-protection rule is stated as a percentage gap but not demonstrated with the token arithmetic (no shown sum of d1..dN vs +$B)",
+      "BYO per-dimension deltas use a new token family (`+$d1..d17`) alongside `+$A/+$B/+$C` without a brief legend tying them together"
+    ],
+    "suggested_fixes": [
+      "Define `+$D` in the vague-input preamble or replace with existing token (e.g., `+$C-equivalent`) to avoid introducing undeclared tokens",
+      "Add a one-line worked check: 'Blueprint base +$A + d1+d2+d4+d6+d8+d10+d12 must equal ~1.15\u20131.20 \u00d7 +$B' to prove flagship protection",
+      "Add a short token legend under BYO: '+$A/B/C = tier prices; +$d1..dN = per-upgrade deltas; will resolve to $ once niche/current price shared'"
+    ]
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [
+      "Part 2 'Training Scope' is an invented domain-specific dimension but not explicitly flagged/called out as such per spec guidance to 'invent domain-specific dimensions'",
+      "Pace dimension lists Sprint\u2192Standard as '+$0 (default)' which is slightly confusing since base is Lite (Sprint); minor labeling inconsistency",
+      "Vague-input preamble is used but input actually provided concrete prices ($2,500, $99/mo) \u2014 per Pricing-Anchor Rule, concrete prices should anchor without needing a vagueness stub"
+    ],
+    "suggested_fixes": [
+      "Add a one-line note under the Part 2 table explicitly naming invented dimensions (e.g., 'Training Scope and Compliance are domain-specific dimensions added for enterprise SaaS onboarding')",
+      "Reframe Pace upgrade pricing so the baseline (Sprint at Lite) is clear and Standard shows as a true delta or explicitly 'included at Standard+ depth'",
+      "Drop the vague-input preamble when concrete prices are supplied; replace with a brief anchoring note tying tiers to the given $2,500 and $99/mo"
+    ]
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-logic column shows only $ figures and a brief parenthetical, not an explicit 'anchor' statement for Lite (just '(your current price \u2014 anchor stays)') \u2014 Core and Premium reference BYO-sum anchoring but Lite's anchor rationale is thin",
+      "Vague-input preamble is used alongside concrete $ figures throughout Part 3 and BYO, which is inconsistent with the rule that placeholder tokens should be used when input is vague \u2014 user gave $400 for Lite only, yet Core/Premium/BYO upgrades are given as hard $ figures without sub-niche anchoring"
+    ],
+    "suggested_fixes": [
+      "Expand Lite's pricing logic to state the anchor explicitly (e.g., 'anchored to user's current $400 single-pass price; sets the floor for BYO').",
+      "Either drop the vague-input preamble (since the user supplied a concrete anchor price) or convert Core/Premium/upgrade figures to placeholder tokens (+$A/+$B) until sub-niche is named, per the Pricing-Anchor Rule."
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing-logic per tier: existing tiers are shown with price + configuration but lack an explicit 'positioning line' and 'pricing logic' row for each, as the spec mandates for every tier",
+      "BYO slots A\u2013D lack an explicit per-slot 'dependencies the configurator must enforce' list tied to each slot (global rules are given, but spec asks for dependencies within the BYO framework)",
+      "Starter flagship-protection math shows BYO at $1,300 vs Starter $2,000 \u2014 this means BYO is cheaper, violating the stated rule that BYO sum must price *above* the tier; the narrative hand-waves with 'productized consistency' instead of proving price-above"
+    ],
+    "suggested_fixes": [
+      "Add a one-line positioning sentence and explicit pricing-logic anchor beneath each preserved tier (Starter/Growth/Pro) in Part 3",
+      "Under each BYO slot, add a short 'Dependencies enforced in this slot' bullet list (e.g., Slot B blocks Weekly reporting, Slot C requires Content Brief for 2+ articles)",
+      "Re-price Essentials base or Starter-equivalent atoms so BYO-sum exceeds $2,000 (e.g., raise base to $1,100 and keyword add-ons) to make Starter's flagship-protection quantitative, not qualitative"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [
+      "Minor: skill says 'Infer, produce, then offer to refine' as an anti-pattern against clarifying questions first \u2014 but here the refusal+redirect correctly asks qualifying questions since the user explicitly requested out-of-scope work. Could be read as borderline.",
+      "The redirect offers to run the blueprint but makes it conditional on answering three questions rather than inferring and producing with placeholder tokens as the vague-input preamble rule suggests."
+    ],
+    "suggested_fixes": [
+      "Offer to produce the blueprint immediately with placeholder tokens (per vague-input preamble rule) while optionally inviting the niche/inclusion details to re-anchor, rather than gating production on answers."
+    ]
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing table merges 'Positioning' and 'Anchor Logic' columns instead of presenting them as the spec's three discrete sub-bullets (configuration / positioning line / pricing logic), slightly compressing the required structure",
+      "BYO 'per-dimension upgrade pricing' lists Dual\u2192Tri (+$8K) and Tri\u2192Full-stack (+$12K) but the flagship-protection math for Embed uses '+$20K (Full-stack)' from the Dual baseline, which is internally consistent but not explicitly defined as a cumulative step in the upgrade list",
+      "Access dimension in Part 2 lists four levels (Async / Weekly / Partner line / Embedded) but BYO upgrade pricing starts from 'Weekly call' with no path from Async Slack, leaving the Signal-to-BYO entry point under-specified"
+    ],
+    "suggested_fixes": [
+      "Reformat each tier in Part 3 as explicit Configuration / Positioning line / Pricing logic bullets per spec rather than a merged table row",
+      "Add an explicit cumulative note or a Dual\u2192Full-stack (+$20K) line to the Discipline Mix upgrade ladder so the Embed math traces cleanly",
+      "Add an Async Slack \u2192 Weekly call (+$2K) step to the Access upgrade ladder so BYO can start from the true floor configuration"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing uses placeholder tokens ($B, $C) without the required vague-input preamble assumption stub at the top \u2014 the memory note substitutes but doesn't follow the specified format ('Assuming [reading]; will re-anchor with $ figures once you name [variable]')",
+      "Lite tier ('Clay Open') pricing logic doesn't anchor against a $ figure or benchmark \u2014 it just says 'Free (MIT)' and describes its role; spec requires each tier's pricing logic to be anchored",
+      "BYO base is $0 which technically violates the implicit expectation that BYO base = Lite price acting as a paid floor; spec says 'floor (minimum viable)' \u2014 a $0 floor means BYO sum-to-Pro comparison starts from zero, weakening flagship-protection math",
+      "Flagship-protection rule is asserted as a constraint ('must exceed by \u226525%') but not demonstrated \u2014 no worked sum showing BYO-to-Pro actually prices above Pro, which the spec's inline example implicitly models",
+      "Hybrid-offering handling: spec says 'the product is one fixed atom' for hybrids, but the OSS core is decomposed across multiple atoms (skill file, references, examples, GHA, memory config) rather than treated as one fixed atom"
+    ],
+    "suggested_fixes": [
+      "Add a one-line assumption stub before Part 1: 'Assuming a freemium OSS-core + commercial-layer model; will re-anchor with $ figures once you name target ACV or comparable tools' per the vague-input preamble format",
+      "Give Clay Open an explicit pricing anchor line (e.g., 'Free; anchored against zero-friction adoption \u2014 every paid tier must out-value self-serve OSS by a measurable margin')",
+      "Either set BYO base to Clay Pro's price (making Pro the true floor) or explicitly justify the $0 floor and show how flagship-protection math still holds from a free starting point",
+      "Add a worked example under flagship-protection: sum the per-dimension tokens needed to reach Pro's config and show the result exceeds $B by \u226525%",
+      "Collapse the OSS core atoms into a single fixed 'Clay Open core' atom per the hybrid-offering rule, and decompose only the commercial service/support layers"
+    ],
+    "passed_note": "Core structure (3 parts, table in Part 2, 3 tiers + BYO, invalid combos, invented dimensions for Iteration Loop and Configurator Output, follow-up menu item) is present and correct; gaps are refinements, not structural failures"
+  }
+]
