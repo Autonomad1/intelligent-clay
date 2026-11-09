@@ -1,0 +1,144 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table omits explicit 'Pricing logic' field \u2014 anchor is present but spec requires three labeled sub-items (configuration, positioning line, pricing logic); currently merged into an 'Anchor' column which is acceptable but loses the 'pricing logic' label",
+      "Lite tier BYO-sum check not shown \u2014 flagship-protection rule says 'each tier' must be verified, but only Core and Premium are proven (Lite is the base so trivially equal, but not stated)"
+    ],
+    "suggested_fixes": [
+      "Rename the Part 3 table column 'Anchor' to 'Pricing logic (anchor)' to match spec vocabulary explicitly",
+      "Add a one-line note under flagship-protection check: 'Lite = base configuration, so BYO sum equals flagship by definition \u2713'"
+    ]
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing anchor rows use token math but reference percentages of the user's 1-on-1 rate as if known \u2014 the user never provided it, creating mild internal inconsistency with the vague-input stance",
+      "Flagship-protection rule states Core BYO-match must price '~15-20% above Core' but with pure tokens (+$A/+$B/+$C) this cannot be verified by the configurator as written"
+    ],
+    "suggested_fixes": [
+      "In Part 3 anchors, keep percentages as relational logic but explicitly note they resolve once the 1-on-1 rate is provided, matching the opening stub",
+      "Express flagship-protection as a formula tied to the per-dimension deltas (sum of upgrades to reach Core config = 1.15\u20131.20 \u00d7 Core flat) so it's enforceable without concrete $"
+    ]
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [
+      "Minor: Pace dependency says 'Expedited blocks Deep Depth and Full Breadth' but invalid-combos list is consistent; no real gap.",
+      "Minor: BYO upgrade for Pace lists 'Standard \u2192 Expedited +$1,200' but Expedited is blocked at Deep/Full \u2014 configurator rule is implied but not explicitly tied to the BYO upgrade path.",
+      "Minor: The $99/mo SaaS atom is acknowledged as fixed but not explicitly listed in Part 1's atom inventory (e.g., under a 'Fixed product atom' header) for completeness."
+    ],
+    "suggested_fixes": [
+      "Add an explicit 'Fixed product atom' line at the top of Part 1: 'SaaS subscription \u2014 $99/mo, not decomposed'.",
+      "In BYO upgrades, annotate the Expedited pace upgrade with '(blocked if Depth=Deep or Breadth=Full)' so the dependency is visible at the pricing layer.",
+      "No change needed to pace dependency wording; already consistent with invalid-combos list."
+    ]
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table lacks an explicit 'Pricing logic / Anchor' column separate from the Price \u2014 anchors are embedded parenthetically in the Price cell rather than as a distinct field as implied by 'Pricing logic \u2014 what the price is anchored against'",
+      "Vague-input preamble is used but the input actually gave a concrete price ($400) \u2014 per the Pricing-Anchor Rule, concrete prices mean 'use $ figures; anchor each tier against them,' so the hedging preamble is arguably unwarranted",
+      "Ceiling logic is slightly inverted: says '$1,900 auto-route to Premium ($2,200 flat is cheaper than max BYO)' but max BYO sums to $2,425, so the ceiling threshold rationale could be stated more precisely"
+    ],
+    "suggested_fixes": [
+      "Split the Part 3 tier table into separate 'Price' and 'Pricing logic / Anchor' columns so anchoring is a first-class field",
+      "Drop or soften the vague-input preamble when the user supplies a concrete price anchor like $400; reserve the stub for truly vague inputs",
+      "Restate ceiling as 'BYO ceiling $1,900 \u2014 above this, Premium flat ($2,200) beats continued BYO stacking (max $2,425)' to make the routing math explicit"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing anchors use mixed tokens: tier prices use +$A/+$B/+$C but flagship-protection rule references concrete percentages and multipliers (\u00d72.8, \u00d75.2) which borders on fabrication for a vague input",
+      "Follow-up menu offers two items (re-anchor + JSON configurator) rather than one as spec requires ('offer one based on context')",
+      "Commitment multipliers (\u00d72.8, \u00d75.2, \u00d79.8) are specific numbers invented despite tokenized pricing \u2014 inconsistent with 'do not fabricate' rule"
+    ],
+    "suggested_fixes": [
+      "Tokenize commitment multipliers too (e.g., \u00d7M1/M2/M3) to stay consistent with placeholder discipline",
+      "Trim follow-up to a single offer per spec ('Optional Follow-Up Menu: offer one')",
+      "Either tokenize the flagship-protection percentages or justify them as structural invariants rather than domain-anchored figures"
+    ]
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": true,
+    "gaps": [
+      "Part 1 Access tiers: spec expects access as an atom group but overlay mode is otherwise clean \u2014 minor: 'biweekly call' in Growth was inferred to include 1 brief/mo without the user stating so, which slightly bends the 'preserve existing tiers exactly' rule",
+      "Flagship-protection fixes mutate the user's existing tiers (adding audit/Slack to Starter, articles to Growth, links to Pro) \u2014 overlay mode is supposed to preserve existing tiers exactly and prove flagship protection, not rewrite the tiers to make the math work",
+      "Memory preamble absent (acceptable if memory unavailable, but not explicitly noted)",
+      "Vague-input preamble used ('Assuming\u2026') is fine, but the opening italic note doubles as a mode-declaration rather than the spec's assumption-stub format"
+    ],
+    "suggested_fixes": [
+      "In overlay mode, keep existing tier configs frozen and instead adjust BYO base/upgrade prices (or declare a tier under-priced) rather than adding deliverables to the user's tiers",
+      "Flag the Growth 'content brief' inference explicitly as a question to the user before pricing against it, instead of silently assuming 1/mo",
+      "Add a one-line note that memory is unavailable or omit silently per spec (currently silent \u2014 acceptable, no change needed)",
+      "Tighten opening to separate mode declaration from any assumption stub per the vague-input preamble format"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 2 standard dimension 'Format' is omitted without explicit justification (spec lists Format among standard six)",
+      "Add-on pricing mixes one-time and monthly units (Naming +$8K one-time, Research +$12K one-time) but the flagship-protection math amortizes them silently without showing the amortization window, slightly muddying the proof",
+      "Ceiling is stated as $75K configured but the BYO-to-match Premium math reaches ~$111K, meaning the ceiling rule would auto-route Premium-equivalent buyers away before they can even assemble it \u2014 internally consistent for routing, but the ceiling's relationship to the $111K figure isn't reconciled"
+    ],
+    "suggested_fixes": [
+      "Add a one-line note explaining Format was folded into Discipline Mix/Rights, or include Format as its own row (e.g., deliverable format: static/interactive/motion-first)",
+      "Specify amortization basis for one-time add-ons in the flagship-protection math (e.g., 'amortized over 12 months') or exclude them and recompute",
+      "Add a sentence clarifying that the $75K ceiling triggers Premium routing precisely because BYO-to-Premium (~$111K) proves the packaged tier is the only rational path above the ceiling"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier pricing uses loose ranges ($400\u20131,200/yr, $8K\u201325K) alongside placeholder tokens, which blurs the Pricing-Anchor Rule's bright line between tokens and $ figures",
+      "BYO base is stated as '+$B/yr' (a token) rather than a concrete base price, making the floor/ceiling math and flagship-protection arithmetic non-verifiable \u2014 the example '+$B \u00d7 ~1.4' is illustrative but not a checkable sum",
+      "Memory Integration preamble was omitted with no acknowledgment \u2014 spec says omit silently if unavailable, which is compliant, but since this is the skill applied to itself (which ships memory integration), a note on whether memory was queried would strengthen self-application",
+      "Follow-up menu offers two options ('re-anchor' and 'JSON configurator'), but spec says offer *one* based on context"
+    ],
+    "suggested_fixes": [
+      "Remove the parenthetical $ ranges in Tier 2/3 and keep pure tokens, OR commit to $ figures and drop the tokens \u2014 don't mix",
+      "Pick a concrete base price for BYO (even if provisional) so floor/ceiling/flagship-protection sums are arithmetically checkable, or explicitly state BYO pricing is deferred until re-anchor",
+      "Add a one-line note that memory was not queried (or was unavailable) for transparency when the skill is self-applied",
+      "Trim the closing follow-up to a single highest-leverage option (the re-anchor, given the vague-input preamble)"
+    ]
+  }
+]
