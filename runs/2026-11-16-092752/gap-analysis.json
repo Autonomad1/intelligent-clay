@@ -1,0 +1,134 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [
+      "Memory Integration: no mention of memory-availability check (preamble or silent omission) \u2014 minor, but spec says to query before producing",
+      "Follow-Up Menu: offers three options instead of 'one based on context' as spec instructs"
+    ],
+    "suggested_fixes": [
+      "Add a silent memory check or a one-line note acknowledging memory unavailability per spec",
+      "Trim follow-up menu to a single most-relevant option (e.g., configurator output) rather than three"
+    ]
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table/pricing format: tiers use token placeholders (+$A/B/C) which is acceptable for vague input, but the Pricing-Anchor Rule's vague-input preamble names 'sub-niche' as the unlocking variable \u2014 fine \u2014 however Signature's anchor ('your current 1-on-1 rate') assumes a figure not provided, slightly mixing concrete-anchor language with token output.",
+      "Ceiling rule in BYO uses '~1.8\u00d7 flagship' which references the token +$B rather than a configuration-based ceiling, making the auto-route threshold ambiguous when no $ exists."
+    ],
+    "suggested_fixes": [
+      "In Signature pricing logic, keep it token-only (e.g., '+$B/month, anchored at user's stated 1-on-1 rate once provided') rather than implying the anchor is already set.",
+      "Express the BYO ceiling primarily as a configuration trigger (the listed combo) and treat the '1.8\u00d7 flagship' multiplier as secondary/illustrative until $ figures are supplied."
+    ]
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Part 3 Premium anchor references 'career coaches ($2K\u2013$5K)' as a competitive benchmark despite the vague-input preamble declaring tier figures are placeholders pending re-anchoring \u2014 mild inconsistency between the stub and the confident $ anchoring",
+      "Pricing-Anchor Rule compliance is borderline: the preamble says 'will re-anchor tier figures once you name the target seniority or vertical' yet concrete $ figures ($850, $1,750) are produced rather than placeholder tokens (+$A, +$B, +$C) \u2014 the user gave $400 for Lite only, so upgrades arguably should have been tokenized",
+      "Support dimension dependency 'Career pivot + zero revisions' appears both as an invalid combination bullet and as an implicit configurator rule ('pivot targeting forces... minimum 1 round of revisions') \u2014 slight redundancy without cross-reference"
+    ],
+    "suggested_fixes": [
+      "Either drop the 're-anchor' clause from the preamble (since concrete figures were produced) or convert Core/Premium prices to tokens until seniority/vertical is named",
+      "Remove the 'career coaches ($2K\u2013$5K)' external benchmark or caveat it as illustrative, to stay consistent with the placeholder-pending stance",
+      "Consolidate the pivot+zero-revisions rule into a single location (either invalid-combos list or configurator-enforce list, not both)"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": false,
+    "gaps": [
+      "Part 3 Flagship-protection math: Starter row shows BYO sum ($900) BELOW tier price ($2,000), violating the flagship-protection rule that BYO-summed equivalent must price ABOVE the tier \u2014 the note reframes this as 'premium over BYO floor' rather than fixing it",
+      "Part 3 Flagship-protection math: Pro row admits BYO 'physically cannot replicate it,' which sidesteps rather than demonstrates the sum-above-flagship proof the overlay mode requires",
+      "Part 3 BYO slot pricing: 'Between Starter and Growth: $900\u2013$4,800' overlaps Foundation floor ($900) and lets BYO undercut Starter's $2,000 config \u2014 breaks the 'each existing tier wins on price vs BYO-summed equivalent' requirement"
+    ],
+    "suggested_fixes": [
+      "Raise BYO per-dimension prices (or add mandatory base components at Starter-equivalent config) so summing Starter's config in BYO exceeds $2,000, preserving Starter as the rational discount",
+      "For Pro, either add a BYO 'near-unlimited' tier (e.g., 100kw at +$X) priced so the sum exceeds $10,000, or explicitly state exclusivity as the protection mechanism instead of presenting incomplete sum math as proof",
+      "Set BYO 'between Starter and Growth' floor at >$2,000 so Foundation ($900) sits clearly below Starter and mid-BYO configs cannot undercut Starter's bundle"
+    ]
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": true,
+    "gaps": [
+      "Part 3 tier table merges 'Configuration' and 'Positioning' into cells rather than separate labeled sub-items per spec, but all required elements are present",
+      "Premium tier configuration lists 'Accelerated OR Cohort' which is ambiguous for a flagship config \u2014 spec implies one level per dimension"
+    ],
+    "suggested_fixes": [
+      "Keep the table but ensure each tier explicitly lists Configuration/Positioning/Pricing-logic as discrete labeled fields (already effectively done via columns \u2014 acceptable)",
+      "Pick one pace for Premium flagship (e.g., Accelerated) and let Cohort-pace be a BYO swap, to keep the tier config unambiguous"
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 3 Pricing-Anchor Rule adherence: user did not give concrete prices \u2014 only a $15K\u2013$80K range \u2014 yet output fabricates specific tier figures ($18K/$45K/$75K) and per-dimension $ weights while labeling them 'hypothesis'. Spec says use placeholder tokens for vague/range input and never fabricate.",
+      "Vague-input preamble present but mixed with concrete $ hypotheses throughout Part 3, partially violating the 'use tokens; don't fabricate' bright line.",
+      "Extra closing commentary ('Worth noting for high-end positioning...') drifts toward positioning advice, which is listed as out of scope."
+    ],
+    "suggested_fixes": [
+      "Replace the hypothesis $ figures in tier table and BYO upgrades with pure +$A/+$B/+$C tokens (plus relative % anchors) and offer to re-anchor once retainer distribution is shared.",
+      "Keep the assumption stub but strip all fabricated dollar amounts from Part 3 until user confirms numbers.",
+      "Remove the 'high-end positioning' gating commentary or move it into the follow-up menu as a positioning-adjacent option handed off to another skill."
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing logic uses placeholder tokens ($A/$B/$C) but references concrete benchmark ranges ($6\u201310K/mo junior strategist, $15\u201340K/mo retainer) \u2014 borderline violation of the 'never fabricate / use tokens' rule when input is vague",
+      "Memory Integration preamble not included or explicitly noted as skipped \u2014 spec says query before producing; output gives no signal either way",
+      "Tier 0 (MIT Core) is introduced as a fourth labeled tier, which risks reading as 'four tiers' and softens the strict 'three tiers + BYO' rule even though it's framed as funnel-top",
+      "BYO per-dimension pricing uses 19 opaque tokens (D1\u2013D19) without grouping or anchor hints, making the framework hard to act on compared to the inline example's cleaner structure",
+      "Flagship-protection rule states BYO must land '15\u201325% above' Studio \u2014 a fabricated specific range not grounded in user input or spec"
+    ],
+    "suggested_fixes": [
+      "Replace concrete $ benchmark ranges in pricing logic with token-relative phrasing (e.g., 'below loaded cost of a junior strategist') or defer benchmarks until re-anchor",
+      "Add a one-line note like 'Memory unavailable \u2014 proceeding without preamble' or silently confirm per spec; make the choice visible in a self-check",
+      "Reframe MIT Core as a funnel/preamble note above the three tiers, not as 'Tier 0', to preserve the strict three-tier structure",
+      "Collapse D1\u2013D19 into grouped token families (e.g., +$Depth, +$Breadth-pack) matching the dimension table for readability",
+      "Drop the specific '15\u201325%' figure and state the rule qualitatively ('BYO-sum must exceed flat tier price') until $ anchors exist"
+    ]
+  }
+]
