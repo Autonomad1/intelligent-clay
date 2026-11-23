@@ -1,0 +1,122 @@
+[
+  {
+    "id": "brand-strategist",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "fitness-coach",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "change-management-consultant",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "pure-saas",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "physical-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "hybrid-service-product",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "single-deliverable",
+    "passed": true,
+    "gaps": [
+      "Pricing-Anchor Rule adherence: preamble flags input as generic-market (vague) but output uses concrete $ figures ($400 user-given is fine, but $950/$2,200 and all BYO upgrades are fabricated without sub-niche anchoring) \u2014 should use placeholder tokens for non-user-given prices per the bright-line rule",
+      "Flagship-protection rule partially violated and surfaced as a \u26a0\ufe0f in-output fix rather than resolved before delivery \u2014 self-check should have caught this and re-priced silently",
+      "Follow-up menu offers three options instead of 'one based on context' as spec requires"
+    ],
+    "suggested_fixes": [
+      "Keep user's $400 for Lite; express Core/Premium and BYO upgrades as tokens (+$A, +$B) until seniority/industry named, OR justify sub-niche anchor explicitly in preamble",
+      "Re-run flagship-protection math before rendering and adjust upgrade prices or \u00e0 la carte restrictions so BYO > flagship cleanly, without exposing the arithmetic failure",
+      "Offer exactly one follow-up tailored to context (likely Pricing validation, given the token/anchor gap)"
+    ]
+  },
+  {
+    "id": "vague-coaching",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "already-modular-overlay",
+    "passed": false,
+    "gaps": [
+      "Part 3 Flagship-Protection Proof: Starter fails (BYO equivalent $1,700 < $2,000 flagship) \u2014 spec requires BYO sum to price *above* each tier's flagship, not below. The output acknowledges this but ships it as a 'required adjustment' rather than resolving before delivery.",
+      "Part 3 Flagship-Protection Proof: Growth fails at near-parity ($4,900 vs $5,000) \u2014 same violation of flagship-protection rule shipped unresolved.",
+      "Part 3 Growth BYO sum omits the Access/Slack-equivalent and content brief atoms inconsistently; the ad-hoc 'recommend option 2' defers the fix instead of producing a compliant blueprint.",
+      "Part 3 Pro BYO calculation is internally inconsistent \u2014 parenthetical '(biweekly report; weekly adds another +$800 = $2,000)' conflates line items and isn't cleanly reflected in the $11,200 sum."
+    ],
+    "suggested_fixes": [
+      "Resolve flagship protection *within* the blueprint by applying option 2 (bundle quarterly audit into Starter, monthly audit into Growth) directly, then re-run the proof table so all three tiers show a positive discount before delivery.",
+      "Recompute Growth BYO sum with a consistent atom list (base + 30kw + biweekly report + biweekly call + Slack + brief + bundled audit) and show the resulting >$5,000 figure.",
+      "Clean up the Pro BYO math: pick weekly reporting as one line item (+$2,000 inclusive) rather than stacking biweekly+weekly, and show the arithmetic transparently."
+    ],
+    "suggested_fixes_note": null
+  },
+  {
+    "id": "adversarial-skip-framework",
+    "passed": true,
+    "gaps": [],
+    "suggested_fixes": []
+  },
+  {
+    "id": "course-creator",
+    "passed": false,
+    "gaps": [
+      "Part 3 flagship-protection rule violated for Premium: BYO sum ($2,450) prices BELOW Premium ($3,200), not above \u2014 spec requires BYO sum to price *above* each tier's flagship so flagships remain the rational discount",
+      "Skill acknowledges the violation in a parenthetical note and substitutes a ceiling-routing rationale, which is not the spec's flagship-protection mechanism"
+    ],
+    "suggested_fixes": [
+      "Re-price Premium upgrades (e.g., raise unlimited async, alumni-for-life, or procurement add-on costs) so BYO-to-Premium sums above $3,200, preserving Premium as the rational discount",
+      "Remove the parenthetical rationalization and instead adjust per-dimension upgrade prices to satisfy flagship-protection for both Core and Premium"
+    ]
+  },
+  {
+    "id": "boutique-creative-agency",
+    "passed": true,
+    "gaps": [
+      "Part 1 Access tiers lists 5 bullets but mixes channel/response-time with named-role seniority, slightly conflating 'Access tiers' atom with 'Support levels' \u2014 minor taxonomy blur",
+      "Flagship-protection math for Core shows $50K vs $42K but omits the Volume upgrade line (Standard-Heavy would be needed if Core is 'Standard\u2013Heavy'); if Standard only, the config description is inconsistent",
+      "BYO base is stated as $18K/mo (Lite) but Lite already includes 'Dual-discipline' \u2014 so 'add third discipline: +$12K' implies base is single-discipline, creating an ambiguity about what the $18K actually buys as a BYO starting point"
+    ],
+    "suggested_fixes": [
+      "Split Access atoms into two clean groups: channel+SLA vs. named-seniority, or fold seniority under Support",
+      "Clarify Core as either 'Standard volume' (matching the $50K math) or add +$8K Heavy upgrade to the flagship-protection calculation",
+      "State BYO base explicitly: '$18K/mo = Dual-discipline + Standard volume + Execution-only' and reprice upgrades from that true baseline (e.g., 'add third discipline: +$12K' assumes Dual as starting point)"
+    ]
+  },
+  {
+    "id": "skill-on-itself",
+    "passed": true,
+    "gaps": [
+      "Part 3 pricing uses token placeholders (+$B, +$C) for Pro/Studio but the preamble stub asks about business model rather than niche \u2014 the Pricing-Anchor Rule says tokens are correct for vague input, but the stub should name the specific variable that unlocks $ norms (sub-niche/positioning), which it partially does",
+      "Clay OSS tier lists 'Memory=None or claude-mem' and Pro lists 'Deployment=Self-host or Hosted CLI' \u2014 tier configurations should be a single level per dimension, not a choice, otherwise BYO logic collapses",
+      "BYO base price is $0 but Lite is free MIT \u2014 this makes 'BYO sum must exceed flagship' math awkward for Pro (any paid upgrade trivially exceeds $0 base), weakening the flagship-protection proof for the Pro tier specifically",
+      "Ceiling rule ('exceeds Clay Pro's monthly AND includes DWY or White-label') is a compound condition that could let a high-$ BYO without DWY/White-label stay in BYO instead of routing up \u2014 ceiling should be a clean price or capability threshold"
+    ],
+    "suggested_fixes": [
+      "Tighten the vague-input stub to explicitly name 'sub-niche + target buyer' as the unlock variable rather than business-model archetype",
+      "Pin each tier to exactly one level per dimension; move 'or' options into BYO upgrades",
+      "Set BYO base at Vertical-pack price (not $0) so flagship-protection math is non-trivial for Pro, and treat OSS as a separate free entry rather than the BYO floor",
+      "Restate ceiling as a single clean rule: 'BYO monthly > 1.5\u00d7 Pro OR any enterprise-gated capability selected \u2192 route to Studio'"
+    ]
+  }
+]
